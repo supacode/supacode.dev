@@ -1,0 +1,48 @@
+.hero {
+  margin: 8rem 5rem;
+  color: $white;
+
+  &__tagline {
+    font-size: 3rem;
+    margin-bottom: 5rem;
+    font-weight: 200;
+  }
+
+  &__text {
+    margin-bottom: 5rem;
+    font-size: 3rem;
+    font-weight: 300;
+    line-height: 1.5;
+  }
+
+  &__contact {
+    &--emoji {
+      display: inline-block;
+      margin: 0 1rem;
+    }
+
+    a {
+      display: inline-block;
+      margin-left: 1rem;
+      border-bottom: 2px solid $secondary-accent;
+      padding-bottom: 0.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: $screen-md-max) {
+  .hero {
+    margin: 8rem 2rem 0 2rem;
+
+    &__text {
+      font-size: 1.5rem;
+    }
+
+    &__contact {
+      a {
+        margin-left: 0;
+        clear: left;
+      }
+    }
+  }
+}
