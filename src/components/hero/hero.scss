@@ -1,0 +1,29 @@
+@import '../../assets/scss/variables';
+
+.hero {
+  padding: 4rem 3rem;
+
+  &__text {
+    width: 70%;
+  }
+
+  &__text-small {
+    color: $accent;
+    margin-bottom: 1rem;
+  }
+
+  &__lead {
+    font-size: 4.5rem;
+    margin-bottom: 1.5rem;
+    color: #fff;
+    font-weight: bolder;
+    span {
+      color: $accent;
+    }
+  }
+
+  &__lead-2 {
+    font-size: 3rem;
+    color: #8892af;
+  }
+}

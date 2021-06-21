@@ -1,0 +1,17 @@
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 3rem;
+
+  &__logo {
+    font-size: 1.5rem;
+  }
+
+  &__nav {
+    li {
+      display: inline-block;
+      margin-left: 2rem;
+    }
+  }
+}
