@@ -1,17 +1,30 @@
+@import '../../assets/scss/variables';
+
 .main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 3rem;
+  padding: 2rem 5rem;
+  position: absolute;
+  width: 100%;
 
   &__logo {
     font-size: 1.5rem;
+    color: $accent-primary;
   }
 
   &__nav {
     li {
       display: inline-block;
       margin-left: 2rem;
+    }
+    li a {
+      color: #ccc;
+      font-family: $font-stack-monospace;
+      transition: 0.4s ease-out;
+      &:hover {
+        color: $accent-primary;
+      }
     }
   }
 }

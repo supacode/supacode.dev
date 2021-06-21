@@ -2,12 +2,14 @@
 
 $white: #fff;
 $dark: #1a2130;
-$accent: #62b5ec;
-$grey: #ddd;
+$accent-primary: #ecbc62;
+$grey-primary: #8892af;
+$grey-secondary: #535763;
 
 // Fonts
 $font-stack-main: Apercu, 'Source Sans Pro', system, system-ui, -apple-system,
   BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+$font-stack-monospace: 'Roboto Mono', monospace;
 
 // 2. Media queries breakpoints
 

@@ -8,13 +8,20 @@ export const Hero: React.SFC<HeroProps> = () => {
   return (
     <div className="hero">
       <div className="hero__text">
-        <p className="hero__text-small">Welcome to my website.</p>
         <p className="hero__lead">
-          <span>My name is</span> Maverick
+          My name is <span>Maverick.</span>
         </p>
-        <p className="hero__lead-2">
-          I'm a Web Developer based in Abuja, Nigeria.
+        <p className="hero__lead-2">I code for fun, and as a job.</p>
+        <p className="hero__description">
+          I'm a Web Developer based in Abuja, Nigeria. Quis, voluptate eum fuga
+          culpa aperiam praesentium quam eaque exercitationem amet ratione
+          officiis dicta suscipit earum quaerat sint nisi quo voluptas soluta
+          veritatis asperiores nulla? Culpa aperiam quod maiores! Velit,
+          corrupti beatae!
         </p>
+        <a href="mailto:supacode@gmail.com" className="btn hero__btn">
+          Contact Me
+        </a>
       </div>
     </div>
   );

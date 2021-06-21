@@ -1,0 +1,14 @@
+@import './variables';
+
+.btn {
+  border: 1px solid $accent-primary;
+  padding: 1rem 2rem;
+  display: inline-block;
+  color: $accent-primary;
+  font-family: $font-stack-monospace;
+  border-radius: 2px;
+
+  &:hover {
+    background: transparentize($color: $accent-primary, $amount: 0.8);
+  }
+}

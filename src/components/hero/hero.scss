@@ -1,29 +1,41 @@
 @import '../../assets/scss/variables';
+@import '../../assets/scss/utils';
 
 .hero {
-  padding: 4rem 3rem;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  height: 100vh;
 
   &__text {
-    width: 70%;
-  }
-
-  &__text-small {
-    color: $accent;
-    margin-bottom: 1rem;
+    margin-right: 5rem;
   }
 
   &__lead {
-    font-size: 4.5rem;
+    font-size: 5rem;
     margin-bottom: 1.5rem;
-    color: #fff;
     font-weight: bolder;
+    color: $white;
+
     span {
-      color: $accent;
+      color: $accent-primary;
     }
   }
 
   &__lead-2 {
-    font-size: 3rem;
-    color: #8892af;
+    color: $grey-primary;
+    font-size: 4rem;
+    font-weight: bolder;
+    margin-bottom: 2rem;
+  }
+
+  &__description {
+    color: $grey-primary;
+    width: 70%;
+    line-height: 2;
+  }
+
+  &__btn {
+    margin-top: 2rem;
   }
 }
