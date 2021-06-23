@@ -1,0 +1,16 @@
+@import '../../assets/scss/reset';
+@import '../../assets/scss/variables';
+
+body {
+  font-family: $font-stack-main;
+  background: $dark;
+}
+
+.site-wrapper {
+  padding: 0 5rem;
+}
+@media screen and (max-width: $screen-sm-max) {
+  .site-wrapper {
+    padding: 0 4rem;
+  }
+}
