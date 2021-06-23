@@ -96,7 +96,7 @@
       overflow: hidden;
       opacity: 1;
       visibility: visible;
-      width: 60%;
+      width: 70%;
     }
 
     &__open li {
@@ -119,8 +119,8 @@
       width: 100%;
     }
     li {
-      height: calc(100% / 5);
       position: relative;
+      margin-bottom: 2rem;
       opacity: 0;
       display: block;
     }
