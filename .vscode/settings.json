@@ -1,15 +1,3 @@
 {
-  "liveServer.settings.port": 5500,
-  "liveSassCompile.settings.formats": [
-    // {
-    //   "format": "expanded",
-    //   "extensionName": ".css",
-    //   "savePath": "/css"
-    // },
-    {
-      "extensionName": ".min.css",
-      "format": "compressed",
-      "savePath": "/css/"
-    }
-  ]
+    "liveServer.settings.port": 5501
 }

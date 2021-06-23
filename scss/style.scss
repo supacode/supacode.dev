@@ -1,9 +1,0 @@
-@import 'partials/variables';
-@import 'partials/reset';
-
-body {
-  background: $dark;
-  font-family: $font-stack-main;
-}
-
-@import 'components/hero';
