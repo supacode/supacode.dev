@@ -9,3 +9,8 @@ body {
 .site-wrapper {
   padding: 0 5rem;
 }
+@media screen and (max-width: $screen-sm-max) {
+  .site-wrapper {
+    padding: 0 4rem;
+  }
+}

@@ -14,17 +14,22 @@
   }
 
   &__nav {
+    display: block;
     li {
       display: inline-block;
       margin-left: 2rem;
     }
     li a {
-      color: #ccc;
+      color: $grey-primary;
       font-family: $font-stack-monospace;
       transition: 0.4s ease-out;
-      &:hover {
-        color: $accent-primary;
-      }
     }
+  }
+}
+
+@media screen and (max-width: $screen-sm-max) {
+  .main-header {
+    padding: 2rem;
+    top: 0;
   }
 }

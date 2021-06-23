@@ -17,3 +17,10 @@ a {
 li {
   list-style: none;
 }
+
+input[type='submit'],
+button {
+  cursor: pointer;
+  background: none;
+  border: none;
+}

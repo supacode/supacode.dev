@@ -1,0 +1,147 @@
+@import '../../assets/scss/variables';
+
+.overlay {
+  &__nav {
+    li {
+      list-style: none;
+      display: inline-block;
+      margin-left: 2rem;
+    }
+
+    li a {
+      color: $white;
+      font-size: 1rem;
+      font-family: $font-stack-monospace;
+      transition: 0.4s ease-out color;
+      &:hover {
+        color: $accent-primary;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $screen-sm-max) {
+  .hamburger {
+    position: relative;
+    top: 5%;
+    right: 2%;
+    height: 27px;
+    width: 35px;
+    cursor: pointer;
+    z-index: 100;
+    transition: opacity 0.25s ease-out;
+
+    &__line {
+      background: $white;
+      height: 2px;
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      &:hover {
+        width: 100%;
+      }
+      &--1 {
+        width: 40%;
+      }
+      &--2 {
+        width: 70%;
+        top: 11px;
+      }
+      &--3 {
+        width: 100%;
+        top: 22px;
+      }
+    }
+
+    &__active {
+      .hamburger__line--1 {
+        transform: translateY(11px) translateX(0) rotate(45deg);
+        width: 100%;
+      }
+      .hamburger__line--3 {
+        transform: translateY(-11px) translateX(0) rotate(-45deg);
+        width: 100%;
+      }
+      .hamburger__line--2 {
+        opacity: 0;
+      }
+    }
+
+    &:hover {
+      .hamburger__line {
+        width: 100%;
+      }
+    }
+  }
+
+  .overlay {
+    position: fixed;
+    background: lighten($color: $dark, $amount: 10%);
+    padding-right: 3rem;
+    top: 0;
+    right: 0;
+    width: 0;
+    height: 0;
+    opacity: 0;
+    height: 100vh;
+    visibility: hidden;
+    transition: opacity 0.5s, visibility 0.15s, width 0.15s;
+    box-shadow: 0 0 5rem 20rem rgba($dark, 80%);
+
+    &__open {
+      overflow: hidden;
+      opacity: 1;
+      visibility: visible;
+      width: 60%;
+    }
+
+    &__open li {
+      animation: slideIn 0.5s ease forwards;
+      animation-delay: 0.3s;
+    }
+
+    &__nav {
+      position: relative;
+      height: 70%;
+      top: 50%;
+      padding-top: 2rem;
+      transform: translateY(-50%);
+      text-align: right;
+    }
+
+    ul {
+      display: inline-block;
+      height: 100%;
+      width: 100%;
+    }
+    li {
+      height: calc(100% / 5);
+      position: relative;
+      opacity: 0;
+      display: block;
+    }
+    li a {
+      display: block;
+      font-size: 1.2rem;
+
+      &:hover {
+        color: $accent-primary;
+      }
+    }
+  }
+
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      left: 5%;
+    }
+    to {
+      opacity: 1;
+      left: 0;
+    }
+  }
+}

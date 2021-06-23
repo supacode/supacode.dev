@@ -5,7 +5,7 @@
   display: flex;
   align-items: center;
   flex-direction: row;
-  height: 100vh;
+  min-height: 100vh;
 
   &__text {
     margin-right: 5rem;
@@ -37,5 +37,41 @@
 
   &__btn {
     margin-top: 2rem;
+  }
+}
+
+@media screen and (max-width: $screen-lg-max) {
+  .hero {
+    &__text {
+      margin-right: 0;
+    }
+
+    &__lead {
+      font-size: 3.5rem;
+    }
+
+    &__lead-2 {
+      font-size: 2.5rem;
+    }
+  }
+}
+
+@media screen and (max-width: $screen-sm-max) {
+  .hero {
+    height: auto;
+
+    &__description {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: $screen-sm-mid-max) {
+  .hero {
+    margin-top: 4rem;
+
+    &__lead {
+      font-size: 2.5rem;
+    }
   }
 }
