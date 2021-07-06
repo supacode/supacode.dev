@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 5rem;
+  padding: 2rem 2.5rem;
   position: absolute;
   width: 100%;
 
@@ -20,7 +20,8 @@
       margin-left: 2rem;
     }
     li a {
-      color: $grey-primary;
+      // color: $grey-light;
+      color: $grey-dark;
       font-family: $font-stack-monospace;
       transition: 0.4s ease-out;
     }
@@ -29,7 +30,6 @@
 
 @media screen and (max-width: $screen-sm-max) {
   .main-header {
-    padding: 2rem;
     top: 0;
   }
 }
