@@ -5,7 +5,7 @@ import './header.scss';
 
 export interface HeaderProps {}
 
-export const Header: React.SFC<HeaderProps> = () => {
+export const Header: React.FC<HeaderProps> = () => {
   return (
     <header className="main-header">
       <h1 className="main-header__logo">Supacode</h1>

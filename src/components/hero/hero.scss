@@ -3,73 +3,102 @@
 
 .hero {
   display: flex;
+  justify-content: space-between;
+  min-height: 90vh;
   align-items: center;
-  flex-direction: row;
-  min-height: 100vh;
 
-  &__text {
-    margin-right: 5rem;
-  }
-
-  &__lead {
-    font-size: 5rem;
-    margin-bottom: 1.5rem;
-    font-weight: bolder;
-    color: $white;
-
+  &__lead-text {
+    font-size: 4rem;
+    font-weight: 700;
+    color: $grey-dark;
+    margin-bottom: 1rem;
     span {
       color: $accent-primary;
     }
   }
 
-  &__lead-2 {
-    color: $grey-primary;
-    font-size: 4rem;
-    font-weight: bolder;
+  &__tag-text {
     margin-bottom: 2rem;
+    font-size: 4rem;
+    font-weight: 800;
+    color: $grey-light;
   }
 
-  &__description {
-    color: $grey-primary;
-    width: 70%;
-    line-height: 2;
+  &__desc-text {
+    color: $grey-light;
+    font-size: $font-size-lg;
+    line-height: 1.8;
+    max-width: 800px;
   }
 
-  &__btn {
-    margin-top: 2rem;
+  &__social {
+    &--list {
+      margin-bottom: 1.5rem;
+      color: $white;
+    }
+
+    &--link {
+      border-radius: 50%;
+      border: 1px solid $grey-light;
+      display: inline-block;
+      height: 2.5rem;
+      width: 2.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: 0.4s ease-out;
+      &:hover {
+        border-color: $accent-primary;
+        svg {
+          path {
+            fill: $accent-primary;
+          }
+        }
+      }
+    }
+
+    svg {
+      width: 20px;
+      height: 20px;
+
+      path {
+        transition: 0.4s ease-out;
+        stroke-width: 0;
+        fill: $grey-light;
+      }
+    }
   }
 }
 
 @media screen and (max-width: $screen-lg-max) {
   .hero {
-    &__text {
-      margin-right: 0;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    &__left {
+      margin-bottom: 2rem;
+      width: 100%;
+    }
+    &__lead-text,
+    &__tag-text {
+      font-size: 3em;
     }
 
-    &__lead {
-      font-size: 3.5rem;
-    }
-
-    &__lead-2 {
-      font-size: 2.5rem;
+    &__social {
+      width: 100%;
+      &--list {
+        display: inline-flex;
+        margin-right: 1.5rem;
+      }
     }
   }
 }
 
 @media screen and (max-width: $screen-sm-max) {
   .hero {
-    height: auto;
-
-    &__description {
-      width: 100%;
-    }
-  }
-}
-
-@media screen and (max-width: $screen-sm-mid-max) {
-  .hero {
-    &__lead {
-      font-size: 2.5rem;
+    &__lead-text,
+    &__tag-text {
+      font-size: 2rem;
     }
   }
 }

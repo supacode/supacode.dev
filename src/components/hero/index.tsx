@@ -1,28 +1,41 @@
 import React from 'react';
 
+import { socials } from '../../constants/socialLinks';
 import './hero.scss';
 
 export interface HeroProps {}
 
-export const Hero: React.SFC<HeroProps> = () => {
+export const Hero: React.FC<HeroProps> = () => {
   return (
     <div className="hero">
-      <div className="hero__text">
-        <p className="hero__lead">
-          My name is <span>Maverick.</span>
+      <div className="hero__left">
+        <h2 className="hero__lead-text">
+          My name is <span>Maverick</span>.
+        </h2>
+        <h3 className="hero__tag-text">I code for fun, and as a job.</h3>
+
+        <p className="hero__desc-text">
+          👋🏽 &nbsp; Hey there! I'm Maverick, a web developer based in Abuja,
+          Nigeria. <br />
+          Welcome to my little corner of the web, where I'll be sharing notes,
+          code snippets, and resources on topics that interest me and updates on
+          projects I'm working on.
         </p>
-        <p className="hero__lead-2">I code for fun, and as a job.</p>
-        <p className="hero__description">
-          👋🏽 Hey there! I&apos;m Maverick, a web developer based in Abuja,
-          Nigeria.
-          <br /> Welcome to my little corner of the web, where I&apos;ll be
-          sharing notes, code snippets, and resources on topics that interest me
-          and updates on projects I&apos;m working on.
-        </p>
-        <a href="mailto:supacode@gmail.com" className="btn hero__btn">
-          Contact Me
-        </a>
       </div>
+      <ul className="hero__social">
+        {socials.map((social) => (
+          <li key={social.url} className="hero__social--list">
+            <a
+              href={social.url}
+              title={social.name}
+              className="hero__social--link"
+              target="_blank"
+            >
+              {social.icon}
+            </a>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 };

@@ -4,26 +4,13 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 5rem;
-  position: absolute;
+  padding: 2rem 2.5rem;
   width: 100%;
+  position: absolute;
 
   &__logo {
     font-size: 1.5rem;
     color: $accent-primary;
-  }
-
-  &__nav {
-    display: block;
-    li {
-      display: inline-block;
-      margin-left: 2rem;
-    }
-    li a {
-      color: $grey-primary;
-      font-family: $font-stack-monospace;
-      transition: 0.4s ease-out;
-    }
   }
 }
 

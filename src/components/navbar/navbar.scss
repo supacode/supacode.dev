@@ -9,8 +9,8 @@
     }
 
     li a {
-      color: $white;
-      font-size: 1rem;
+      color: $grey-light;
+      font-size: $font-size-xs;
       font-family: $font-stack-monospace;
       transition: 0.4s ease-out color;
       &:hover {
@@ -19,8 +19,7 @@
     }
   }
 }
-
-@media screen and (max-width: $screen-sm-max) {
+@media screen and (max-width: $screen-md-max) {
   .hamburger {
     position: relative;
     top: 5%;
@@ -80,23 +79,23 @@
 
   .overlay {
     position: fixed;
-    background: lighten($color: $dark, $amount: 10%);
+    background: lighten($color: $dark-primary, $amount: 10%);
     padding-right: 3rem;
     top: 0;
     right: 0;
-    width: 0;
+    width: 0; // transitioning in fly-out menu
     height: 0;
     opacity: 0;
     height: 100vh;
     visibility: hidden;
-    transition: opacity 0.5s, visibility 0.15s, width 0.15s;
-    box-shadow: 0 0 5rem 20rem rgba($dark, 80%);
+    transition: opacity 0.2s, visibility 0.2s, width 0.2s;
+    box-shadow: 0 0 5rem 50rem rgba($dark-primary, 80%);
 
     &__open {
       overflow: hidden;
       opacity: 1;
       visibility: visible;
-      width: 70%;
+      width: 40%;
     }
 
     &__open li {
@@ -142,6 +141,17 @@
     to {
       opacity: 1;
       left: 0;
+    }
+  }
+}
+
+@media screen and (max-width: $screen-md-min) {
+  .overlay {
+    &__open {
+      overflow: hidden;
+      opacity: 1;
+      visibility: visible;
+      width: 70%;
     }
   }
 }
