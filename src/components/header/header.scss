@@ -5,31 +5,17 @@
   justify-content: space-between;
   align-items: center;
   padding: 2rem 2.5rem;
-  position: absolute;
   width: 100%;
 
   &__logo {
     font-size: 1.5rem;
     color: $accent-primary;
   }
-
-  &__nav {
-    display: block;
-    li {
-      display: inline-block;
-      margin-left: 2rem;
-    }
-    li a {
-      // color: $grey-light;
-      color: $grey-dark;
-      font-family: $font-stack-monospace;
-      transition: 0.4s ease-out;
-    }
-  }
 }
 
 @media screen and (max-width: $screen-sm-max) {
   .main-header {
+    padding: 2rem;
     top: 0;
   }
 }

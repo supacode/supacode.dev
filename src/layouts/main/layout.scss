@@ -4,12 +4,15 @@
 body {
   font-family: $font-stack-main;
   background: $dark-primary;
+  color: $grey-light;
+  line-height: 1.3;
 }
 
 .site-wrapper {
-  padding: 0 5rem;
+  padding: 0 6rem;
 }
-@media screen and (max-width: $screen-sm-max) {
+
+@media screen and (max-width: $screen-lg-max) {
   .site-wrapper {
     padding: 0 2rem;
   }

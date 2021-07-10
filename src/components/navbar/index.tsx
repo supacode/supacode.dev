@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 
 import { routes } from '../../constants/path';
 
@@ -7,11 +7,7 @@ import './navbar.scss';
 export const Navbar: React.FC = () => {
   const [sideDrawerActive, setMenuActive] = useState(false);
 
-  // Disable scroll when side drawer is active
-
-  const clickHandler = () => {
-    setMenuActive(!sideDrawerActive);
-  };
+  const clickHandler = () => setMenuActive(!sideDrawerActive);
 
   return (
     <>
@@ -24,15 +20,14 @@ export const Navbar: React.FC = () => {
         <span className="hamburger__line hamburger__line--3"></span>
       </button>
 
-      <div
-        className={`overlay${sideDrawerActive ? ' overlay__open' : ''}`}
-        id="overlay"
-      >
+      <div className={`overlay${sideDrawerActive ? ' overlay__open' : ''}`}>
         <nav className="overlay__nav">
           <ul>
             {routes.map((link) => (
               <li key={link.id}>
-                <a href={link.url}>{link.text} </a>
+                <a title={link.text} href={link.url}>
+                  {link.text}
+                </a>
               </li>
             ))}
           </ul>

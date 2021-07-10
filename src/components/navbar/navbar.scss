@@ -9,8 +9,8 @@
     }
 
     li a {
-      color: $white;
-      font-size: $font-size-md;
+      color: $grey-light;
+      font-size: $font-size-xs;
       font-family: $font-stack-monospace;
       transition: 0.4s ease-out color;
       &:hover {
@@ -89,7 +89,7 @@
     height: 100vh;
     visibility: hidden;
     transition: opacity 0.2s, visibility 0.2s, width 0.2s;
-    box-shadow: 0 0 5rem 20rem rgba($dark-primary, 80%);
+    box-shadow: 0 0 5rem 50rem rgba($dark-primary, 80%);
 
     &__open {
       overflow: hidden;
