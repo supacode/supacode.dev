@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 import { routes } from '../../constants/path';
+import { AppLink } from '../AppLink';
 
 import './navbar.scss';
 
@@ -25,9 +26,12 @@ export const Navbar: React.FC = () => {
           <ul>
             {routes.map((link) => (
               <li key={link.id}>
-                <a title={link.text} href={link.url}>
-                  {link.text}
-                </a>
+                <AppLink
+                  title={link.text}
+                  text={link.text}
+                  href={link.url}
+                  clearStyles
+                />
               </li>
             ))}
           </ul>
