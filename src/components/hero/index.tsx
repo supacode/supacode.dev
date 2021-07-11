@@ -1,6 +1,8 @@
 import React from 'react';
 
 import { socials } from '../../constants/socialLinks';
+import { AppLink } from '../AppLink';
+import { chevronRight } from '../../assets/icons/icons';
 import './hero.scss';
 
 export interface HeroProps {}
@@ -21,18 +23,24 @@ export const Hero: React.FC<HeroProps> = () => {
           code snippets, and resources on topics that interest me and updates on
           projects I'm working on.
         </p>
+
+        <AppLink
+          icon={chevronRight}
+          text={'Contact Me'}
+          href="mailto:supacode@gmail.com"
+        />
       </div>
       <ul className="hero__social">
         {socials.map((social) => (
           <li key={social.url} className="hero__social--list">
-            <a
+            <AppLink
               href={social.url}
               title={social.name}
-              className="hero__social--link"
               target="_blank"
+              clearStyles
             >
-              {social.icon}
-            </a>
+              <span className="hero__social--link">{social.icon}</span>
+            </AppLink>
           </li>
         ))}
       </ul>
