@@ -1,24 +1,29 @@
-import * as SocialIcons from '../assets/icons/icons';
+import { codepen, email, twitter, linkedIn, github } from '../assets/icons';
 
 export const socials = [
   {
     name: 'Twitter',
     url: 'https://twitter.com/supacode',
-    icon: SocialIcons.twitter,
+    icon: twitter,
   },
   {
     name: 'GitHub',
     url: 'https://github.com/supacodes',
-    icon: SocialIcons.github,
+    icon: github,
   },
   {
     name: 'CodePen',
     url: 'https://codepen.io/supacode',
-    icon: SocialIcons.codepen,
+    icon: codepen,
+  },
+  {
+    name: 'LinkedIn',
+    url: 'https://linkedin.com/in/supacode',
+    icon: linkedIn,
   },
   {
     name: 'E-mail',
     url: 'mailto:https://supacode@gmail.com',
-    icon: SocialIcons.email,
+    icon: email,
   },
 ];

@@ -39,7 +39,7 @@
     line-height: 2;
     margin-right: 4rem;
 
-    .btn__external {
+    a[target='_blank'] {
       text-decoration: underline;
       color: $accent-primary;
     }

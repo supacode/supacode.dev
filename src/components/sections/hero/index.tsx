@@ -2,7 +2,7 @@ import React from 'react';
 
 import { socials } from '../../../constants/socialLinks';
 import { AppLink } from '../../AppLink';
-import { chevronRight } from '../../../assets/icons/icons';
+import { chevronRight } from '../../../assets/icons';
 import './hero.scss';
 
 export interface HeroProps {}

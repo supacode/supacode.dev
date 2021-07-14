@@ -56,7 +56,7 @@ export const AppLink: React.FC<LinkProps> = ({
     } else {
       // external link
       return (
-        <a {...btnProps} href={href} target="_blank" className="btn__external">
+        <a {...btnProps} href={href} target="_blank">
           {children}
         </a>
       );
