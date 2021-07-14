@@ -2,7 +2,8 @@ import React from 'react';
 
 import { Layout } from '../layouts/main';
 import { Seo } from '../components/seo';
-import { Hero } from '../components/hero';
+import { Hero } from '../components/sections/hero';
+import { About } from '../components/sections/about';
 
 const IndexPage: React.FC = () => (
   <>
@@ -10,6 +11,7 @@ const IndexPage: React.FC = () => (
 
     <Layout>
       <Hero />
+      <About />
     </Layout>
   </>
 );

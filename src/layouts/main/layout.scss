@@ -9,11 +9,14 @@ body {
 }
 
 .site-wrapper {
-  padding: 0 6rem;
+  max-width: 1500px;
+  margin: auto;
+  padding: 0 5rem;
 }
 
 @media screen and (max-width: $screen-lg-max) {
   .site-wrapper {
+    width: auto;
     padding: 0 2rem;
   }
 }

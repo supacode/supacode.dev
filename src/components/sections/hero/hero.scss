@@ -1,10 +1,15 @@
-@import '../../assets/scss/variables';
+@import '../../../assets/scss/variables';
 
 .hero {
   display: flex;
   justify-content: space-between;
   min-height: 100vh;
+  margin-bottom: 3rem;
   align-items: center;
+
+  &__left {
+    margin-right: 2rem;
+  }
 
   &__lead-text {
     font-size: 4rem;
@@ -26,8 +31,7 @@
   &__desc-text {
     margin-bottom: 2rem;
     color: $grey-light;
-    font-size: $font-size-lg;
-    line-height: 1.8;
+    line-height: 2;
     max-width: 800px;
   }
 
