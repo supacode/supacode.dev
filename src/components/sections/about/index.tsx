@@ -21,7 +21,7 @@ const skills = [
   { name: 'Postgres', icon: tools.postgres },
   { name: 'MongoDB', icon: tools.mongodb },
   { name: 'Docker', icon: tools.docker },
-  { name: 'Kurbernetes', icon: tools.k8s },
+  { name: 'Kubernetes', icon: tools.k8s },
   { name: 'Git', icon: tools.git },
   { name: 'Software Testing', icon: tools.jest },
 ];
