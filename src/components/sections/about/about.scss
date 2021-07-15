@@ -4,27 +4,38 @@
   display: flex;
   padding-bottom: 6rem;
   justify-content: space-between;
+  flex-direction: row-reverse;
 
   &__img {
-    flex: 1;
+    flex: 1.5;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-right: 4rem;
+
+    &::after {
+      content: '';
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      border: 1px solid $accent-primary;
+      top: 10px;
+      left: 10px;
+      border-radius: 5px;
+      pointer-events: none;
+    }
 
     &--img {
-      position: relative;
+      align-self: flex-end;
       border-radius: 5px;
-      filter: brightness(60%) saturate(50%);
-      transition: 0.4s ease-out;
-      width: 300px;
-
-      &:hover {
-        filter: none;
-      }
+      height: 100%;
+      width: 100%;
+      position: relative;
     }
   }
 
   &__heading {
-    font-size: $font-size-heading * 1.5;
-    margin-bottom: 1.5rem;
+    font-size: $font-size-heading;
     font-weight: 600;
     color: $grey-light;
 
@@ -37,7 +48,6 @@
     color: $white;
     flex: 2;
     line-height: 2;
-    margin-right: 4rem;
 
     a[target='_blank'] {
       text-decoration: underline;
@@ -85,7 +95,7 @@
     }
 
     &__img {
-      width: 250px;
+      width: 60%;
       margin-top: 2rem;
       &--img {
         filter: none;
