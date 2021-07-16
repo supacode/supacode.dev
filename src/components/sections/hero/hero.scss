@@ -6,6 +6,7 @@
   min-height: 100vh;
   margin-bottom: 3rem;
   align-items: center;
+  margin-top: 2rem;
 
   &__left {
     margin-right: 2rem;
@@ -92,7 +93,7 @@
       width: 100%;
       &--list {
         display: inline-flex;
-        margin-right: 1.5rem;
+        margin-right: 1rem;
       }
     }
   }
@@ -102,7 +103,7 @@
   .hero {
     &__lead-text,
     &__tag-text {
-      font-size: 2rem;
+      font-size: 1.5rem;
     }
   }
 }

@@ -4,29 +4,40 @@
   display: flex;
   padding-bottom: 6rem;
   justify-content: space-between;
+  padding-bottom: 10rem;
 
   &__img {
     flex: 1;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-right: 4rem;
+    align-self: flex-start;
+
+    &::after {
+      content: '';
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      border: 1px solid $accent-primary;
+      top: 10px;
+      left: 10px;
+      pointer-events: none;
+    }
 
     &--img {
+      align-self: flex-end;
+      height: 100%;
+      width: 100%;
       position: relative;
-      border-radius: 5px;
-      filter: brightness(60%) saturate(50%);
-      transition: 0.4s ease-out;
-      width: 300px;
-
-      &:hover {
-        filter: none;
-      }
     }
   }
 
   &__heading {
-    font-size: $font-size-heading * 1.5;
-    margin-bottom: 1.5rem;
+    font-size: $font-size-heading;
     font-weight: 600;
     color: $grey-light;
+    margin-bottom: 1.5rem;
 
     span {
       color: $accent-primary;
@@ -35,9 +46,8 @@
 
   &__content {
     color: $white;
-    flex: 2;
+    flex: 1.5;
     line-height: 2;
-    margin-right: 4rem;
 
     a[target='_blank'] {
       text-decoration: underline;
@@ -85,10 +95,15 @@
     }
 
     &__img {
-      width: 250px;
-      margin-top: 2rem;
+      width: 100%;
+      margin-bottom: 2rem;
+
+      &::after {
+        top: 8px;
+        left: 8px;
+      }
       &--img {
-        filter: none;
+        width: 100%;
       }
     }
   }
