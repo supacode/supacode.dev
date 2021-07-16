@@ -29,9 +29,6 @@ const skills = [
 export const About: React.FC<AboutProps> = () => {
   return (
     <>
-      <h2 className="about__heading">
-        A little <span>About Me</span>
-      </h2>
       <div className="about">
         <div className="about__img">
           <StaticImage
@@ -43,6 +40,9 @@ export const About: React.FC<AboutProps> = () => {
         </div>
 
         <div className="about__content">
+          <h2 className="about__heading">
+            A little <span>About Me</span>
+          </h2>
           <p>
             I started Software Development in 2015 as a hobby, just out of
             curiosity after reading that video games are made from computer

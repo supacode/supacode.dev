@@ -37,7 +37,6 @@
     font-size: $font-size-heading;
     font-weight: 600;
     color: $grey-light;
-    margin-bottom: 1.5rem;
 
     span {
       color: $accent-primary;
@@ -101,9 +100,6 @@
       &::after {
         top: 8px;
         left: 8px;
-      }
-      &--img {
-        width: 100%;
       }
     }
   }
