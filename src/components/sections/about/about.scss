@@ -4,14 +4,15 @@
   display: flex;
   padding-bottom: 6rem;
   justify-content: space-between;
-  flex-direction: row-reverse;
+  padding-bottom: 10rem;
 
   &__img {
-    flex: 1.5;
+    flex: 1;
     position: relative;
     display: flex;
     flex-direction: column;
     margin-right: 4rem;
+    align-self: flex-start;
 
     &::after {
       content: '';
@@ -21,13 +22,11 @@
       border: 1px solid $accent-primary;
       top: 10px;
       left: 10px;
-      border-radius: 5px;
       pointer-events: none;
     }
 
     &--img {
       align-self: flex-end;
-      border-radius: 5px;
       height: 100%;
       width: 100%;
       position: relative;
@@ -38,6 +37,7 @@
     font-size: $font-size-heading;
     font-weight: 600;
     color: $grey-light;
+    margin-bottom: 1.5rem;
 
     span {
       color: $accent-primary;
@@ -46,7 +46,7 @@
 
   &__content {
     color: $white;
-    flex: 2;
+    flex: 1.5;
     line-height: 2;
 
     a[target='_blank'] {
@@ -95,10 +95,15 @@
     }
 
     &__img {
-      width: 60%;
-      margin-top: 2rem;
+      width: 100%;
+      margin-bottom: 2rem;
+
+      &::after {
+        top: 8px;
+        left: 8px;
+      }
       &--img {
-        filter: none;
+        width: 100%;
       }
     }
   }
