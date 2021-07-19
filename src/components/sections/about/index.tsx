@@ -2,8 +2,9 @@ import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
 
 import { tools } from '../../../assets/icons';
-import './about.scss';
 import { AppLink } from '../../AppLink';
+
+import './about.scss';
 
 export interface AboutProps {}
 
@@ -28,47 +29,44 @@ const skills = [
 
 export const About: React.FC<AboutProps> = () => {
   return (
-    <>
-      <div className="about">
-        <div className="about__img">
-          <StaticImage
-            className="about__img--img"
-            src="../../../images/maverick.jpg"
-            alt="Maverick"
-            quality={50}
-          />
-        </div>
-
-        <div className="about__content">
-          <h2 className="about__heading">
-            A little <span>About Me</span>
-          </h2>
-          <p>
-            I started Software Development in 2015 as a hobby, just out of
-            curiosity after reading that video games are made from computer
-            programming.
-          </p>
-          <p>
-            I've been working professionally as a Software Developer for the
-            last ~3 years. I'm currently contracting as a Frontend Engineer with{' '}
-            <AppLink external href="https://neighborhoods.com" clearStyles>
-              Neighborhoods.com™
-            </AppLink>{' '}
-            (a real estate resource company in Chicago).
-          </p>
-          <p>
-            Here are some technologies I enjoy working with:
-            <ul className="tools">
-              {skills.map((skill) => (
-                <li key={skill.name} className="tools__tool">
-                  <span className="tools__tool--icon">{skill.icon}</span>
-                  <span className="tools__tool--name">{skill.name}</span>
-                </li>
-              ))}
-            </ul>
-          </p>
-        </div>
+    <div className="about" id="about">
+      <div className="about__img">
+        <StaticImage
+          className="about__img--img"
+          src="../../../images/maverick.jpg"
+          alt="Maverick"
+          quality={50}
+        />
       </div>
-    </>
+
+      <div className="about__content">
+        <h2 className="about__heading">
+          A little <span>About Me</span>
+        </h2>
+        <p>
+          I started Software Development in 2015 as a hobby, just out of
+          curiosity after reading that video games are made from computer
+          programming.
+        </p>
+        <p>
+          I&apos;ve been working professionally as a Software Developer for the
+          last ~3 years. I&apos;m currently contracting as a Frontend Engineer
+          with{' '}
+          <AppLink href="https://neighborhoods.com" clearStyles>
+            Neighborhoods.com™
+          </AppLink>{' '}
+          (a real estate resource company in Chicago).
+        </p>
+        <p>Here are some technologies I enjoy working with:</p>
+        <ul className="tools">
+          {skills.map((skill) => (
+            <li key={skill.name} className="tools__tool">
+              <span className="tools__tool--icon">{skill.icon}</span>
+              <span className="tools__tool--name">{skill.name}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
   );
 };

@@ -1,11 +1,15 @@
 @import '../../assets/scss/reset';
 @import '../../assets/scss/variables';
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: $font-stack-main;
   background: $dark-primary;
   color: $grey-light;
-  line-height: 1.3;
+  line-height: 1.5;
 }
 
 .site-wrapper {

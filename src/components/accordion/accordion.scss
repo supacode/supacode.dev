@@ -1,0 +1,112 @@
+@import '../../assets/scss/variables';
+
+.accordion {
+  &__btn {
+    margin-top: 2rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: left;
+    color: $grey-dark;
+    background: rgba(9, 9, 9, 0.28);
+    border: 1px solid rgba($white, 0.09);
+    width: 100%;
+    padding: 2rem;
+    h3 {
+      color: $white;
+      font-weight: 600;
+    }
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+    font-weight: 600;
+    line-height: 2;
+    span {
+      color: $accent-primary;
+    }
+  }
+
+  &__head {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__duration {
+    color: $grey-dark;
+  }
+
+  &__icon {
+    svg {
+      width: 30px;
+      height: 30px;
+      transition: 0.8s ease-out;
+      margin-left: 3rem;
+
+      polyline {
+        transition: 0.4s ease-out;
+        stroke: $grey-dark;
+        stroke-width: 2px;
+      }
+    }
+    &--active {
+      svg {
+        transform: rotate(90deg);
+
+        polyline {
+          stroke: $accent-primary;
+        }
+      }
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+    transition: max-height 0.5s cubic-bezier(1, 0, 1, 0);
+    height: auto;
+    max-height: 9999px;
+
+    &--animated {
+      animation: slideUp 1s ease-out;
+    }
+
+    &--collapsed {
+      max-height: 0;
+      transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+    }
+  }
+
+  &__head {
+    display: flex;
+    align-items: center;
+  }
+
+  &__content {
+    padding: 2rem 0;
+    width: 80%;
+    margin: auto;
+  }
+}
+
+@media screen and (max-width: $screen-sm-max) {
+  .accordion {
+    &__head {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
