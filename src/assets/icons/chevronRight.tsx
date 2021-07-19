@@ -13,7 +13,7 @@ export const chevronRight = (
         fill: 'none',
         strokeLinecap: 'round',
         strokeLinejoin: 'round',
-        strokeWidth: '48px',
+        strokeWidth: '35px',
       }}
     />
   </svg>

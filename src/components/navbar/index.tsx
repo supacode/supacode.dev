@@ -26,12 +26,7 @@ export const Navbar: React.FC = () => {
           <ul>
             {routes.map((link) => (
               <li key={link.id}>
-                <AppLink
-                  title={link.text}
-                  text={link.text}
-                  href={link.url}
-                  clearStyles
-                />
+                <AppLink text={link.text} href={link.url} clearStyles />
               </li>
             ))}
           </ul>
