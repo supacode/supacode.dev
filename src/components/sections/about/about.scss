@@ -20,8 +20,8 @@
       width: 100%;
       position: absolute;
       border: 1px solid $accent-primary;
-      top: 10px;
-      left: 10px;
+      top: 20px;
+      left: 20px;
       pointer-events: none;
     }
 
@@ -37,7 +37,6 @@
     font-size: $font-size-heading;
     font-weight: 600;
     color: $grey-light;
-    margin-bottom: 1.5rem;
 
     span {
       color: $accent-primary;
@@ -62,6 +61,7 @@
 
   .tools {
     margin-top: 1rem;
+
     &__tool {
       display: inline-flex;
       align-items: center;
@@ -69,7 +69,7 @@
       margin-bottom: 0.8rem;
       font-size: 0.8rem;
       background: rgba(9, 9, 9, 0.28);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba($white, 0.15);
       border-radius: 30px;
       padding: 0.7rem 1rem;
       line-height: 0;
@@ -101,9 +101,6 @@
       &::after {
         top: 8px;
         left: 8px;
-      }
-      &--img {
-        width: 100%;
       }
     }
   }

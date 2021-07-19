@@ -13,7 +13,7 @@
   }
 
   &__lead-text {
-    font-size: 4rem;
+    font-size: $font-size-heading * 1.5;
     font-weight: 700;
     color: $grey-dark;
     margin-bottom: 1rem;
@@ -86,7 +86,7 @@
     }
     &__lead-text,
     &__tag-text {
-      font-size: 3em;
+      font-size: $font-size-heading;
     }
 
     &__social {
@@ -103,7 +103,7 @@
   .hero {
     &__lead-text,
     &__tag-text {
-      font-size: 1.5rem;
+      font-size: $font-size-xxl;
     }
   }
 }
