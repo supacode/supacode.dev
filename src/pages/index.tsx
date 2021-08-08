@@ -6,16 +6,18 @@ import { Hero } from '../components/sections/hero';
 import { About } from '../components/sections/about';
 import { Experience } from '../components/sections/experience';
 
-const IndexPage: React.FC = () => (
-  <>
-    <Seo title="Home" />
+const IndexPage: React.FC = () => {
+  return (
+    <>
+      <Seo title="Home" />
 
-    <Layout>
-      <Hero />
-      <About />
-      <Experience />
-    </Layout>
-  </>
-);
+      <Layout>
+        <Hero />
+        <About />
+        <Experience />
+      </Layout>
+    </>
+  );
+};
 
 export default IndexPage;

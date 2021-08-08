@@ -8,6 +8,9 @@ module.exports = {
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-image`,
     `gatsby-plugin-sass`,
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -15,19 +18,11 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
-      resolve: `gatsby-plugin-webfonts`,
+      resolve: `gatsby-source-filesystem`,
       options: {
-        fonts: {
-          google: [
-            {
-              family: 'Roboto Mono',
-              variants: ['300', '400', '500', '600', '700'],
-            },
-          ],
-        },
+        name: `content`,
+        path: `${__dirname}/content/`,
       },
     },
     {
@@ -46,7 +41,7 @@ module.exports = {
     `gatsby-plugin-gatsby-cloud`,
     // this (optional) plugin enables Progressive Web App + Offline
     // functionality To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    `gatsby-plugin-offline`,
     `gatsby-plugin-typescript`,
   ],
 };
