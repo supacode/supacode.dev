@@ -1,22 +1,30 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import { Accordion } from '../../accordion';
 import './experience.scss';
 
-export interface ExperienceProps {}
-
-export interface Experience {
+interface Experience {
   title: string;
   duration: string;
   company: string;
   description: string;
 }
+export interface ExperienceQuery {
+  experience: {
+    edges: {
+      node: {
+        frontmatter: Experience;
+        html: string;
+      };
+    }[];
+  };
+}
 
-export const Experience: React.FC<ExperienceProps> = () => {
-  const data = useStaticQuery(graphql`
+export const Experience: React.FC = () => {
+  const data = useStaticQuery<ExperienceQuery>(graphql`
     query {
-      jobs: allMarkdownRemark(
+      experience: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/experience/" } }
         sort: { fields: [frontmatter___date], order: DESC }
       ) {
@@ -36,14 +44,15 @@ export const Experience: React.FC<ExperienceProps> = () => {
     }
   `);
 
-  const experiences = data.jobs.edges;
+  const experiences = data.experience.edges;
 
   return (
     <div id="experience" className="experience">
       <h2 className="experience__title">Experience</h2>
 
       {experiences.map(({ node }) => {
-        const ex = node.frontmatter as Experience;
+        const ex = node.frontmatter;
+
         return (
           <div className="experience__content" key={ex.duration}>
             <Accordion
