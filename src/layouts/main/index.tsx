@@ -8,6 +8,8 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import '@fontsource/roboto-mono';
+
 import { Header } from '../../components/header';
 import './layout.scss';
 

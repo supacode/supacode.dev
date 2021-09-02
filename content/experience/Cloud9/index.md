@@ -7,4 +7,4 @@ url: '#'
 date: 2018-10-01
 ---
 
-- Coming Soon
+Coming Soon

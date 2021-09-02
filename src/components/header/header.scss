@@ -1,12 +1,16 @@
 @import '../../assets/scss/variables';
 
 .main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 2rem 2.5rem;
   width: 100%;
-  position: absolute;
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 2.5rem;
+    max-width: $site-width + 300;
+    margin: auto;
+  }
 
   &__logo {
     font-size: 1.5rem;

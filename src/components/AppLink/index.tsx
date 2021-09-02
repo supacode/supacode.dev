@@ -24,7 +24,7 @@ export const AppLink: React.FC<LinkProps> = ({
   className,
   external,
   onClick,
-  clearStyles,
+  clearStyles = false,
   children,
   ...rest
 }) => {

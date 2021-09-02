@@ -2,17 +2,18 @@
 
 .accordion {
   &__btn {
-    margin-top: 2rem;
+    margin-bottom: 2rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: left;
     color: $grey-dark;
-    background: rgba(9, 9, 9, 0.28);
+    background: $dark-tertiary;
     border: 1px solid rgba($white, 0.09);
     width: 100%;
     padding: 2rem;
+
     h3 {
       color: $white;
       font-weight: 600;
@@ -52,6 +53,7 @@
         stroke-width: 2px;
       }
     }
+
     &--active {
       svg {
         transform: rotate(90deg);
