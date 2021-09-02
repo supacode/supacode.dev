@@ -13,6 +13,7 @@ export const Navbar: React.FC = () => {
   return (
     <>
       <button
+        type="button"
         className={`hamburger${sideDrawerActive ? ' hamburger__active' : ''}`}
         onClick={clickHandler}
       >

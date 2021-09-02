@@ -3,6 +3,7 @@ import React from 'react';
 export const chevronRight = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
+    role="img"
     width="50"
     height="50"
     viewBox="0 0 512 512"

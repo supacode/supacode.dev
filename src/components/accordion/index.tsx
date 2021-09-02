@@ -22,7 +22,7 @@ export const Accordion: React.FC<AccordionProps> = ({
 
   return (
     <div className={'accordion'}>
-      <button className="accordion__btn" onClick={clickHandler}>
+      <button className="accordion__btn" type="button" onClick={clickHandler}>
         <div className="accordion__head">
           <h3 className="accordion__title">
             {title} <span>{company}</span>

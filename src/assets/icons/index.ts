@@ -5,3 +5,4 @@ export { email } from './email';
 export { linkedIn } from './linkedin';
 export { twitter } from './twitter';
 export { github } from './github';
+export { externalLink } from './externalLink';

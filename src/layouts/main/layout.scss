@@ -13,14 +13,21 @@ body {
 }
 
 .site-wrapper {
-  max-width: 1500px;
+  max-width: $site-width;
   margin: auto;
-  padding: 0 10rem;
 }
 
 @media screen and (max-width: $screen-lg-max) {
   .site-wrapper {
     width: auto;
     padding: 0 2rem;
+  }
+}
+
+.section {
+  &__title {
+    font-size: $font-size-heading;
+    font-weight: 600;
+    margin-bottom: 2rem;
   }
 }

@@ -4,6 +4,7 @@ $accent-primary: #faab32;
 
 $dark-primary: #1a2130;
 $dark-secondary: #1f2029;
+$dark-tertiary: rgba(9, 9, 9, 0.28);
 
 $grey-light: #c5d1f7;
 $grey-dark: #7c85a0;
@@ -11,10 +12,10 @@ $grey-dark: #7c85a0;
 // Fonts
 $font-stack-main: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
   Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-$font-stack-monospace: 'Courier New', 'Roboto Mono', monospace;
+$font-stack-monospace: 'Roboto Mono', monospace;
 
 // 2. Media queries breakpoints
-
+$site-width: 1100px;
 // Small Phone: 320px(or less) - 539px
 $screen-xs-min: 320px;
 
@@ -41,11 +42,6 @@ $screen-sm-max: ($screen-md-min - 1);
 $screen-sm-mid-max: ($screen-sm-mid-min - 1);
 $screen-md-max: ($screen-lg-min - 1);
 $screen-lg-max: ($screen-xl-min - 1);
-
-// Fonts
-$font-stack-main: Apercu, 'Source Sans Pro', system, system-ui, -apple-system,
-  BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
-$font-stack-monospace: 'Roboto Mono', monospace;
 
 // 2. Media queries breakpoints
 // Small Phone: 320px(or less) - 539px
