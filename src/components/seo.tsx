@@ -28,7 +28,7 @@ export const Seo: React.FC<SeoTypes> = ({ description, lang, meta, title }) => {
           }
         }
       }
-    `
+    `,
   );
 
   const metaDescription = description || site.siteMetadata.description;

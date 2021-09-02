@@ -3,6 +3,9 @@ module.exports = {
     title: `Maverick`,
     description: `Maverick's Portfolio`,
     author: `@supacode`,
+    twitterUsername: '@supacode',
+    url: 'https://www.supacode.dev',
+    image: '/src/assets/img/maverick-mask.jpeg', // Path to your image you placed in the 'static' folder
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
