@@ -5,6 +5,7 @@
     margin-bottom: 2rem;
     width: 100%;
     display: flex;
+    cursor: pointer;
     justify-content: space-between;
     align-items: center;
     text-align: left;
@@ -13,6 +14,10 @@
     border: 1px solid rgba($white, 0.09);
     width: 100%;
     padding: 2rem;
+
+    &:focus {
+      @include focusOutset;
+    }
 
     h3 {
       color: $white;
@@ -71,6 +76,10 @@
     height: auto;
     max-height: 9999px;
 
+    &:focus {
+      @include focusOutset;
+    }
+
     &--animated {
       animation: slideUp 1s ease-out;
     }
@@ -87,7 +96,7 @@
   }
 
   &__content {
-    padding: 2rem 0;
+    padding: 1rem 0 4rem 0;
     width: 80%;
     margin: auto;
   }

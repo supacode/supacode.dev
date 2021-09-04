@@ -16,6 +16,8 @@ export const Navbar: React.FC = () => {
         type="button"
         className={`hamburger${sideDrawerActive ? ' hamburger__active' : ''}`}
         onClick={clickHandler}
+        tabIndex={-1}
+        aria-label={sideDrawerActive ? 'Close Menu' : 'Open Menu'}
       >
         <span className="hamburger__line hamburger__line--1"></span>
         <span className="hamburger__line hamburger__line--2"></span>

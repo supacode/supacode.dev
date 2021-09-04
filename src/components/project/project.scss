@@ -80,8 +80,8 @@
 @media screen and (max-width: $screen-sm-max) {
   .project {
     padding: 0;
-    grid-template-columns: 1;
-    grid-template-rows: 1;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
 
     &__img,
     &__content {

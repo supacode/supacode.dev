@@ -64,6 +64,7 @@ export const Project: React.FC<IProject> = ({
               href={link}
               target="_blank"
               rel="noreferrer"
+              aria-label="Open link in new tab"
               title="Open Project"
             >
               {externalLink}
@@ -75,8 +76,14 @@ export const Project: React.FC<IProject> = ({
       {image && (
         <div className="project__img">
           {link ? (
-            <a href={link} target="_blank" rel="noreferrer" title={title}>
-              <GatsbyImage image={image} alt={title} />
+            <a
+              href={link}
+              target="_blank"
+              aria-label="Open link in new tab"
+              rel="noreferrer"
+              title={title}
+            >
+              <GatsbyImage image={image} alt={title} title={title} />
             </a>
           ) : (
             <GatsbyImage image={image} alt={title} title={title} />

@@ -47,12 +47,12 @@ export const Experience: React.FC = () => {
   const experiences = data.experience.edges;
 
   return (
-    <div id="experience" className="experience">
+    <div className="experience">
       <h2 className="section__title" id="experience">
         Experience
       </h2>
 
-      {experiences.map(({ node }) => {
+      {experiences.map(({ node }, index) => {
         const ex = node.frontmatter;
 
         return (
@@ -60,6 +60,7 @@ export const Experience: React.FC = () => {
             <Accordion
               key={ex.title}
               title={ex.title}
+              index={index + 1}
               company={ex.company}
               duration={ex.duration}
             >

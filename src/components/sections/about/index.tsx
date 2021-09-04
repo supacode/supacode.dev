@@ -35,7 +35,8 @@ export const About: React.FC<AboutProps> = () => {
           className="about__img--img"
           src="../../../images/maverick.jpg"
           alt="Maverick"
-          quality={50}
+          width={600}
+          formats={['auto', 'avif', 'webp']}
         />
       </div>
 

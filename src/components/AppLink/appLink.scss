@@ -27,7 +27,8 @@
       stroke: $accent-primary;
     }
   }
-  &:hover {
+  &:hover,
+  &:focus {
     background: transparentize($color: $accent-primary, $amount: 0.8);
     svg {
       animation: moveRight 1s forwards ease-in-out;

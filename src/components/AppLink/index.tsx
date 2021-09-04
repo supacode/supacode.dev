@@ -12,6 +12,8 @@ export interface LinkProps {
   href?: string;
   icon?: JSX.Element;
   className?: string;
+  title?: string;
+  target?: string;
   external?: boolean;
   clearStyles?: boolean;
   onClick?: (evt: React.SyntheticEvent<EventTarget>) => void;
@@ -22,7 +24,6 @@ export const AppLink: React.FC<LinkProps> = ({
   icon,
   href,
   className,
-  external,
   onClick,
   clearStyles = false,
   children,
@@ -40,7 +41,7 @@ export const AppLink: React.FC<LinkProps> = ({
 
   const btnProps = {
     ...rest,
-    className: cn({ btn: !clearStyles }),
+    className: cn({ btn: !clearStyles }, className),
   };
 
   const internal = href && /^\/(?!\/)/.test(href);
