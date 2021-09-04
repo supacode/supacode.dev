@@ -52,12 +52,20 @@
       align-items: center;
       justify-content: center;
       transition: 0.4s ease-out;
+
       &:hover {
         border-color: $accent-primary;
-        svg {
-          path {
-            fill: $accent-primary;
-          }
+
+        svg path {
+          fill: $accent-primary;
+        }
+      }
+
+      &:focus {
+        border-color: $accent-primary;
+
+        svg path {
+          fill: $accent-primary;
         }
       }
     }

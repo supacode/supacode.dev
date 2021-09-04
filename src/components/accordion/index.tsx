@@ -8,6 +8,7 @@ interface AccordionProps {
   title: string;
   company: string;
   duration?: string;
+  index: number;
 }
 
 export const Accordion: React.FC<AccordionProps> = ({
@@ -15,6 +16,7 @@ export const Accordion: React.FC<AccordionProps> = ({
   title,
   duration,
   company,
+  index,
 }) => {
   const [isActive, setIsActive] = useState(false);
 
@@ -22,24 +24,40 @@ export const Accordion: React.FC<AccordionProps> = ({
 
   return (
     <div className={'accordion'}>
-      <button className="accordion__btn" type="button" onClick={clickHandler}>
-        <div className="accordion__head">
-          <h3 className="accordion__title">
-            {title} <span>{company}</span>
-          </h3>
-          <p className="accordion__duration">{duration}</p>
-        </div>
-
-        <span
-          className={cn('accordion__icon', {
-            'accordion__icon--active': isActive,
-          })}
+      <h3 id={`experience-${index}`}>
+        <button
+          className="accordion__btn"
+          onClick={clickHandler}
+          type="button"
+          aria-expanded={isActive}
+          aria-controls={`experience-body-${index}`}
+          aria-label={
+            isActive
+              ? `Expand ${title} at ${company} accordion`
+              : `Collapse ${title} at ${company} accordion`
+          }
         >
-          {chevronRight}
-        </span>
-      </button>
+          <span className="accordion__head">
+            <span className="accordion__title">
+              {title} <span>{company}</span>
+            </span>
+            <span className="accordion__duration">{duration}</span>
+          </span>
+
+          <span
+            className={cn('accordion__icon', {
+              'accordion__icon--active': isActive,
+            })}
+          >
+            {chevronRight}
+          </span>
+        </button>
+      </h3>
 
       <div
+        aria-labelledby={`experience-${index}`}
+        id={`experience-body-${index}`}
+        tabIndex={isActive ? 0 : -1}
         className={cn('accordion__item', {
           'accordion__item--collapsed': !isActive,
           'accordion__item--animated': isActive,

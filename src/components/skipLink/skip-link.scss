@@ -1,0 +1,14 @@
+@import '../../assets/scss/variables';
+
+.skip-link {
+  position: absolute;
+  transform: translateX(-50%);
+  left: 50%;
+  top: -30%;
+
+  &:focus {
+    background: $accent-primary;
+    color: $dark-primary;
+    top: 1%;
+  }
+}

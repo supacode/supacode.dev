@@ -1,8 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `Maverick`,
-    description: `Maverick's Portfolio`,
+    title: `supacode | Maverick's Portfolio`,
+    description: ` Welcome to my little corner of the web, where I share notes, code snippets, and resources on topics that interest me.`,
     author: `@supacode`,
+    twitterUsername: '@supacode',
+    siteUrl: 'https://www.supacode.dev',
+    image: '/src/images/supacode.png', // Path to your image you placed in the
+    // 'static' folder
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -31,10 +35,10 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#1f2029`,
+        theme_color: ` #1f2029`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the
+        icon: `src/images/supacode.png`, // This path is relative to the
         // root of the site.
       },
     },

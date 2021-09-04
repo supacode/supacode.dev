@@ -13,8 +13,14 @@
       font-size: $font-size-xs;
       font-family: $font-stack-monospace;
       transition: 0.4s ease-out color;
+      border: 2px dotted transparent;
+
       &:hover {
         color: $accent-primary;
+      }
+
+      &:focus {
+        @include focusOutset;
       }
     }
   }

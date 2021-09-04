@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const docker = (
-  <svg viewBox="0 0 128 128">
+  <svg viewBox="0 0 128 128" role="img">
     <path
       fillRule="evenodd"
       clipRule="evenodd"
