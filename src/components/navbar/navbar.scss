@@ -46,16 +46,20 @@
       right: 0;
       transition: all 0.3s ease;
       cursor: pointer;
+
       &:hover {
         width: 100%;
       }
+
       &--1 {
         width: 40%;
       }
+
       &--2 {
         width: 70%;
         top: 11px;
       }
+
       &--3 {
         width: 100%;
         top: 22px;
@@ -63,14 +67,20 @@
     }
 
     &__active {
+      position: fixed;
+      top: 7%;
+      right: 9%;
+
       .hamburger__line--1 {
         transform: translateY(11px) translateX(0) rotate(45deg);
         width: 100%;
       }
+
       .hamburger__line--3 {
         transform: translateY(-11px) translateX(0) rotate(-45deg);
         width: 100%;
       }
+
       .hamburger__line--2 {
         opacity: 0;
       }
@@ -87,6 +97,7 @@
     position: fixed;
     background: lighten($color: $dark-primary, $amount: 10%);
     padding-right: 3rem;
+    z-index: 90;
     top: 0;
     right: 0;
     width: 0; // transitioning in fly-out menu
@@ -123,12 +134,14 @@
       height: 100%;
       width: 100%;
     }
+
     li {
       position: relative;
       margin-bottom: 2rem;
       opacity: 0;
       display: block;
     }
+
     li a {
       display: block;
       font-size: $font-size-xl;
