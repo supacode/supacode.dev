@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 
 import { routes } from '../../constants/path';
+import { useOnClickOutside } from '../../hooks/clickOutside';
 import { AppLink } from '../AppLink';
-
 import './navbar.scss';
 
 export const Navbar: React.FC = () => {
   const [sideDrawerActive, setMenuActive] = useState(false);
+  const btnRef = useRef<HTMLButtonElement>(null);
 
   const clickHandler = () => setMenuActive(!sideDrawerActive);
+  useOnClickOutside(btnRef, () => setMenuActive(false));
 
   return (
     <>
       <button
         type="button"
+        ref={btnRef}
         className={`hamburger${sideDrawerActive ? ' hamburger__active' : ''}`}
         onClick={clickHandler}
         tabIndex={-1}
