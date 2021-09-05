@@ -46,6 +46,7 @@
       right: 0;
       transition: all 0.3s ease;
       cursor: pointer;
+      will-change: transform, top;
 
       &:hover {
         width: 100%;
