@@ -37,7 +37,7 @@ module.exports = {
         background_color: `#1f2029`,
         theme_color: ` #1f2029`,
         display: `minimal-ui`,
-        icon: `src/images/supacode.png`, // This path is relative to the
+        icon: `static/images/preview.png`, // This path is relative to the
         // root of the site.
       },
     },
