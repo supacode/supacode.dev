@@ -5,7 +5,8 @@ module.exports = {
     author: `@supacode`,
     twitterUsername: '@supacode',
     siteUrl: 'https://www.supacode.dev',
-    image: '/src/images/supacode.png', // Path to your image you placed in the 'static' folder
+    image: '/preview.png', // Path to your image you placed in the
+    // 'static' folder
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -37,7 +38,7 @@ module.exports = {
         background_color: `#1f2029`,
         theme_color: ` #1f2029`,
         display: `minimal-ui`,
-        icon: `static/images/preview.png`, // This path is relative to the
+        icon: `src/images/supacode.png`, // This path is relative to the
         // root of the site.
       },
     },
