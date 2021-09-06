@@ -12,29 +12,27 @@
       color: $grey-light;
       font-size: $font-size-xs;
       font-family: $font-stack-monospace;
-      transition: 0.4s ease-out color;
-      border: 2px dotted transparent;
+      transition: 0.4s ease-out;
 
       &:hover {
         color: $accent-primary;
       }
 
       &:focus {
+        color: $accent-primary;
         @include focusOutset;
       }
     }
   }
 }
-@media screen and (max-width: $screen-md-max) {
+@media screen and (max-width: $screen-sm-max) {
   .hamburger {
     position: relative;
-    top: 5%;
-    right: 2%;
     height: 27px;
     width: 35px;
     cursor: pointer;
     z-index: 100;
-    transition: opacity 0.25s ease-out;
+    cursor: pointer;
 
     &__line {
       background: $white;
@@ -45,8 +43,6 @@
       top: 0;
       right: 0;
       transition: all 0.5s ease;
-      cursor: pointer;
-      will-change: transform, top;
 
       &:hover {
         width: 100%;
@@ -68,28 +64,18 @@
     }
 
     &__active {
-      position: fixed;
-      top: 5%;
-      right: 9%;
-
       .hamburger__line--1 {
-        transform: translateY(11px) translateX(0) rotate(45deg);
+        transform: translateY(11px) rotate(45deg);
         width: 100%;
       }
 
       .hamburger__line--3 {
-        transform: translateY(-11px) translateX(0) rotate(-45deg);
+        transform: translateY(-11px) rotate(-45deg);
         width: 100%;
       }
 
       .hamburger__line--2 {
         opacity: 0;
-      }
-    }
-
-    &:hover {
-      .hamburger__line {
-        width: 100%;
       }
     }
   }
@@ -107,7 +93,6 @@
     height: 100vh;
     visibility: hidden;
     transition: opacity 0.2s, visibility 0.2s, width 0.2s;
-    box-shadow: 0 0 5rem 50rem rgba($dark-primary, 80%);
 
     &__open {
       overflow: hidden;
@@ -123,7 +108,7 @@
 
     &__nav {
       position: relative;
-      height: 70%;
+      height: 75%;
       top: 50%;
       padding-top: 2rem;
       transform: translateY(-50%);
@@ -144,7 +129,6 @@
     }
 
     li a {
-      display: block;
       font-size: $font-size-xl;
 
       &:hover {
@@ -162,6 +146,21 @@
       opacity: 1;
       left: 0;
     }
+  }
+}
+
+// Should this be here or in the layout scss file?
+// I'll decide later
+.blur {
+  overflow-y: hidden;
+
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    background: rgba($dark-secondary, 0.05);
   }
 }
 
