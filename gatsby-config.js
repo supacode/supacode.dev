@@ -5,7 +5,8 @@ module.exports = {
     author: `@supacode`,
     twitterUsername: '@supacode',
     siteUrl: 'https://www.supacode.dev',
-    image: '/src/images/supacode.png', // Path to your image you placed in the 'static' folder
+    image: '/src/images/supacode.png', // Path to your image you placed in the
+    // 'static' folder
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
