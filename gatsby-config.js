@@ -31,8 +31,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `supacode | Maverick's Portfolio`,
+        short_name: `supacode`,
         start_url: `/`,
         background_color: `#1f2029`,
         theme_color: ` #1f2029`,
