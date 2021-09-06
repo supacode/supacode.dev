@@ -1,33 +1,51 @@
 import React, { useState, useRef } from 'react';
 
+import cn from 'classnames';
+
+import { viewports } from '../../constants/config';
 import { routes } from '../../constants/path';
-import { useOnClickOutside } from '../../hooks/clickOutside';
+import { useOnClickOutside, useWindowSize } from '../../hooks';
+
 import { AppLink } from '../AppLink';
 import './navbar.scss';
 
-export const Navbar: React.FC = () => {
-  const [sideDrawerActive, setMenuActive] = useState(false);
-  const btnRef = useRef<HTMLButtonElement>(null);
+const BACKDROP_CN = 'blur';
 
-  const clickHandler = () => setMenuActive(!sideDrawerActive);
-  useOnClickOutside(btnRef, () => setMenuActive(false));
+export const Navbar: React.FC = () => {
+  const [isSideDrawerOpen, setIsSideDrawerOpen] = useState(false);
+  const sideDrawerRef = useRef<HTMLDivElement>(null);
+  const { width: deviceWidth } = useWindowSize();
+
+  const toggleSideDrawer = () => {
+    document.querySelector('body')?.classList.toggle(BACKDROP_CN);
+    setIsSideDrawerOpen(!isSideDrawerOpen);
+  };
+
+  useOnClickOutside(sideDrawerRef, (e) => {
+    const el = e.target as HTMLElement;
+    if (el.classList.contains(BACKDROP_CN)) toggleSideDrawer();
+  });
 
   return (
     <>
       <button
         type="button"
-        ref={btnRef}
-        className={`hamburger${sideDrawerActive ? ' hamburger__active' : ''}`}
-        onClick={clickHandler}
-        tabIndex={-1}
-        aria-label={sideDrawerActive ? 'Close Menu' : 'Open Menu'}
+        className={cn('hamburger', { hamburger__active: isSideDrawerOpen })}
+        onClick={toggleSideDrawer}
+        aria-hidden={deviceWidth > viewports.screenMdMin}
+        tabIndex={deviceWidth > viewports.screenMdMin ? -1 : 0}
+        aria-label={isSideDrawerOpen ? 'Close Menu' : 'Open Menu'}
       >
         <span className="hamburger__line hamburger__line--1"></span>
         <span className="hamburger__line hamburger__line--2"></span>
         <span className="hamburger__line hamburger__line--3"></span>
       </button>
 
-      <div className={`overlay${sideDrawerActive ? ' overlay__open' : ''}`}>
+      <div
+        ref={sideDrawerRef}
+        aria-hidden={deviceWidth > viewports.screenLgMin}
+        className={cn('overlay', { overlay__open: isSideDrawerOpen })}
+      >
         <nav className="overlay__nav">
           <ul>
             {routes.map((link) => (

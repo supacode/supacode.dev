@@ -3,6 +3,7 @@ import { AppLink } from '../AppLink';
 
 import { Navbar } from '../navbar';
 import { SkipLink } from '../skipLink';
+
 import './header.scss';
 
 export interface HeaderProps {}
@@ -19,6 +20,7 @@ export const Header: React.FC<HeaderProps> = () => {
               Supacode
             </AppLink>
           </h1>
+
           <Navbar />
         </div>
       </header>
