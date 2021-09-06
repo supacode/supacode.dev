@@ -43,6 +43,7 @@
       top: 0;
       right: 0;
       transition: all 0.5s ease;
+      will-change: transform, opacity;
 
       &:hover {
         width: 100%;
