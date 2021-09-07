@@ -12,7 +12,7 @@ export const routes = [
   {
     id: 'experience',
     text: 'Experience',
-    url: '/#',
+    url: '/#experience',
   },
   {
     id: 'blog',
