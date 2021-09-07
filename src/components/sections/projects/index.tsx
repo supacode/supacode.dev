@@ -50,7 +50,7 @@ export const Projects: React.FC = () => {
   const projects = data.projects.edges;
 
   return (
-    <div className="projects" id="projects">
+    <section className="projects section" id="projects">
       <h2 className="section__title">Projects I&apos;ve Worked on</h2>
 
       {projects.map(({ node }) => {
@@ -71,6 +71,6 @@ export const Projects: React.FC = () => {
           />
         );
       })}
-    </div>
+    </section>
   );
 };

@@ -25,6 +25,8 @@ body {
 }
 
 .section {
+  margin-bottom: 8rem;
+
   &__title {
     font-size: $font-size-heading;
     font-weight: 600;

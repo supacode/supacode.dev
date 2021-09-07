@@ -1,6 +1,5 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
-import { graphql } from 'gatsby';
 
 import { tools } from '../../../assets/icons';
 import { AppLink } from '../../AppLink';
@@ -30,11 +29,11 @@ const skills = [
 
 export const About: React.FC<AboutProps> = () => {
   return (
-    <div className="about" id="about">
+    <section className="about section" id="about">
       <div className="about__img">
         <StaticImage
           className="about__img--img"
-          src="../../../images/maverick-square.jpg"
+          src="../../../images/maverick.jpg"
           alt="Maverick"
           width={600}
           formats={['auto', 'avif', 'webp']}
@@ -69,6 +68,6 @@ export const About: React.FC<AboutProps> = () => {
           ))}
         </ul>
       </div>
-    </div>
+    </section>
   );
 };

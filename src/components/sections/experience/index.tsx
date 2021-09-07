@@ -2,7 +2,6 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import { Accordion } from '../../accordion';
-import './experience.scss';
 
 interface Experience {
   title: string;
@@ -47,7 +46,7 @@ export const Experience: React.FC = () => {
   const experiences = data.experience.edges;
 
   return (
-    <div className="experience">
+    <section className="experience section">
       <h2 className="section__title" id="experience">
         Experience
       </h2>
@@ -69,6 +68,6 @@ export const Experience: React.FC = () => {
           </div>
         );
       })}
-    </div>
+    </section>
   );
 };

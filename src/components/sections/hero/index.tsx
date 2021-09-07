@@ -9,7 +9,7 @@ export interface HeroProps {}
 
 export const Hero: React.FC<HeroProps> = () => {
   return (
-    <div className="hero" id="content">
+    <section className="hero" id="content">
       <div className="hero__left">
         <h2 className="hero__lead-text">
           My name is <span>Maverick</span>.
@@ -46,6 +46,6 @@ export const Hero: React.FC<HeroProps> = () => {
           </li>
         ))}
       </ul>
-    </div>
+    </section>
   );
 };
