@@ -1,13 +1,12 @@
 import React, { useState, useRef } from 'react';
-
 import cn from 'classnames';
 
 import { viewports } from '../../constants/config';
 import { routes } from '../../constants/path';
 import { useOnClickOutside, useWindowSize } from '../../hooks';
 
-import { AppLink } from '../AppLink';
 import './navbar.scss';
+import { Link } from 'gatsby';
 
 const BACKDROP_CN = 'blur';
 
@@ -26,14 +25,16 @@ export const Navbar: React.FC = () => {
     if (el.classList.contains(BACKDROP_CN)) toggleSideDrawer();
   });
 
+  const isSmallDevice = deviceWidth < viewports.screenMdMin;
+
   return (
     <>
       <button
         type="button"
         className={cn('hamburger', { hamburger__active: isSideDrawerOpen })}
         onClick={toggleSideDrawer}
-        aria-hidden={deviceWidth > viewports.screenMdMin}
-        tabIndex={deviceWidth > viewports.screenMdMin ? -1 : 0}
+        aria-hidden={!isSmallDevice}
+        tabIndex={!isSmallDevice ? -1 : 0}
         aria-label={isSideDrawerOpen ? 'Close Menu' : 'Open Menu'}
       >
         <span className="hamburger__line hamburger__line--1"></span>
@@ -50,7 +51,12 @@ export const Navbar: React.FC = () => {
           <ul>
             {routes.map((link) => (
               <li key={link.id}>
-                <AppLink text={link.text} href={link.url} clearStyles />
+                <Link
+                  onClick={() => isSmallDevice && toggleSideDrawer()}
+                  to={link.url}
+                >
+                  {link.text}
+                </Link>
               </li>
             ))}
           </ul>

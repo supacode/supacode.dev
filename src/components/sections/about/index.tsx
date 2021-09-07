@@ -1,5 +1,6 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
+import { graphql } from 'gatsby';
 
 import { tools } from '../../../assets/icons';
 import { AppLink } from '../../AppLink';
@@ -33,7 +34,7 @@ export const About: React.FC<AboutProps> = () => {
       <div className="about__img">
         <StaticImage
           className="about__img--img"
-          src="../../../images/maverick.jpg"
+          src="../../../images/maverick-square.jpg"
           alt="Maverick"
           width={600}
           formats={['auto', 'avif', 'webp']}

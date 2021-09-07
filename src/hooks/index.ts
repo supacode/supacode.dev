@@ -1,2 +1,2 @@
-export { useOnClickOutside } from './clickOutside';
+export { useOnClickOutside } from './useClickOutside';
 export { useWindowSize } from './useWindowSize';
