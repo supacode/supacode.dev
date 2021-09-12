@@ -1,6 +1,8 @@
 @import '../../assets/scss/variables';
 
 .accordion {
+  transition: 0.4s ease-out;
+
   &__btn {
     margin-bottom: 2rem;
     width: 100%;
@@ -11,7 +13,7 @@
     text-align: left;
     color: $grey-dark;
     background: $dark-tertiary;
-    border: 1px solid rgba($white, 0.09);
+    border: 1px solid rgba($white, 0.05);
     width: 100%;
     padding: 2rem;
 

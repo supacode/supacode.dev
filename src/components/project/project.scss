@@ -3,7 +3,7 @@
 .project {
   margin-bottom: 2rem;
   background: $dark-tertiary;
-  border: 1px solid rgba($white, 0.09);
+  border: 1px solid rgba($white, 0.05);
   padding: 3rem;
   position: relative;
   display: grid;
@@ -44,7 +44,7 @@
 
   &__img {
     img {
-      border: 1px solid rgba($white, 0.05);
+      border: 1px solid rgba($white, 0.04);
     }
 
     .gatsby-image-wrapper,

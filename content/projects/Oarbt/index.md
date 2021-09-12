@@ -1,7 +1,7 @@
 ---
 index: 1
 title: 'Oarbt'
-link: 'https://www.oarbt.com/'
+link: https://www.oarbt.com/
 tools:
   - React
   - React Material UI
@@ -10,8 +10,8 @@ tools:
   - Strapi
   - Heroku
   - Unity 3D
-company: 'R&CO'
-image: './oarbt.png'
+company: R&CO
+image: oarbt.png
 ---
 
 An app to create no-code 3D drag-and-drop design toolkit for presenting and

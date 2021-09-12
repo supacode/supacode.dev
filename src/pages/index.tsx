@@ -6,6 +6,7 @@ import { About } from '../components/sections/about';
 import { Experience } from '../components/sections/experience';
 import { Projects } from '../components/sections/projects';
 import { SEO } from '../components/seo/seo';
+import { Blog } from '../components/sections/blog';
 
 const IndexPage: React.FC = () => {
   return (
@@ -16,6 +17,7 @@ const IndexPage: React.FC = () => {
         <About />
         <Experience />
         <Projects />
+        <Blog />
       </Layout>
     </>
   );
