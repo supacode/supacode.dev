@@ -1,10 +1,9 @@
 ---
 template: blog-post
-title: Our large team of engineers use this front end development guide
-slug: /minimalists-desk
-date: 2020-05-13 12:46
+title: React’s Five Fingers of Death. Master these five concepts, then master React.
+date: 2019-07-10T00:00:00.000Z
 description: sdasd
-featuredImage: ../../../static/blog/andrew-seaman-4fi_4q6_efm-unsplash.jpg
+featuredImage: ../../../static/blog-images/avery-klein-c_drtsnboqa-unsplash.jpg
 ---
 
 Uh, is the puppy mechanical in any way? Maybe I love you so much I love you no matter who you are pretending to be. If rubbin' frozen dirt in your crotch is wrong, hey I don't wanna be right. I found what I need. And it's not friends, it's things.

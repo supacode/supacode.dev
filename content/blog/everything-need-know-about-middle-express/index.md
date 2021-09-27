@@ -1,9 +1,8 @@
 ---
 template: blog-post
-slug: /markdown
 date: 2020-05-09T05:53:16.102Z
 title: Everything You Need to Know About Middleware in Express
-featuredImage: ../../../static/blog/mike-dorner-sf_1ZDA1YFw-unsplash.jpg
+featuredImage: ../../../static/blog-images/mike-dorner-sf_1ZDA1YFw-unsplash.jpg
 ---
 
 ## Overview
@@ -269,7 +268,8 @@ ampersands and angle brackets. For example, this:
         &copy; 2004 Foo Corporation
     </div>
 
-![Royal Mail](/assets/royal-mail-unsplash.jpg)
+![Inline](./royal-mail-unsplash.jpg)
+![External](static/blog-images/royal-mail-unsplash.jpg)
 
 Regular Markdown syntax is not processed within code blocks. E.g.,
 asterisks are just literal asterisks within a code block. This means

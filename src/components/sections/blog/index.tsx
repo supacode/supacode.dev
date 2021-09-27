@@ -11,6 +11,9 @@ interface BlogQuery {
   blog: {
     edges: {
       node: {
+        fields: {
+          slug: string;
+        };
         frontmatter: IBlog;
       };
     }[];
@@ -19,51 +22,57 @@ interface BlogQuery {
 
 export const Blog: React.FC<BlogProps> = () => {
   const data = useStaticQuery<BlogQuery>(graphql`
-    query {
+    {
       blog: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/blog/" } }
         sort: { fields: [frontmatter___index], order: DESC }
-        limit: 5
       ) {
         edges {
           node {
-            frontmatter {
-              title
+            fields {
               slug
+            }
+            frontmatter {
               date
+              title
               featuredImage {
                 childImageSharp {
                   gatsbyImageData(
-                    width: 500
+                    width: 700
                     placeholder: BLURRED
                     formats: [AUTO, WEBP, AVIF]
                   )
                 }
               }
             }
+            html
           }
         }
       }
     }
   `);
 
+  const blogPosts = data.blog.edges;
+
   return (
     <section className="section blog-section" id="blog">
       <h2 className="section__title">Blog</h2>
 
       <div className="blog__featured">
-        {data.blog.edges.map((item) => {
+        {blogPosts.map((item, index) => {
           const blog = item.node.frontmatter;
 
           const image = blog.featuredImage && getImage(blog.featuredImage);
 
           const date = new Date(Date.parse(`${blog.date}`));
 
+          const slug = item.node.fields.slug;
+
           return (
             <BlogCard
               title={blog.title}
-              slug={blog.slug}
-              key={blog.slug}
+              slug={slug}
+              key={index}
               featuredImage={image}
               date={date}
             />
