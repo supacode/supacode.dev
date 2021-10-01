@@ -7,8 +7,7 @@
   max-height: 300px;
   transition: 0.3s ease-out;
   border: 1px solid rgba($white, 0.05);
-
-  // box-shadow: 0 10px 20px -15px rgba($dark-tertiary, 0.93);
+  transition: 0.4s cubic-bezier(0.5, 2, 0.6, 1);
 
   &:first-child {
     grid-column: 1 / 3;
@@ -25,7 +24,7 @@
   }
 
   &:hover {
-    transform: translateY(-0.2rem);
+    transform: translateY(-5px);
 
     .blog__title:hover {
       color: $accent-primary;
