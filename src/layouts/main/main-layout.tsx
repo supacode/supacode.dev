@@ -1,9 +1,10 @@
 import React from 'react';
 
 import '@fontsource/roboto-mono';
+import '@fontsource/merriweather';
 
 import { Header } from '../../components/header';
-import './layout.scss';
+import './main-layout.scss';
 
 export const Layout: React.FC = ({ children }) => {
   return (

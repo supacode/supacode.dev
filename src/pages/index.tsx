@@ -4,20 +4,20 @@ import { Layout } from '../layouts/main';
 import { Hero } from '../components/sections/hero';
 import { About } from '../components/sections/about';
 import { Experience } from '../components/sections/experience';
-import { Projects } from '../components/sections/projects';
-import { SEO } from '../components/seo/seo';
-import { Blog } from '../components/sections/blog';
+import { Project } from '../components/sections/projects';
+import { SEO } from '../components/seo';
+import { BlogSection } from '../components/sections/blog';
 
-const IndexPage: React.FC = () => {
+export const IndexPage: React.FC = () => {
   return (
     <>
-      <SEO />
+      <SEO title="Software Developer" />
       <Layout>
         <Hero />
         <About />
         <Experience />
-        <Projects />
-        <Blog />
+        <Project />
+        <BlogSection />
       </Layout>
     </>
   );

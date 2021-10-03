@@ -6,9 +6,7 @@ import { SkipLink } from '../skipLink';
 
 import './header.scss';
 
-export interface HeaderProps {}
-
-export const Header: React.FC<HeaderProps> = () => {
+export const Header: React.FC = () => {
   return (
     <>
       <SkipLink to={'#content'} />

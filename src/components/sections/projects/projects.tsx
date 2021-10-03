@@ -2,20 +2,20 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 
-import { Project, IProject } from '../../project';
+import { ProjectItem, ProjectType } from '../../project';
 
-interface ProjectsQuery {
+type ProjectsQuery = {
   projects: {
     edges: {
       node: {
-        frontmatter: IProject;
+        frontmatter: ProjectType;
         html: string;
       };
     }[];
   };
-}
+};
 
-export const Projects: React.FC = () => {
+export const Project: React.FC = () => {
   const data = useStaticQuery<ProjectsQuery>(graphql`
     query {
       projects: allMarkdownRemark(
@@ -59,7 +59,7 @@ export const Projects: React.FC = () => {
         const image = project.image && getImage(project.image);
 
         return (
-          <Project
+          <ProjectItem
             key={project.link}
             link={project.link}
             html={node.html}

@@ -1,23 +1,23 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
-import { SEO } from '../../components/seo/seo';
+import { SEO } from '../../components/seo';
 
 import { Layout } from '../../layouts/main';
-import { IBlog } from '../../components/blogcard';
+import type { Blog } from '../../components/blogcard';
 
 import './article-template.scss';
 
-interface IArticleTemplate {
+type ArticleTemplate = {
   data: {
     markdownRemark: {
       html: string;
-      frontmatter: IBlog;
+      frontmatter: Blog;
     };
   };
-}
+};
 
-const ArticleTemplate: React.FC<IArticleTemplate> = ({ data }) => {
+const ArticleTemplate: React.FC<ArticleTemplate> = ({ data }) => {
   const article = data.markdownRemark;
 
   const featuredImage =

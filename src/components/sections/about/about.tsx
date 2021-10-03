@@ -6,8 +6,6 @@ import { AppLink } from '../../AppLink';
 
 import './about.scss';
 
-export interface AboutProps {}
-
 const skills = [
   { name: 'HTML', icon: tools.html5 },
   { name: 'CSS/SCSS', icon: tools.scss },
@@ -27,7 +25,7 @@ const skills = [
   { name: 'Software Testing', icon: tools.jest },
 ];
 
-export const About: React.FC<AboutProps> = () => {
+export const About: React.FC = () => {
   return (
     <section className="about section" id="about">
       <div className="about__img">

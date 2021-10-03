@@ -6,4 +6,7 @@ description: How we scaled an Extreme gaming extravaganza
 featuredImage: ../../../static/blog-images/vanessa-bucceri-gdirwiyama8-unsplash.jpg
 ---
 
-My Pretty White ShoesMy Pretty White ShoesMy Pretty White ShoesMy Pretty White ShoesMy Pretty White ShoesMy Pretty White ShoesMy Pretty White Shoes
+My Pretty White Shoes
+My Pretty White Shoes
+My Pretty White Shoes
+My Pretty White Shoes

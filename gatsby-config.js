@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    title: `supacode | Maverick's Portfolio`,
+    title: `supacode`,
     description: ` Welcome to my little corner of the web, where I share notes, code snippets, and resources on topics that interest me.`,
     author: `@supacode`,
     twitterUsername: '@supacode',

@@ -2,30 +2,36 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 
-import { BlogCard, IBlog } from '../../blogcard';
+import {
+  BlogCard,
+  Blog,
+  BlogCardLayout as blogCardLayout,
+} from '../../blogcard';
+import { AppLink } from '../../AppLink';
+import { chevronRight } from '../../../assets/icons';
+import { blogRoutes } from '../../../constants/path';
 import './blog-section.scss';
 
-export interface BlogProps {}
-
-interface BlogQuery {
+type BlogQuery = {
   blog: {
     edges: {
       node: {
         fields: {
           slug: string;
         };
-        frontmatter: IBlog;
+        frontmatter: Blog;
       };
     }[];
   };
-}
+};
 
-export const Blog: React.FC<BlogProps> = () => {
+export const BlogSection: React.FC = () => {
   const data = useStaticQuery<BlogQuery>(graphql`
     {
       blog: allMarkdownRemark(
         filter: { fileAbsolutePath: { regex: "/blog/" } }
         sort: { fields: [frontmatter___index], order: DESC }
+        limit: 5
       ) {
         edges {
           node {
@@ -58,13 +64,13 @@ export const Blog: React.FC<BlogProps> = () => {
     <section className="section blog-section" id="blog">
       <h2 className="section__title">Blog</h2>
 
-      <div className="blog__featured">
+      <div className="blog-section__featured" id="content">
         {blogPosts.map((item, index) => {
           const blog = item.node.frontmatter;
 
           const image = blog.featuredImage && getImage(blog.featuredImage);
 
-          const date = new Date(Date.parse(`${blog.date}`));
+          const date = new Date(blog.date);
 
           const slug = item.node.fields.slug;
 
@@ -75,10 +81,22 @@ export const Blog: React.FC<BlogProps> = () => {
               key={index}
               featuredImage={image}
               date={date}
+              layout={blogCardLayout.stacked}
             />
           );
         })}
       </div>
+
+      {blogRoutes.url && (
+        <div className="blog-section__read-more-cta">
+          <AppLink
+            icon={chevronRight}
+            text="Read More"
+            title="Read More"
+            href={blogRoutes.url}
+          />
+        </div>
+      )}
     </section>
   );
 };

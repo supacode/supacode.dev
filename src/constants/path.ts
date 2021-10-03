@@ -1,27 +1,27 @@
-export const routes = [
-  {
-    id: 'about',
-    text: 'About Me',
-    url: '/#about',
-  },
-  {
-    id: 'contact',
-    text: 'Contact',
-    url: '/#',
-  },
-  {
-    id: 'experience',
-    text: 'Experience',
-    url: '/#experience',
-  },
-  {
-    id: 'blog',
-    text: 'Blog',
-    url: '/#',
-  },
-  {
-    id: 'resume',
-    text: 'Resume',
-    url: '/#',
-  },
-];
+export const blogRoutes = {
+  id: 'blog',
+  text: 'Blog',
+  url: '/blog',
+};
+
+export const aboutRoutes = {
+  id: 'about',
+  text: 'About Me',
+  url: '/#about',
+};
+
+export const contactRoutes = {
+  id: 'contact',
+  text: 'Contact',
+  url: '/#',
+};
+
+export const experienceRoutes = {
+  id: 'experience',
+  text: 'Experience',
+  url: '/#experience',
+};
+
+export const resumeRoutes = { id: 'resume', text: 'Resume', url: '/#' };
+
+export const routes = [aboutRoutes, contactRoutes, blogRoutes, resumeRoutes];

@@ -42,10 +42,12 @@
   &__date {
     font-family: $font-stack-monospace;
     color: $accent-primary;
+    font-size: $font-size-xs;
   }
 
   &__content {
     margin-top: 3rem;
+    font-family: $font-stack-serif;
     line-height: 2;
 
     p {
@@ -139,22 +141,17 @@
       margin-right: 2.25em;
     }
 
+    code,
     pre {
       background-color: $dark-tertiary;
       border-radius: 0.75em;
       padding: 1.5em 2.5em;
       line-height: 2.5em;
-      font-family: $font-stack-monospace;
+      font-size: $font-size-sm;
+      word-wrap: break-word;
       margin: 2rem 0;
     }
 
-    code {
-      font-family: var(--font-mono);
-      background-color: $dark-tertiary;
-      color: rgba(255, 255, 255, 0.9);
-      border-radius: 0.25em;
-      padding: 0em 0.1875em;
-    }
     pre code {
       padding: 0em;
     }

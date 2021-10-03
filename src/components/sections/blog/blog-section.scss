@@ -1,7 +1,26 @@
 @import '../../../assets/scss/variables';
 
 .blog-section {
-  &__load-more-cta {
+  .blog-card {
+    &:first-child {
+      grid-column: 1 / 3;
+      .blog-card__title {
+        font-size: 2.5rem;
+      }
+    }
+  }
+
+  &__featured {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-bottom: 5rem;
+  }
+
+  &__read-more-cta {
     margin: auto;
+    text-align: center;
+    display: flex;
+    justify-content: center;
   }
 }
