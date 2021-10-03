@@ -1,10 +1,10 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
-import { SEO } from '../components/seo/seo';
+import { SEO } from '../../components/seo/seo';
 
-import { Layout } from '../layouts/main';
-import { IBlog } from '../components/blogcard';
+import { Layout } from '../../layouts/main';
+import { IBlog } from '../../components/blogcard';
 
 import './article-template.scss';
 
