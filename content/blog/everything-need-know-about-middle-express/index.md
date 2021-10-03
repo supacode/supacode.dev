@@ -214,6 +214,54 @@ in both `<pre>` and `<code>` tags.
 To produce a code block in Markdown, simply indent every line of the
 block by at least 4 spaces or 1 tab.
 
+```typescript
+interface Person {
+  name: string;
+  age: number;
+  hobbies: string[];
+}
+
+let person: Person;
+
+person.name = 'Maverick';
+person.age = 24;
+person.hobbies = ['programming', 'football'];
+```
+
+```javascript
+function foo(bar) {
+  var a = 42;
+  var b = 'Prism';
+  return a + b;
+}
+```
+
+```javascript
+let name = prompt('Please enter your name', '');
+
+if (age === 'Justin Bieber') {
+  alert('Your are not allowed here');
+}
+```
+
+```css
+body {
+  font-family: system-ui;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+```
+
+```go
+import "fmt"
+
+main() {
+  fmt.PrintLn("Hello World")
+}
+
+```
+
 ```javascript
 import React from 'react';
 import { Link, useStaticQuery, graphql } from 'gatsby';
@@ -279,6 +327,7 @@ it's also easy to use Markdown to write about Markdown's own syntax.
 tell application "Foo"
     beep
 end tell
+git status
 ```
 
 ## Span Elements
@@ -321,4 +370,4 @@ normal paragraph. For example:
 
 Use the `printf()` function.
 
-<iframe src="https://sunflower-business-mobi.netlify.app/" width="600" height="400"></iframe>
+<iframe src="https://supacode.dev/" width="600" height="400"></iframe>

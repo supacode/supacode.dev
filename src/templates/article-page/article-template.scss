@@ -6,7 +6,6 @@
 
   &__header {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     flex-direction: row-reverse;
   }
@@ -53,6 +52,7 @@
     p {
       line-height: 1.75rem;
       margin-bottom: 1.5rem;
+      font: 100%/1.75 $font-stack-serif;
     }
 
     hr {
@@ -71,27 +71,27 @@
     }
 
     h1 {
-      font-size: 2.2rem;
+      font-size: 1.8rem;
     }
 
     h2 {
-      font-size: 2rem;
+      font-size: 1.2rem;
     }
 
     h3 {
-      font-size: 1.5rem;
+      font-size: 1rem;
     }
 
     h4 {
-      font-size: 1.75rem;
+      font-size: 0.9rem;
     }
 
     h5 {
-      font-size: 1.5rem;
+      font-size: 0.8rem;
     }
 
     h6 {
-      font-size: 1.25rem;
+      font-size: 0.7rem;
     }
 
     table {
@@ -126,34 +126,43 @@
       padding-inline-start: 2.25rem;
       margin-block-start: 1.25rem;
       margin-block-end: 1.25rem;
-      line-height: 2em;
+      line-height: 2rem;
     }
 
     ul li {
       list-style: circle;
     }
 
+    ol li {
+      list-style: decimal;
+    }
+
     blockquote {
       border-left: 3px solid lighten($accent-primary, 2);
-      padding: 0em 0.75em;
+      padding: 0 0.75rem;
       font-style: italic;
-      margin-left: 2.25em;
-      margin-right: 2.25em;
+      margin-left: 2.25rem;
+      margin-right: 2.25rem;
     }
 
     code,
     pre {
-      background-color: $dark-tertiary;
-      border-radius: 0.75em;
-      padding: 1.5em 2.5em;
-      line-height: 2.5em;
+      border-radius: 0.75rem;
+      padding: 1.5rem 2.5rem;
+      line-height: 2.5rem;
       font-size: $font-size-sm;
       word-wrap: break-word;
       margin: 2rem 0;
     }
 
     pre code {
-      padding: 0em;
+      padding: 0;
+    }
+
+    // Syntax highlighting edit
+    code[class*='language-'],
+    pre[class*='language-'] {
+      background: #121620;
     }
   }
 }
