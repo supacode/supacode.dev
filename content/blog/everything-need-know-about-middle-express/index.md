@@ -237,10 +237,10 @@ function foo(bar) {
 ```
 
 ```javascript
-let name = prompt('Please enter your name', '');
+const clubName = prompt("Please enter your football club's name", '');
 
-if (age === 'Justin Bieber') {
-  alert('Your are not allowed here');
+if (name === 'Manchester United') {
+  alert('You are not allowed in here!');
 }
 ```
 
