@@ -2,7 +2,6 @@ import * as React from 'react';
 import { graphql } from 'gatsby';
 import { getImage, GatsbyImage } from 'gatsby-plugin-image';
 import { SEO } from '../../components/seo';
-
 import { Layout } from '../../layouts/main';
 import type { Blog } from '../../components/blogcard';
 
@@ -68,11 +67,6 @@ const ArticleTemplate: React.FC<ArticleTemplate> = ({ data }) => {
 
 export const pageQuery = graphql`
   query BlogPostBySlug($id: String!) {
-    site {
-      siteMetadata {
-        title
-      }
-    }
     markdownRemark(id: { eq: $id }) {
       id
       excerpt(pruneLength: 160)

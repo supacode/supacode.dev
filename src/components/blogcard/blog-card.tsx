@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import { IGatsbyImageData, GatsbyImage } from 'gatsby-plugin-image';
-import { BlogCardLayout } from './BlogCardLayout';
 import cn from 'classnames';
+import { BlogCardLayout } from './BlogCardLayout';
 
 export type Blog = {
   title: string;

@@ -9,6 +9,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     `./src/templates/article-page/article-template.tsx`,
   );
 
+  const blogList = path.resolve(`./src/templates/blog-index/blog-index.tsx`);
+
   // Get all markdown blog posts sorted by date
   const result = await graphql(
     `
@@ -16,7 +18,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: ASC }
           filter: { fileAbsolutePath: { regex: "/blog/" } }
-          limit: 1000
         ) {
           nodes {
             id
@@ -45,21 +46,38 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (posts.length > 0) {
     posts.forEach((post, index) => {
-      const previousPostId = index === 0 ? null : posts[index - 1].id;
+      const prevPostId = index === 0 ? null : posts[index - 1].id;
       const nextPostId =
         index === posts.length - 1 ? null : posts[index + 1].id;
 
+      // Article page
       createPage({
         path: post.fields.slug,
         component: blogPost,
         context: {
           id: post.id,
-          previousPostId,
           nextPostId,
+          prevPostId,
         },
       });
     });
   }
+
+  // Create blog index per 5 pages.
+  const postsPerPage = 5;
+  const numOfPages = Math.ceil(posts.length / postsPerPage);
+  Array.from({ length: numOfPages }).forEach((_post, index) => {
+    createPage({
+      path: index === 0 ? `/blog` : `/blog/${index + 1}`,
+      component: blogList,
+      context: {
+        limit: postsPerPage,
+        skip: index * postsPerPage,
+        numOfPages,
+        currentPage: index + 1,
+      },
+    });
+  });
 };
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
