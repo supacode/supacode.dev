@@ -16,6 +16,10 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
+
+    @media screen and (max-width: $screen-md-max) {
+      flex-direction: column;
+    }
   }
 
   &__featured-img {
@@ -25,18 +29,8 @@
     img {
       border-radius: 3px;
       width: 100%;
-    }
-
-    &::after {
-      border-radius: 3px;
-      content: '';
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      border: 2px solid $accent-primary;
-      top: 5px;
-      right: 5px;
-      pointer-events: none;
+      margin-top: 1rem;
+      max-height: 300px;
     }
   }
 
@@ -44,12 +38,17 @@
     font-size: $font-size-heading;
     font-weight: bold;
     margin-bottom: 1rem;
+
+    @media screen and (max-width: $screen-md-max) {
+      font-size: $font-size-xxl;
+    }
   }
 
   &__date {
     font-family: $font-stack-monospace;
     color: $accent-primary;
     font-size: $font-size-xs;
+    margin-bottom: 1rem;
   }
 
   &__content {
