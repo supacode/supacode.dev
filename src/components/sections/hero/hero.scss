@@ -35,52 +35,6 @@
     line-height: 2;
     max-width: 800px;
   }
-
-  &__social {
-    &--list {
-      margin-bottom: 1.5rem;
-      color: $white;
-    }
-
-    &--link {
-      border-radius: 50%;
-      border: 1px solid $grey-light;
-      display: inline-block;
-      height: 2.5rem;
-      width: 2.5rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: 0.4s ease-out;
-
-      &:hover {
-        border-color: $accent-primary;
-
-        svg path {
-          fill: $accent-primary;
-        }
-      }
-
-      &:focus {
-        border-color: $accent-primary;
-
-        svg path {
-          fill: $accent-primary;
-        }
-      }
-    }
-
-    svg {
-      width: 20px;
-      height: 20px;
-
-      path {
-        transition: 0.4s ease-out;
-        stroke-width: 0;
-        fill: $grey-light;
-      }
-    }
-  }
 }
 
 @media screen and (max-width: $screen-lg-max) {

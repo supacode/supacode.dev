@@ -1,0 +1,25 @@
+@import '../../assets/scss/variables';
+
+.site-footer {
+  max-width: $site-width;
+  margin: auto;
+  margin-top: 3rem;
+  padding: 3rem 0;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+
+  &__lead-txt {
+    font-size: $font-size-heading;
+    font-weight: bold;
+    margin-bottom: 2rem;
+    color: $accent-primary;
+  }
+
+  &__desc {
+    margin-bottom: 2rem;
+    text-align: center;
+    width: 70%;
+    line-height: 2;
+  }
+}

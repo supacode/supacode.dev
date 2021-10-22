@@ -1,0 +1,61 @@
+@import '../../assets/scss/variables';
+
+.social-links {
+  display: flex;
+
+  &--list {
+    margin-bottom: 1.5rem;
+    color: $white;
+  }
+
+  &--link {
+    border-radius: 50%;
+    border: 1px solid $grey-light;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.4s ease-out;
+
+    &:hover {
+      border-color: $accent-primary;
+
+      svg path {
+        fill: $accent-primary;
+      }
+    }
+
+    &:focus {
+      border-color: $accent-primary;
+
+      svg path {
+        fill: $accent-primary;
+      }
+    }
+  }
+
+  svg {
+    width: 20px;
+    height: 20px;
+
+    path {
+      transition: 0.4s ease-out;
+      stroke-width: 0;
+      fill: $grey-light;
+    }
+  }
+}
+
+.social-links__stacked {
+  flex-direction: column;
+  .social-links--list {
+    margin-bottom: 2rem;
+  }
+}
+.social-links__inline {
+  flex-direction: row;
+  .social-links--list {
+    margin-right: 1rem;
+  }
+}
