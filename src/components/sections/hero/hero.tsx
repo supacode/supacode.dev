@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { socials } from '../../../constants/socialLinks';
 import { AppLink } from '../../AppLink';
 import { chevronRight } from '../../../assets/icons';
+import { SocialLinks } from '../../social-links';
 import './hero.scss';
 
 export const Hero: React.FC = () => {
@@ -29,21 +29,8 @@ export const Hero: React.FC = () => {
           href="mailto:supacode@gmail.com"
         />
       </div>
-      <ul className="hero__social">
-        {socials.map((social) => (
-          <li key={social.url} className="hero__social--list">
-            <a
-              href={social.url}
-              title={social.name}
-              rel="noreferrer"
-              target="_blank"
-              className="hero__social--link"
-            >
-              {social.icon}
-            </a>
-          </li>
-        ))}
-      </ul>
+
+      <SocialLinks direction="stacked" />
     </section>
   );
 };
