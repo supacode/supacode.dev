@@ -2,11 +2,7 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 
-import {
-  BlogCard,
-  Blog,
-  BlogCardLayout as blogCardLayout,
-} from '../../blogcard';
+import { BlogCard, Blog } from '../../blogcard';
 import { AppLink } from '../../AppLink';
 import { chevronRight } from '../../../assets/icons';
 import { blogRoutes } from '../../../constants/path';
@@ -81,7 +77,7 @@ export const BlogSection: React.FC = () => {
               key={index}
               featuredImage={image}
               date={date}
-              layout={blogCardLayout.stacked}
+              layout={'stacked'}
             />
           );
         })}

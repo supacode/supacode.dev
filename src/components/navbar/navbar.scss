@@ -12,7 +12,7 @@
       color: $grey-light;
       font-size: $font-size-xs;
       font-family: $font-stack-monospace;
-      transition: 0.4s ease-out;
+      transition: 0.4s ease-out color;
 
       &:hover {
         color: $accent-primary;
@@ -168,7 +168,7 @@
   }
 }
 
-@media screen and (max-width: $screen-md-min) {
+@media screen and (max-width: $screen-md-max) {
   .overlay {
     &__open {
       overflow: hidden;

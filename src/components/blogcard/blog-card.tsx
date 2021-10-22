@@ -2,7 +2,6 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { IGatsbyImageData, GatsbyImage } from 'gatsby-plugin-image';
 import cn from 'classnames';
-import { BlogCardLayout } from './BlogCardLayout';
 
 export type Blog = {
   title: string;
@@ -10,7 +9,7 @@ export type Blog = {
   date: Date;
   excerpt?: string;
   featuredImage?: IGatsbyImageData;
-  layout?: string;
+  layout?: 'inline' | 'stacked';
 };
 
 export const BlogCard: React.FC<Blog> = ({
@@ -21,8 +20,8 @@ export const BlogCard: React.FC<Blog> = ({
   excerpt,
   layout,
 }) => {
-  const isInline = layout === BlogCardLayout.inline;
-  const isStacked = layout === BlogCardLayout.stacked;
+  const isInline = layout === 'inline';
+  const isStacked = layout === 'stacked';
 
   return (
     <div

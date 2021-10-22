@@ -1,12 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
-import { BlogCard, Blog, BlogCardLayout } from '../../components/blogcard';
+import { BlogCard, Blog } from '../../components/blogcard';
 import { SEO } from '../../components/seo/seo';
 import { Pagination } from '../../components/pagination/Pagination';
 import { Layout } from '../../layouts/main';
+import { useWindowSize } from '../../hooks';
 import './blog-index.scss';
 import '../../components/blogcard/blog-card.scss';
+import { viewports } from '../../constants/config';
 
 type BlogQuery = {
   blog: {
@@ -41,6 +43,8 @@ const BlogPage: React.FC<BlogPageProps> = ({ pageContext, data }) => {
   const nextPage = currentPage + 1;
   const isFirstPage = currentPage === 1;
   const isLastPage = currentPage === numOfPages;
+  const { width: deviceWidth } = useWindowSize();
+  const isSmallDevice = deviceWidth < viewports.screenLgMin;
 
   return (
     <>
@@ -66,7 +70,7 @@ const BlogPage: React.FC<BlogPageProps> = ({ pageContext, data }) => {
                   slug={postSlug}
                   date={postDate}
                   featuredImage={featuredImage && getImage(featuredImage)}
-                  layout={BlogCardLayout.inline}
+                  layout={'inline'}
                   excerpt={except}
                 />
               );

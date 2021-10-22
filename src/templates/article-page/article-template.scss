@@ -4,6 +4,14 @@
   margin: 5rem auto;
   width: 75%;
 
+  @media screen and (max-width: $screen-md-max) {
+    width: 85%;
+  }
+
+  @media screen and (max-width: $screen-sm-max) {
+    width: 95%;
+  }
+
   &__header {
     display: flex;
     justify-content: space-between;

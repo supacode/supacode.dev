@@ -81,12 +81,20 @@
   padding: 2rem;
   background: $dark-tertiary;
 
+  @media screen and (max-width: $screen-md-max) {
+    flex-direction: column;
+  }
+
   .blog-card__cover {
     width: 300px;
     height: 200px;
     overflow: hidden;
     align-self: flex-start;
     margin-right: 2rem;
+    @media screen and (max-width: $screen-md-max) {
+      margin-top: 2rem;
+      width: 100%;
+    }
 
     &--img {
       border-radius: 3px;
