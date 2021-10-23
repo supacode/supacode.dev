@@ -6,6 +6,7 @@
 
   @media screen and (max-width: $screen-md-max) {
     width: 85%;
+    margin-top: 1rem;
   }
 
   @media screen and (max-width: $screen-sm-max) {
@@ -63,6 +64,7 @@
     margin-top: 3rem;
     font-family: $font-stack-serif;
     line-height: 2;
+    word-wrap: break-word;
 
     p {
       line-height: 1.75rem;
