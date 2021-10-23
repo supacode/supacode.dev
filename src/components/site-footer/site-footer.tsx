@@ -3,19 +3,28 @@ import React from 'react';
 import { SocialLinks } from '../social-links';
 import './site-footer.scss';
 
-// eslint-disable-next-line @typescript-eslint/ban-types
-type SiteFooterProps = {};
-
-export const SiteFooter: React.FC<SiteFooterProps> = () => {
+export const SiteFooter: React.FC = () => {
   return (
-    <footer className="site-footer">
-      <h2 className="site-footer__lead-txt">Let&apos;s Work Together</h2>
+    <footer className="site-footer" id="contact">
+      <h2 className="site-footer__lead-txt">Reach out to me!</h2>
+
       <p className="site-footer__desc">
         Do you want us to work together? Maybe you just want to say Hello!
         <br />
         Don&apos;t be shy, you can reach out to me anytime.
       </p>
+
       <SocialLinks direction="inline" />
+
+      <p className="site-footer__copyright">
+        <a
+          target="_blank"
+          rel="noreferrer"
+          href="https://github.com/supacodes/supacode.dev"
+        >
+          Designed &amp; developed by Maverick.
+        </a>
+      </p>
     </footer>
   );
 };

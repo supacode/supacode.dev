@@ -44,7 +44,7 @@
   .blog-card__info {
     padding: 2rem;
     position: absolute;
-    z-index: 10;
+    z-index: $z-index-layer-1;
     bottom: 0;
     width: 100%;
     line-height: 1.4;

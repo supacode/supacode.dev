@@ -3,6 +3,7 @@
 .skip-link {
   position: absolute;
   transform: translateX(-50%);
+  z-index: $z-index-layer-5;
   left: 50%;
   top: -30%;
 

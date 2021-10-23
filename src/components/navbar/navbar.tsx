@@ -16,20 +16,34 @@ export const Navbar: React.FC = () => {
   const { width: deviceWidth } = useWindowSize();
   const isSmallDevice = deviceWidth < viewports.screenMdMin;
 
+  const openSideDrawer = () => {
+    document.body.classList.add(BACKDROP_CN);
+    setIsSideDrawerOpen(true);
+  };
+
+  const closeSideDrawer = () => {
+    document.body.classList.remove(BACKDROP_CN);
+    setIsSideDrawerOpen(false);
+  };
+
   const toggleSideDrawer = () => {
-    document.querySelector('body')?.classList.toggle(BACKDROP_CN);
-    setIsSideDrawerOpen(!isSideDrawerOpen);
+    isSideDrawerOpen ? closeSideDrawer() : openSideDrawer();
   };
 
   useOnClickOutside(sideDrawerRef, (e) => {
     const el = e.target as HTMLElement;
-    if (el.classList.contains(BACKDROP_CN)) toggleSideDrawer();
+    const elClicked = el.tagName.toLowerCase();
+
+    const exclude = ['a', 'div'];
+
+    if (exclude.includes(elClicked) || el.classList.contains(BACKDROP_CN)) {
+      closeSideDrawer();
+    }
   });
 
   useEffect(() => {
     if (!isSmallDevice) {
-      setIsSideDrawerOpen(false);
-      document.querySelector('body')?.classList.remove(BACKDROP_CN);
+      closeSideDrawer();
     }
   }, [deviceWidth]);
 

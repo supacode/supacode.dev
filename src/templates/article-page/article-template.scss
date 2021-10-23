@@ -16,6 +16,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
+    align-items: center;
 
     @media screen and (max-width: $screen-md-max) {
       flex-direction: column;
@@ -35,7 +36,7 @@
   }
 
   &__title {
-    font-size: $font-size-heading;
+    font-size: $font-size-xxl * 1.2;
     font-weight: bold;
     margin-bottom: 1rem;
 

@@ -13,7 +13,7 @@ export const aboutRoutes = {
 export const contactRoutes = {
   id: 'contact',
   text: 'Contact',
-  url: '/#',
+  url: '/#contact',
 };
 
 export const experienceRoutes = {

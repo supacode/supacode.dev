@@ -3,8 +3,7 @@
 .site-footer {
   max-width: $site-width;
   margin: auto;
-  margin-top: 3rem;
-  padding: 3rem 0;
+  padding: 5rem 3rem 10rem 3rem;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -14,12 +13,27 @@
     font-weight: bold;
     margin-bottom: 2rem;
     color: $accent-primary;
+
+    @media screen and (max-width: $screen-md-max) {
+      font-size: $font-size-xxl;
+    }
   }
 
   &__desc {
-    margin-bottom: 2rem;
+    margin-bottom: 3rem;
     text-align: center;
     width: 70%;
     line-height: 2;
+
+    @media screen and (max-width: $screen-md-max) {
+      width: 100%;
+    }
+  }
+
+  &__copyright {
+    font-family: $font-stack-monospace;
+    font-size: $font-size-xs;
+    text-align: center;
+    margin-top: 2rem;
   }
 }

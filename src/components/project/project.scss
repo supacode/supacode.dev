@@ -92,7 +92,7 @@
     &__content {
       padding: 2rem;
       position: relative;
-      z-index: 10;
+      z-index: $z-index-layer-2;
       margin: 0;
     }
 

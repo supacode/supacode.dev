@@ -80,6 +80,13 @@ $font-size-xl: 20px;
 $font-size-xxl: 22px;
 $font-size-heading: 35px;
 
+// Z-index
+$z-index-layer-1: 1;
+$z-index-layer-2: 2;
+$z-index-layer-3: 3;
+$z-index-layer-4: 4;
+$z-index-layer-5: 5;
+
 @mixin focusOutset {
   outline: 2px dotted $accent-primary;
   outline-offset: 4px;
