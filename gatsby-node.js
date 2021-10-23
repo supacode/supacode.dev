@@ -1,19 +1,19 @@
 const path = require(`path`);
-const {createFilePath} = require(`gatsby-source-filesystem`);
+const { createFilePath } = require(`gatsby-source-filesystem`);
 
-exports.createPages = async ({graphql, actions, reporter}) => {
-  const {createPage} = actions;
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  const { createPage } = actions;
 
   // Define a template for blog post
   const blogPost = path.resolve(
-      `./src/templates/article-page/article-template.tsx`,
+    `./src/templates/article-page/article-template.tsx`,
   );
 
   const blogList = path.resolve(`./src/templates/blog-index/blog-index.tsx`);
 
   // Get all markdown blog posts sorted by date
   const result = await graphql(
-      `
+    `
       {
         allMarkdownRemark(
           sort: { fields: [frontmatter___date], order: ASC }
@@ -35,8 +35,8 @@ exports.createPages = async ({graphql, actions, reporter}) => {
 
   if (result.errors) {
     reporter.panicOnBuild(
-        `There was an error loading your blog posts`,
-        result.errors,
+      `There was an error loading your blog posts`,
+      result.errors,
     );
     return;
   }
@@ -52,14 +52,14 @@ exports.createPages = async ({graphql, actions, reporter}) => {
     posts.forEach((post, index) => {
       const prevPostId = index === 0 ? null : posts[index - 1].id;
       const nextPostId =
-          index === posts.length - 1 ? null : posts[index + 1].id;
+        index === posts.length - 1 ? null : posts[index + 1].id;
 
       // Article page
       createPage({
-        path : post.fields.slug,
-        component : blogPost,
-        context : {
-          id : post.id,
+        path: post.fields.slug,
+        component: blogPost,
+        context: {
+          id: post.id,
           nextPostId,
           prevPostId,
         },
@@ -70,36 +70,36 @@ exports.createPages = async ({graphql, actions, reporter}) => {
   // Create blog index per 5 pages.
   const postsPerPage = 5;
   const numOfPages = Math.ceil(posts.length / postsPerPage);
-  Array.from({length : numOfPages}).forEach((_post, index) => {
+  Array.from({ length: numOfPages }).forEach((_post, index) => {
     createPage({
-      path : index === 0 ? `/blog` : `/blog/${index + 1}`,
-      component : blogList,
-      context : {
-        limit : postsPerPage,
-        skip : index * postsPerPage,
+      path: index === 0 ? `/blog` : `/blog/${index + 1}`,
+      component: blogList,
+      context: {
+        limit: postsPerPage,
+        skip: index * postsPerPage,
         numOfPages,
-        currentPage : index + 1,
+        currentPage: index + 1,
       },
     });
   });
 };
 
-exports.onCreateNode = ({node, actions, getNode}) => {
-  const {createNodeField} = actions;
+exports.onCreateNode = ({ node, actions, getNode }) => {
+  const { createNodeField } = actions;
 
   if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({node, getNode});
+    const value = createFilePath({ node, getNode });
 
     createNodeField({
-      name : `slug`,
+      name: `slug`,
       node,
       value,
     });
   }
 };
 
-exports.createSchemaCustomization = ({actions}) => {
-  const {createTypes} = actions;
+exports.createSchemaCustomization = ({ actions }) => {
+  const { createTypes } = actions;
 
   // Explicitly define the siteMetadata {} object
   // This way those will always be defined even if removed from gatsby-config.js
