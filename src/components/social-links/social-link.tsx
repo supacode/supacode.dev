@@ -22,8 +22,6 @@ export const SocialLinks: React.FC<SocialLinksProps> = ({ direction }) => {
           <a
             href={social.url}
             title={social.name}
-            rel="noreferrer"
-            target="_blank"
             className="social-links--link"
           >
             {social.icon}

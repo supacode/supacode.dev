@@ -14,14 +14,7 @@ body {
   padding: 0 2rem;
 
   @media screen and (max-width: $screen-md-max) {
-    padding: 0;
-  }
-}
-
-@media screen and (max-width: $screen-lg-max) {
-  .site-wrapper {
-    width: auto;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
   }
 }
 

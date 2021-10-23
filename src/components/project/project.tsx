@@ -49,12 +49,7 @@ export const ProjectItem: React.FC<ProjectType> = ({
 
         <div className="project__links">
           {github && (
-            <a
-              href={github}
-              target="_blank"
-              rel="noreferrer"
-              title="View Source"
-            >
+            <a href={github} title="View Source">
               {githubIcon}
             </a>
           )}
@@ -62,8 +57,6 @@ export const ProjectItem: React.FC<ProjectType> = ({
           {link && (
             <a
               href={link}
-              target="_blank"
-              rel="noreferrer"
               aria-label="Open link in new tab"
               title="Open Project"
             >
