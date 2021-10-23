@@ -25,7 +25,10 @@ export const BlogSection: React.FC = () => {
   const data = useStaticQuery<BlogQuery>(graphql`
     {
       blog: allMarkdownRemark(
-        filter: { fileAbsolutePath: { regex: "/blog/" } }
+        filter: {
+          fileAbsolutePath: { regex: "/blog/" }
+          frontmatter: { published: { eq: true } }
+        }
         sort: { fields: [frontmatter___index], order: DESC }
         limit: 5
       ) {

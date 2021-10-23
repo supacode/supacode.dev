@@ -1,8 +1,6 @@
 @import '../../assets/scss/variables';
 
 .accordion {
-  transition: 0.4s ease-out;
-
   &__btn {
     margin-bottom: 2rem;
     width: 100%;
@@ -45,6 +43,8 @@
 
   &__duration {
     color: $grey-dark;
+    font-family: $font-stack-monospace;
+    font-size: $font-size-xs;
   }
 
   &__icon {
@@ -76,7 +76,7 @@
     overflow: hidden;
     transition: max-height 0.5s cubic-bezier(1, 0, 1, 0);
     height: auto;
-    max-height: 9999px;
+    max-height: 99999px;
 
     &:focus {
       @include focusOutset;
@@ -84,6 +84,10 @@
 
     &--animated {
       animation: slideUp 1s ease-out;
+
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
     }
 
     &--collapsed {

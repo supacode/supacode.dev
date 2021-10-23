@@ -95,7 +95,10 @@ const BlogPage: React.FC<BlogPageProps> = ({ pageContext, data }) => {
 export const pageQuery = graphql`
   query blogPageQuery($skip: Int!, $limit: Int!) {
     blog: allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/blog/" } }
+      filter: {
+        fileAbsolutePath: { regex: "/blog/" }
+        frontmatter: { published: { eq: true } }
+      }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit
       skip: $skip

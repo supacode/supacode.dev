@@ -1,10 +1,6 @@
 @import '../../assets/scss/reset';
 @import '../../assets/scss/variables';
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
   font-family: $font-stack-main;
   background: $dark-primary;
@@ -15,6 +11,11 @@ body {
 .site-wrapper {
   max-width: $site-width;
   margin: auto;
+  padding: 0 2rem;
+
+  @media screen and (max-width: $screen-md-max) {
+    padding: 0;
+  }
 }
 
 @media screen and (max-width: $screen-lg-max) {

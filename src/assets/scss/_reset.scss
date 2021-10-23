@@ -10,6 +10,22 @@
   font-weight: inherit;
   max-width: 100%;
   outline: 0;
+
+  @media (prefers-reduced-motion: reduce) {
+    animation-duration: 0 !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0 !important;
+    scroll-behavior: auto !important;
+    transition: 0 !important;
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto;
+  }
 }
 
 a {
@@ -32,20 +48,5 @@ button {
 
   &:focus {
     @include focusOutset;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  html:focus-within {
-    scroll-behavior: auto;
-  }
-
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0 !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0 !important;
-    scroll-behavior: auto !important;
   }
 }

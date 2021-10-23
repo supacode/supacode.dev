@@ -15,16 +15,6 @@ export const SiteFooter: React.FC = () => {
       </p>
 
       <SocialLinks direction="inline" />
-
-      <p className="site-footer__copyright">
-        <a
-          target="_blank"
-          rel="noreferrer"
-          href="https://github.com/supacodes/supacode.dev"
-        >
-          Designed &amp; developed by Maverick.
-        </a>
-      </p>
     </footer>
   );
 };

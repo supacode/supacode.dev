@@ -35,6 +35,13 @@
     }
   }
 
+  a {
+    color: $accent-primary;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   &__title {
     font-size: $font-size-xxl * 1.2;
     font-weight: bold;
