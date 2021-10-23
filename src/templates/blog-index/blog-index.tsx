@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 import { BlogCard, Blog } from '../../components/blogcard';
 import { SEO } from '../../components/seo/seo';
-import { Pagination } from '../../components/pagination/Pagination';
+import { Pagination } from '../../components/pagination';
 import { Layout } from '../../layouts/main';
 import { useWindowSize } from '../../hooks';
 import './blog-index.scss';
