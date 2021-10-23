@@ -5,13 +5,13 @@ import { useLocation } from '@reach/router';
 
 // https://www.gatsbyjs.com/docs/add-seo-component/
 
-interface ISEO {
+type SEO = {
   title?: string;
   description?: string;
   image?: string;
-}
+};
 
-export const SEO: React.FC<ISEO> = ({ title, description, image }) => {
+export const SEO: React.FC<SEO> = ({ title, description, image }) => {
   const { pathname } = useLocation();
 
   const { site } = useStaticQuery(

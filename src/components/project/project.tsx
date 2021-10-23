@@ -6,7 +6,7 @@ import { externalLink, github as githubIcon } from '../../assets/icons';
 
 import './project.scss';
 
-export interface IProject {
+export type ProjectType = {
   title: string;
   link: string;
   tools: string[];
@@ -14,9 +14,9 @@ export interface IProject {
   html?: string;
   github: string;
   image?: IGatsbyImageData;
-}
+};
 
-export const Project: React.FC<IProject> = ({
+export const ProjectItem: React.FC<ProjectType> = ({
   title,
   link,
   html,

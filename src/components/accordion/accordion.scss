@@ -11,7 +11,7 @@
     text-align: left;
     color: $grey-dark;
     background: $dark-tertiary;
-    border: 1px solid rgba($white, 0.09);
+    border: 1px solid rgba($white, 0.05);
     width: 100%;
     padding: 2rem;
 
@@ -43,6 +43,8 @@
 
   &__duration {
     color: $grey-dark;
+    font-family: $font-stack-monospace;
+    font-size: $font-size-xs;
   }
 
   &__icon {
@@ -74,7 +76,7 @@
     overflow: hidden;
     transition: max-height 0.5s cubic-bezier(1, 0, 1, 0);
     height: auto;
-    max-height: 9999px;
+    max-height: 99999px;
 
     &:focus {
       @include focusOutset;
@@ -82,6 +84,10 @@
 
     &--animated {
       animation: slideUp 1s ease-out;
+
+      @media (prefers-reduced-motion: reduce) {
+        animation: none;
+      }
     }
 
     &--collapsed {

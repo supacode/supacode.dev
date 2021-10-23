@@ -1,0 +1,16 @@
+@import '../../assets/scss/variables';
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+
+  &__link {
+    &:hover {
+      color: $accent-primary;
+    }
+  }
+
+  &__current {
+    color: $grey-dark;
+  }
+}

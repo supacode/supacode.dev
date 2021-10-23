@@ -1,0 +1,129 @@
+@import '../../assets/scss/variables';
+
+.blog-card {
+  width: 100%;
+  position: relative;
+  transition: 0.4s cubic-bezier(0.5, 2, 0.6, 1);
+  border: 1px solid rgba($white, 0.05);
+
+  &:hover {
+    transform: translateY(-5px);
+
+    .blog-card__title {
+      &:hover {
+        a {
+          color: $accent-primary;
+        }
+      }
+    }
+  }
+
+  &__title {
+    font-weight: bolder;
+  }
+
+  &__date {
+    font-family: $font-stack-monospace;
+    font-size: $font-size-xs;
+  }
+}
+
+// Stacked variant of blog card
+.blog-card-stacked {
+  min-height: 300px;
+  max-height: 300px;
+  border: 1px solid rgba($white, 0.05);
+
+  &::after {
+    position: absolute;
+    content: '';
+    inset: 0;
+    background: rgba($dark-tertiary, 0.93);
+  }
+
+  .blog-card__info {
+    padding: 2rem;
+    position: absolute;
+    z-index: $z-index-layer-1;
+    bottom: 0;
+    width: 100%;
+    line-height: 1.4;
+  }
+
+  .blog-card__title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+
+    a {
+      display: block;
+    }
+  }
+
+  .blog-card__cover {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+
+    &--img {
+      object-fit: cover;
+      min-width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// Inline blog card
+.blog-card-inline {
+  display: flex;
+  flex-direction: row-reverse;
+  margin-bottom: 2rem;
+  padding: 2rem;
+  background: $dark-tertiary;
+
+  @media screen and (max-width: $screen-md-max) {
+    flex-direction: column;
+  }
+
+  .blog-card__cover {
+    width: 300px;
+    height: 200px;
+    overflow: hidden;
+    align-self: flex-start;
+    margin-right: 2rem;
+    @media screen and (max-width: $screen-md-max) {
+      margin-top: 2rem;
+      width: 100%;
+    }
+
+    &--img {
+      border-radius: 3px;
+      object-fit: cover;
+      min-width: 100%;
+      height: 100%;
+    }
+  }
+
+  .blog-card__title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    align-items: flex-end;
+    align-self: flex-end;
+    color: $white;
+
+    &:hover {
+      a {
+        color: $accent-primary;
+      }
+    }
+  }
+
+  .blog-card__info {
+    flex: 1;
+  }
+
+  .blog-card__excerpt {
+    margin-bottom: 1.5rem;
+    font-size: $font-size-sm;
+  }
+}

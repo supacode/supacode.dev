@@ -4,7 +4,6 @@
   display: flex;
   padding-bottom: 6rem;
   justify-content: space-between;
-  padding-bottom: 10rem;
 
   &__img {
     flex: 1;
@@ -12,7 +11,6 @@
     display: flex;
     flex-direction: column;
     margin-right: 4rem;
-    margin-top: 5rem;
     align-self: flex-start;
 
     &::after {
@@ -98,12 +96,11 @@
     &__img {
       width: 100%;
       margin-bottom: 2rem;
-      width: 60%;
+      width: 65%;
 
       &::after {
         top: 5px;
         left: 5px;
-        z-index: -1;
       }
     }
   }

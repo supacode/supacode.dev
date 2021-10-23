@@ -3,5 +3,7 @@
  *
  * See: https://www.gatsbyjs.com/docs/browser-apis/
  */
+import '@fontsource/roboto-mono';
+import '@fontsource/merriweather';
 
-// You can delete this file if you're not using it
+import 'prismjs/themes/prism-tomorrow.css';

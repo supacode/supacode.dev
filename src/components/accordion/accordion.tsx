@@ -4,12 +4,12 @@ import cn from 'classnames';
 import './accordion.scss';
 import { chevronRight } from '../../assets/icons';
 
-interface AccordionProps {
+type AccordionProps = {
   title: string;
   company: string;
   duration?: string;
   index: number;
-}
+};
 
 export const Accordion: React.FC<AccordionProps> = ({
   children,

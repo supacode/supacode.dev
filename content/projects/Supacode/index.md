@@ -6,7 +6,7 @@ tools:
   - Typescript
   - GraphQL
   - Gatsby
-image: './Supacode.png'
+image: Supacode.png
 github: 'https://github.com/supacodes/supacode.dev'
 ---
 

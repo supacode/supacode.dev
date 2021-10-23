@@ -12,7 +12,7 @@
       color: $grey-light;
       font-size: $font-size-xs;
       font-family: $font-stack-monospace;
-      transition: 0.4s ease-out;
+      transition: 0.4s ease-out color;
 
       &:hover {
         color: $accent-primary;
@@ -31,7 +31,7 @@
     height: 27px;
     width: 35px;
     cursor: pointer;
-    z-index: 100;
+    z-index: $z-index-layer-5;
     cursor: pointer;
 
     &__line {
@@ -85,7 +85,7 @@
     position: fixed;
     background: lighten($color: $dark-primary, $amount: 10%);
     padding-right: 3rem;
-    z-index: 90;
+    z-index: $z-index-layer-4;
     top: 0;
     right: 0;
     width: 0; // transitioning in fly-out menu
@@ -150,14 +150,12 @@
   }
 }
 
-// Should this be here or in the layout scss file?
-// I'll decide later
 .blur {
   overflow-y: hidden;
-  height: 100vh;
-  position: fixed;
+  position: absolute;
 
   &::after {
+    z-index: $z-index-layer-3;
     content: '';
     position: absolute;
     height: 100%;
@@ -168,7 +166,7 @@
   }
 }
 
-@media screen and (max-width: $screen-md-min) {
+@media screen and (max-width: $screen-md-max) {
   .overlay {
     &__open {
       overflow: hidden;

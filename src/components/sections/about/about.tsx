@@ -1,13 +1,10 @@
 import React from 'react';
 import { StaticImage } from 'gatsby-plugin-image';
-import { graphql } from 'gatsby';
 
 import { tools } from '../../../assets/icons';
 import { AppLink } from '../../AppLink';
 
 import './about.scss';
-
-export interface AboutProps {}
 
 const skills = [
   { name: 'HTML', icon: tools.html5 },
@@ -28,13 +25,13 @@ const skills = [
   { name: 'Software Testing', icon: tools.jest },
 ];
 
-export const About: React.FC<AboutProps> = () => {
+export const About: React.FC = () => {
   return (
-    <div className="about" id="about">
+    <section className="about section" id="about">
       <div className="about__img">
         <StaticImage
           className="about__img--img"
-          src="../../../images/maverick-square.jpg"
+          src="../../../images/maverick.jpg"
           alt="Maverick"
           width={600}
           formats={['auto', 'avif', 'webp']}
@@ -69,6 +66,6 @@ export const About: React.FC<AboutProps> = () => {
           ))}
         </ul>
       </div>
-    </div>
+    </section>
   );
 };

@@ -7,7 +7,7 @@ import './appLink.scss';
 // TODO whitelist/blacklist props for links and buttons
 // TODO validate rest parameter
 
-export interface LinkProps {
+type LinkProps = {
   text?: string;
   href?: string;
   icon?: JSX.Element;
@@ -17,7 +17,7 @@ export interface LinkProps {
   external?: boolean;
   clearStyles?: boolean;
   onClick?: (evt: React.SyntheticEvent<EventTarget>) => void;
-}
+};
 
 export const AppLink: React.FC<LinkProps> = ({
   text,

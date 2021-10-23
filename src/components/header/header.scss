@@ -1,15 +1,14 @@
 @import '../../assets/scss/variables';
 
 .main-header {
-  width: 100%;
-
   &__inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem 2.5rem;
+    padding: 3rem 2.5rem;
     max-width: $site-width + 300;
     margin: auto;
+    transition: 0.4s ease-out;
   }
 
   &__logo {
@@ -21,5 +20,17 @@
 @media screen and (max-width: $screen-sm-max) {
   .main-header {
     top: 0;
+  }
+}
+
+.main-header__scrolled {
+  position: sticky;
+  top: 0;
+  z-index: $z-index-layer-4;
+  background: rgba($dark-primary, 0.95);
+  box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
+
+  .main-header__inner {
+    padding: 1rem 1.5rem;
   }
 }
