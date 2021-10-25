@@ -4,8 +4,8 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { tools } from '../../../assets/icons';
 import { AppLink } from '../../AppLink';
 
-import './about.scss';
 import { useScrollReveal } from '../../../hooks';
+import './about.scss';
 
 const skills = [
   { name: 'HTML', icon: tools.html5 },
