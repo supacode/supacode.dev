@@ -1,8 +1,8 @@
 import React from 'react';
 
 import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
-
 import { externalLink, github as githubIcon } from '../../assets/icons';
+import { useScrollReveal } from '../../hooks';
 
 import './project.scss';
 
