@@ -9,6 +9,9 @@
     max-width: $site-width + 300;
     margin: auto;
     transition: 0.4s ease-out;
+    @media screen and (max-width: $screen-sm-max) {
+      padding: 3rem 1.5rem;
+    }
   }
 
   &__logo {

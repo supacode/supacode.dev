@@ -5,6 +5,7 @@ import { tools } from '../../../assets/icons';
 import { AppLink } from '../../AppLink';
 
 import './about.scss';
+import { useScrollReveal } from '../../../hooks';
 
 const skills = [
   { name: 'HTML', icon: tools.html5 },
@@ -26,6 +27,15 @@ const skills = [
 ];
 
 export const About: React.FC = () => {
+  useScrollReveal({
+    selector: '.tools__tool',
+    options: { interval: 100 },
+  });
+
+  useScrollReveal({
+    selector: '.about',
+  });
+
   return (
     <section className="about section" id="about">
       <div className="about__img">

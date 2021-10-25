@@ -34,10 +34,12 @@
     "react-helmet": "^6.1.0",
     "react-reveal": "^1.2.2",
     "react-transition-group": "^4.4.2",
-    "sass": "^1.35.2"
+    "sass": "^1.35.2",
+    "scrollreveal": "^4.0.9"
   },
   "devDependencies": {
     "@types/react-helmet": "^6.1.2",
+    "@types/scrollreveal": "0.0.7",
     "@typescript-eslint/eslint-plugin": "^4.28.2",
     "@typescript-eslint/parser": "^4.28.2",
     "eslint": "^7.30.0",

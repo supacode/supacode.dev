@@ -4,14 +4,26 @@ import { AppLink } from '../../AppLink';
 import { chevronRight } from '../../../assets/icons';
 import { SocialLinks } from '../../social-links';
 import { useWindowSize } from '../../../hooks';
+import { viewports } from '../../../constants/config';
+import { useScrollReveal } from '../../../hooks';
 
 import './hero.scss';
-import { viewports } from '../../../constants/config';
 
 export const Hero: React.FC = () => {
   const { width } = useWindowSize();
 
   const isDesktop = width > viewports.screenXlMin;
+
+  const heroElementSelectors = [
+    { el: '.hero__left', delay: 200 },
+    { el: '.hero__tag-text', delay: 300 },
+    { el: '.hero__desc-text', delay: 500 },
+    { el: '.hero__btn', delay: 700 },
+  ];
+
+  heroElementSelectors.map((item) => {
+    useScrollReveal({ selector: item.el, options: { delay: item.delay } });
+  });
 
   return (
     <section className="hero" id="content">
@@ -29,12 +41,14 @@ export const Hero: React.FC = () => {
           updates on projects I&apos;m working on.
         </p>
 
-        <AppLink
-          icon={chevronRight}
-          text="Contact Me"
-          title="Send me an email"
-          href="mailto:supacode@gmail.com"
-        />
+        <div className="hero__btn">
+          <AppLink
+            icon={chevronRight}
+            text="Contact Me"
+            title="Send me an email"
+            href="mailto:supacode@gmail.com"
+          />
+        </div>
       </div>
 
       <SocialLinks direction={isDesktop ? 'stacked' : 'inline'} />

@@ -5,6 +5,7 @@ import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { externalLink, github as githubIcon } from '../../assets/icons';
 
 import './project.scss';
+import { useScrollReveal } from '../../hooks';
 
 export type ProjectType = {
   title: string;
@@ -24,6 +25,13 @@ export const ProjectItem: React.FC<ProjectType> = ({
   github,
   tools,
 }) => {
+  useScrollReveal({
+    selector: '.project',
+    options: {
+      interval: 100,
+    },
+  });
+
   return (
     <div className="project">
       <div className="project__content">

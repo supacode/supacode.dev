@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import { IGatsbyImageData, GatsbyImage } from 'gatsby-plugin-image';
 import cn from 'classnames';
+import { useScrollReveal } from '../../hooks';
 
 export type Blog = {
   title: string;
@@ -22,6 +23,13 @@ export const BlogCard: React.FC<Blog> = ({
 }) => {
   const isInline = layout === 'inline';
   const isStacked = layout === 'stacked';
+
+  useScrollReveal({
+    selector: '.blog-card',
+    options: {
+      interval: 100,
+    },
+  });
 
   return (
     <div

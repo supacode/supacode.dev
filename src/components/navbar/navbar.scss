@@ -105,12 +105,17 @@
     &__open li {
       animation: slideIn 0.5s ease forwards;
       animation-delay: 0.3s;
+
+      @media (prefers-reduced-motion: reduce) {
+        animation-delay: 0s;
+      }
     }
 
     &__nav {
       position: relative;
       height: 75%;
       top: 50%;
+      right: -1rem;
       padding-top: 2rem;
       transform: translateY(-50%);
       text-align: right;
