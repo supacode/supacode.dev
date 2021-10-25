@@ -24,6 +24,7 @@ export const SEO: React.FC<SEO> = ({ title, description, image }) => {
             siteUrl
             defaultImage: image
             twitterUsername
+            themeColor
           }
         }
       }
@@ -36,6 +37,7 @@ export const SEO: React.FC<SEO> = ({ title, description, image }) => {
     siteUrl,
     defaultImage,
     twitterUsername,
+    themeColor,
   } = site.siteMetadata;
 
   const seo = {
@@ -55,6 +57,7 @@ export const SEO: React.FC<SEO> = ({ title, description, image }) => {
 
       <meta name="description" content={seo.description} />
       <meta name="image" content={seo.image} />
+      <meta name="theme-color" content={themeColor} />
 
       <meta property="og:title" content={seo.title} />
       <meta property="og:description" content={seo.description} />
