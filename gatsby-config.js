@@ -11,6 +11,7 @@ module.exports = {
     siteUrl: 'https://www.supacode.dev',
     image: '/preview.png', // Path to your image you placed in the
     // 'static' folder
+    themeColor: '#1a2130',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -72,7 +73,7 @@ module.exports = {
         short_name: `supacode`,
         start_url: `/`,
         background_color: `#1f2029`,
-        theme_color: ` #1f2029`,
+        themeColor: ` #1f2029`,
         display: `minimal-ui`,
         icon: `src/images/supacode.png`, // This path is relative to the
         // root of the site.
