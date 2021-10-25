@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import cn from 'classnames';
 
-import './accordion.scss';
 import { chevronRight } from '../../assets/icons';
+import { useScrollReveal } from '../../hooks';
+
+import './accordion.scss';
 
 type AccordionProps = {
   title: string;
@@ -22,8 +24,15 @@ export const Accordion: React.FC<AccordionProps> = ({
 
   const clickHandler = () => setIsActive(!isActive);
 
+  useScrollReveal({
+    selector: '.accordion',
+    options: {
+      interval: 200,
+    },
+  });
+
   return (
-    <div className={'accordion'}>
+    <div className="accordion">
       <h3 id={`experience-${index}`}>
         <button
           className="accordion__btn"

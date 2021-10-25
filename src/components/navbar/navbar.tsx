@@ -71,7 +71,7 @@ export const Navbar: React.FC = () => {
         <nav className="overlay__nav">
           <ul>
             {routes.map((link) => (
-              <li key={link.id}>
+              <li key={link.id} className="overlay__nav--list">
                 <Link
                   onClick={() => isSmallDevice && toggleSideDrawer()}
                   to={link.url}

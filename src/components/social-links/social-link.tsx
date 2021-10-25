@@ -2,7 +2,7 @@ import React from 'react';
 import cn from 'classnames';
 
 import { socials } from '../../constants/socialLinks';
-
+import { useScrollReveal } from '../../hooks';
 import './social-link.scss';
 
 type SocialLinksProps = {
@@ -10,6 +10,14 @@ type SocialLinksProps = {
 };
 
 export const SocialLinks: React.FC<SocialLinksProps> = ({ direction }) => {
+  useScrollReveal({
+    selector: '.social-links--list',
+    options: {
+      delay: 700,
+      interval: 50,
+    },
+  });
+
   return (
     <ul
       className={cn('social-links', {

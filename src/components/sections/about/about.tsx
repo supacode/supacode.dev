@@ -4,6 +4,7 @@ import { StaticImage } from 'gatsby-plugin-image';
 import { tools } from '../../../assets/icons';
 import { AppLink } from '../../AppLink';
 
+import { useScrollReveal } from '../../../hooks';
 import './about.scss';
 
 const skills = [
@@ -26,6 +27,15 @@ const skills = [
 ];
 
 export const About: React.FC = () => {
+  useScrollReveal({
+    selector: '.tools__tool',
+    options: { interval: 100 },
+  });
+
+  useScrollReveal({
+    selector: '.about',
+  });
+
   return (
     <section className="about section" id="about">
       <div className="about__img">

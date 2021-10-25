@@ -6,6 +6,7 @@ import { BlogCard, Blog } from '../../blogcard';
 import { AppLink } from '../../AppLink';
 import { chevronRight } from '../../../assets/icons';
 import { blogRoutes } from '../../../constants/path';
+import { useScrollReveal } from '../../../hooks';
 import './blog-section.scss';
 
 type BlogQuery = {
@@ -22,6 +23,8 @@ type BlogQuery = {
 };
 
 export const BlogSection: React.FC = () => {
+  useScrollReveal({ selector: '.blog-section__read-more-cta' });
+
   const data = useStaticQuery<BlogQuery>(graphql`
     {
       blog: allMarkdownRemark(
