@@ -5,7 +5,6 @@ import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
 import { externalLink, github as githubIcon } from '../../assets/icons';
 
 import './project.scss';
-import { useScrollReveal } from '../../hooks';
 
 export type ProjectType = {
   title: string;
