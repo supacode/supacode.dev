@@ -35,7 +35,7 @@ export const Hero: React.FC = () => {
 
         <p className="hero__desc-text">
           <span aria-label="emoji wave">👋🏽</span> &nbsp; Hey there! I&apos;m
-          Maverick, a Software Developer with primary a focus on Frontend
+          Maverick, a Software Developer with a primary focus on Frontend
           Engineering. <br />
           Welcome to my little corner of the web, where I share notes, code
           snippets, and resources on topics that interest me.
