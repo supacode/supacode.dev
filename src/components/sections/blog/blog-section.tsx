@@ -6,8 +6,8 @@ import { BlogCard, Blog } from '../../blogcard';
 import { AppLink } from '../../AppLink';
 import { chevronRight } from '../../../assets/icons';
 import { blogRoutes } from '../../../constants/path';
-import './blog-section.scss';
 import { useScrollReveal } from '../../../hooks';
+import './blog-section.scss';
 
 type BlogQuery = {
   blog: {
