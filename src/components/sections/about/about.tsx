@@ -15,12 +15,15 @@ const skills = [
   { name: 'Typescript', icon: tools.typescript },
   { name: 'VueJS', icon: tools.vuejs },
   { name: 'React/React Native', icon: tools.react },
+  { name: 'Redux', icon: tools.redux },
+  { name: 'GraphQL', icon: tools.graphql },
+  { name: 'Webpack', icon: tools.webpack },
   { name: 'NodeJS', icon: tools.nodejs },
   { name: 'Firebase', icon: tools.firebase },
-  { name: 'GraphQL', icon: tools.graphql },
   { name: 'Postgres', icon: tools.postgres },
   { name: 'MongoDB', icon: tools.mongodb },
   { name: 'Docker', icon: tools.docker },
+  { name: 'AWS', icon: tools.aws },
   { name: 'Kubernetes', icon: tools.k8s },
   { name: 'Git', icon: tools.git },
   { name: 'Software Testing', icon: tools.jest },
@@ -36,12 +39,16 @@ export const About: React.FC = () => {
     selector: '.about',
   });
 
+  useScrollReveal({
+    selector: '.about__img',
+  });
+
   return (
     <section className="about section" id="about">
       <div className="about__img">
         <StaticImage
           className="about__img--img"
-          src="../../../images/maverick.jpg"
+          src="../../../images/supahoodie.jpeg"
           alt="Maverick"
           width={600}
           formats={['auto', 'avif', 'webp']}
