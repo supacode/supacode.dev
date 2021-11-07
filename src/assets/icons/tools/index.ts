@@ -1,3 +1,4 @@
+export { aws } from './aws';
 export { docker } from './docker';
 export { github } from './github';
 export { graphql } from './graphql';
@@ -5,6 +6,7 @@ export { k8s } from './k8s';
 export { javascript } from './javascript';
 export { typescript } from './typescript';
 export { react } from './react';
+export { redux } from './redux';
 export { scss } from './scss';
 export { mongodb } from './mongodb';
 export { firebase } from './firebase';
@@ -16,3 +18,4 @@ export { jest } from './jest';
 export { vuejs } from './vuejs';
 export { nodejs } from './nodejs';
 export { html5 } from './html5';
+export { webpack } from './webpack';

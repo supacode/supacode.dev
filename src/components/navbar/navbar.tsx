@@ -34,7 +34,7 @@ export const Navbar: React.FC = () => {
     const el = e.target as HTMLElement;
     const elClicked = el.tagName.toLowerCase();
 
-    const exclude = ['a', 'div'];
+    const exclude = ['a'];
 
     if (exclude.includes(elClicked) || el.classList.contains(BACKDROP_CN)) {
       closeSideDrawer();
