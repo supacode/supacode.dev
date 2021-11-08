@@ -7,4 +7,4 @@ url: '#'
 date: 2020-10-01
 ---
 
-Coming Soon
+- Hired as a contractor to create features and maintain an event website using VueJS, NuxtJS.

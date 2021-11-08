@@ -50,11 +50,11 @@ export const BlogCard: React.FC<Blog> = ({
 
         {date && (
           <p className="blog-card__date">
-            <time>
+            <span>
               {date.toLocaleDateString('en-us', {
                 dateStyle: 'full',
               })}
-            </time>
+            </span>
           </p>
         )}
       </div>

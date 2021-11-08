@@ -66,7 +66,7 @@ export const BlogSection: React.FC = () => {
     <section className="section blog-section" id="blog">
       <h2 className="section__title">Blog</h2>
 
-      <div className="blog-section__featured" id="content">
+      <div className="blog-section__featured">
         {blogPosts.map((item, index) => {
           const blog = item.node.frontmatter;
 

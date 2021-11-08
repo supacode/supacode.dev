@@ -46,7 +46,7 @@ export const Experience: React.FC = () => {
   const experiences = data.experience.edges;
 
   return (
-    <section className="experience section">
+    <section>
       <h2 className="section__title" id="experience">
         Experience
       </h2>
@@ -55,7 +55,7 @@ export const Experience: React.FC = () => {
         const ex = node.frontmatter;
 
         return (
-          <div className="experience__content" key={ex.duration}>
+          <div key={ex.duration}>
             <Accordion
               key={ex.title}
               title={ex.title}

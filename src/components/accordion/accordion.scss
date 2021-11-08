@@ -105,6 +105,11 @@
     padding: 1rem 0 4rem 0;
     width: 80%;
     margin: auto;
+
+    li {
+      list-style: circle;
+      margin-bottom: 1rem;
+    }
   }
 }
 
