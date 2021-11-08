@@ -7,4 +7,5 @@ url: '#'
 date: 2020-11-01
 ---
 
-Coming Soon
+- Worked as a Fullstack Engineer, on a rendering software that converts user's uploaded media to 3D rendered art space.
+- Worked primarily with ReactJS, Material UI, Express, MongoDB/Mongoose, Docker, Unity3D.
