@@ -66,8 +66,8 @@ export const About: React.FC = () => {
         </p>
         <p>
           I&apos;ve been working professionally as a Software Developer for the
-          last ~4 years. I&apos;m currently contracting as a Frontend Engineer
-          with{' '}
+          last ~4 years. I&apos;m currentlya Frontend Engineer
+          at{' '}
           <AppLink href="https://neighborhoods.com" clearStyles>
             Neighborhoods.com™
           </AppLink>{' '}
