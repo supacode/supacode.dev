@@ -8,7 +8,7 @@ export const socials = [
   },
   {
     name: 'GitHub',
-    url: 'https://github.com/supacodes',
+    url: 'https://github.com/supacode',
     icon: github,
   },
   {
