@@ -1,7 +1,7 @@
 import React from 'react';
 import { GatsbyImage } from 'gatsby-plugin-image';
 
-import type { ProjectType } from '../../types';
+import type { Project as ProjectType } from '../../types';
 import { externalLink, github as githubIcon } from '../../assets/icons';
 import { useScrollReveal } from '../../hooks';
 
