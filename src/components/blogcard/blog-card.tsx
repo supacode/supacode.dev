@@ -1,17 +1,10 @@
 import React from 'react';
-import { Link } from 'gatsby';
-import { IGatsbyImageData, GatsbyImage } from 'gatsby-plugin-image';
 import cn from 'classnames';
-import { useScrollReveal } from '../../hooks';
+import { Link } from 'gatsby';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
-export type Blog = {
-  title: string;
-  slug: string;
-  date: Date;
-  excerpt?: string;
-  featuredImage?: IGatsbyImageData;
-  layout?: 'inline' | 'stacked';
-};
+import { Blog } from '../../types';
+import { useScrollReveal } from '../../hooks';
 
 export const BlogCard: React.FC<Blog> = ({
   title,

@@ -2,7 +2,7 @@
 title: 'Frontend Engineer'
 company: 'Neighborhoods.com'
 location: 'Chicago'
-duration: 'Feb 2021 - Present'
+duration: 'Feb 2021 - Apr 2022'
 url: '#'
 date: 2021-02-01
 ---

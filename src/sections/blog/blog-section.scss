@@ -1,4 +1,4 @@
-@import '../../../assets/scss/variables';
+@import '../../assets/scss/variables';
 
 .blog-section {
   .blog-card {
@@ -11,6 +11,7 @@
           font-size: 1.5rem;
         }
       }
+
       @media screen and (max-width: $screen-md-max) {
         grid-column: 1 / 2;
       }

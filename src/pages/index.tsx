@@ -3,12 +3,12 @@ import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
 import { Layout } from '../layouts/main';
-import { Hero } from '../components/sections/hero';
-import { About } from '../components/sections/about';
-import { Experience } from '../components/sections/experience';
-import { Project } from '../components/sections/projects';
+import { Hero } from '../sections/hero';
+import { About } from '../sections/about';
+import { Experience } from '../sections/experience';
+import { Project } from '../sections/projects';
+import { BlogSection } from '../sections/blog';
 import { SEO } from '../components/seo';
-import { BlogSection } from '../components/sections/blog';
 
 export const IndexPage: React.FC = () => {
   const { site } = useStaticQuery(

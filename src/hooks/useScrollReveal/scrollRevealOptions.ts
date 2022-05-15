@@ -1,16 +1,15 @@
-import { CSSProperties } from 'react';
-
-export type ScrollRevealOptions = {
+export type ScrollRevealOptionType = {
   delay?: number;
   interval?: number;
   origin?: string;
 };
 
+// eslint-disable-next-line @typescript-eslint/explicit-module-boundary-types
 export const scrollRevealOptions = ({
   delay,
   interval,
   origin,
-}: ScrollRevealOptions): CSSProperties => {
+}: ScrollRevealOptionType) => {
   return {
     origin: origin || 'bottom',
     distance: '15px',

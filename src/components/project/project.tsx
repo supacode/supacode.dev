@@ -1,20 +1,11 @@
 import React from 'react';
+import { GatsbyImage } from 'gatsby-plugin-image';
 
-import { GatsbyImage, IGatsbyImageData } from 'gatsby-plugin-image';
+import type { ProjectType } from '../../types';
 import { externalLink, github as githubIcon } from '../../assets/icons';
 import { useScrollReveal } from '../../hooks';
 
 import './project.scss';
-
-export type ProjectType = {
-  title: string;
-  link: string;
-  tools: string[];
-  company: string;
-  html?: string;
-  github: string;
-  image?: IGatsbyImageData;
-};
 
 export const ProjectItem: React.FC<ProjectType> = ({
   title,

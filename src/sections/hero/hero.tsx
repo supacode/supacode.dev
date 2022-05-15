@@ -1,11 +1,11 @@
 import React from 'react';
 
-import { AppLink } from '../../AppLink';
-import { chevronRight } from '../../../assets/icons';
-import { SocialLinks } from '../../social-links';
-import { useWindowSize } from '../../../hooks';
-import { viewports } from '../../../constants/config';
-import { useScrollReveal } from '../../../hooks';
+import { AppLink } from '../../components/AppLink';
+import { chevronRight } from '../../assets/icons';
+import { SocialLinks } from '../../components/social-links';
+import { useWindowSize } from '../../hooks';
+import { useScrollReveal } from '../../hooks';
+import { viewports } from '../../constants/config';
 
 import './hero.scss';
 

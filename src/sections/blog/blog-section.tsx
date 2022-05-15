@@ -2,11 +2,12 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 
-import { BlogCard, Blog } from '../../blogcard';
-import { AppLink } from '../../AppLink';
-import { chevronRight } from '../../../assets/icons';
-import { blogRoutes } from '../../../constants/path';
-import { useScrollReveal } from '../../../hooks';
+import { BlogCard } from '../../components/blogcard';
+import { AppLink } from '../../components/AppLink';
+import { chevronRight } from '../../assets/icons';
+import { blogRoutes } from '../../constants/path';
+import { useScrollReveal } from '../../hooks';
+import type { Blog as BlogType } from '../../types';
 import './blog-section.scss';
 
 type BlogQuery = {
@@ -16,7 +17,7 @@ type BlogQuery = {
         fields: {
           slug: string;
         };
-        frontmatter: Blog;
+        frontmatter: BlogType;
       };
     }[];
   };

@@ -1,14 +1,14 @@
 import { useEffect } from 'react';
 import {
   scrollRevealOptions,
-  ScrollRevealOptions,
+  ScrollRevealOptionType,
 } from './scrollRevealOptions';
 import scrollReveal from '../../utils/scrollreveal';
 import { usePrefersReducedMotion } from '..';
 
 type useScrollRevealProps = {
   selector: string;
-  options?: ScrollRevealOptions;
+  options?: ScrollRevealOptionType;
 };
 
 export const useScrollReveal = ({
@@ -24,9 +24,7 @@ export const useScrollReveal = ({
   const useReducedMotion = usePrefersReducedMotion();
 
   useEffect(() => {
-    if (useReducedMotion) {
-      return;
-    }
+    if (useReducedMotion) return;
 
     scrollReveal && scrollReveal.reveal(selector, configOptions);
   }, []);

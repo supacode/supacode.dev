@@ -2,7 +2,8 @@ import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 import { getImage } from 'gatsby-plugin-image';
 
-import { ProjectItem, ProjectType } from '../../project';
+import { ProjectItem } from '../../components/project';
+import { Project as ProjectType } from '../../types';
 
 type ProjectsQuery = {
   projects: {

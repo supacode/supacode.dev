@@ -1,19 +1,14 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
 
-import { Accordion } from '../../accordion';
+import type { Experience as ExperienceType } from '../../types';
+import { Accordion } from '../../components/accordion';
 
-type Experience = {
-  title: string;
-  duration: string;
-  company: string;
-  description: string;
-};
 export type ExperienceQuery = {
   experience: {
     edges: {
       node: {
-        frontmatter: Experience;
+        frontmatter: ExperienceType;
         html: string;
       };
     }[];
@@ -52,16 +47,16 @@ export const Experience: React.FC = () => {
       </h2>
 
       {experiences.map(({ node }, index) => {
-        const ex = node.frontmatter;
+        const experience = node.frontmatter;
 
         return (
-          <div key={ex.duration}>
+          <div key={experience.duration}>
             <Accordion
-              key={ex.title}
-              title={ex.title}
+              key={experience.title}
+              title={experience.title}
               index={index + 1}
-              company={ex.company}
-              duration={ex.duration}
+              company={experience.company}
+              duration={experience.duration}
             >
               <div dangerouslySetInnerHTML={{ __html: node.html }} />
             </Accordion>
