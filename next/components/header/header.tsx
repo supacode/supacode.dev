@@ -1,16 +1,12 @@
 import React, { useRef, useState, useEffect } from 'react';
 import cn from 'classnames';
-import { AppLink } from '../AppLink';
 
-import { Navbar } from '../navbar';
-import { SkipLink } from '../skipLink';
-
-import './header.scss';
+import styles from './header.module.scss';
 
 export const Header: React.FC = () => {
   const headerRef = useRef<HTMLElement>(null);
   const [isScrollingUp, setIsScrollingUp] = useState(false);
-  const [lastScrollPos, setLastScrollPos] = useState(0);
+  const [lastScrollPos, _setLastScrollPos] = useState(0);
 
   const handleScroll = () => {
     window.addEventListener(
@@ -43,22 +39,9 @@ export const Header: React.FC = () => {
 
   return (
     <>
-      <SkipLink to={'#content'} />
-
-      <header
-        className={cn('main-header', {
-          'main-header__scrolled': isScrollingUp,
-        })}
-        ref={headerRef}
-      >
-        <div className="main-header__inner">
-          <h1 className="main-header__logo">
-            <AppLink href="/" clearStyles>
-              Supacode
-            </AppLink>
-          </h1>
-
-          <Navbar />
+      <header className={cn(styles['main-header'], {})} ref={headerRef}>
+        <div className={styles['main-header__inner']}>
+          <h1 className={styles['main-header__logo']}>Hello World</h1>
         </div>
       </header>
     </>
