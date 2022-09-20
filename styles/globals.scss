@@ -1,0 +1,31 @@
+@import './shared/index';
+@import './reset';
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;1,400;1,500&display=swap');
+
+body {
+  font-family: var(--font-stack-main);
+  background: var(--dark-primary);
+  color: var(--grey-light);
+  font-size: var(--font-size-base);
+}
+
+.site-wrapper {
+  max-width: var(--site-width);
+  margin: auto;
+  padding: 0 var(--spacing-40);
+
+  @media screen and (max-width: var(--screen-md-max)) {
+    padding: 0 var(--spacing-24);
+  }
+}
+
+.section {
+  margin-bottom: var(--spacing-128);
+
+  &__title {
+    font-size: var(--font-size-heading);
+    font-weight: 600;
+    margin-bottom: var(--spacing-24);
+  }
+}

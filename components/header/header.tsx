@@ -1,7 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react';
+import Link from 'next/link';
 import cn from 'classnames';
 
 import styles from './header.module.scss';
+import { Navbar } from './navbar';
 
 export const Header: React.FC = () => {
   const headerRef = useRef<HTMLElement>(null);
@@ -41,7 +43,11 @@ export const Header: React.FC = () => {
     <>
       <header className={cn(styles['main-header'], {})} ref={headerRef}>
         <div className={styles['main-header__inner']}>
-          <h1 className={styles['main-header__logo']}>Hello World</h1>
+          <h1 className={styles['main-header__logo']}>
+            <Link href="/">Supacode</Link>
+          </h1>
+
+          <Navbar />
         </div>
       </header>
     </>
