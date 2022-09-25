@@ -1,0 +1,16 @@
+.main-header {
+  &__inner {
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-48) var(--spacing-40);
+    transition: 0.4s ease-out;
+  }
+
+  &__logo {
+    font-size: 1rem;
+    color: var(--accent-primary);
+  }
+}

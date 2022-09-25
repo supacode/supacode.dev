@@ -1,4 +1,4 @@
-@import './shared/index';
+@import './partials/index';
 @import './reset';
 
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;1,400;1,500&display=swap');
@@ -11,21 +11,19 @@ body {
 }
 
 .site-wrapper {
-  max-width: var(--site-width);
   margin: auto;
   padding: 0 var(--spacing-40);
-
-  @media screen and (max-width: var(--screen-md-max)) {
-    padding: 0 var(--spacing-24);
-  }
 }
 
-.section {
-  margin-bottom: var(--spacing-128);
-
-  &__title {
-    font-size: var(--font-size-heading);
-    font-weight: 600;
-    margin-bottom: var(--spacing-24);
-  }
+.app-container {
+  max-width: 1000px;
+  margin: auto;
 }
+
+// components
+@import './components/header';
+@import './components/hero';
+@import './components/navbar';
+@import './components/about';
+@import './components/accordion';
+@import './components/experience';

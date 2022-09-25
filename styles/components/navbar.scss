@@ -1,0 +1,31 @@
+.hamburger {
+  position: relative;
+  width: 35px;
+  cursor: pointer;
+  cursor: pointer;
+
+  &__line {
+    background: var(--white);
+    height: 2px;
+    display: block;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all 0.5s ease;
+
+    &--1 {
+      width: 40%;
+    }
+
+    &--2 {
+      width: 70%;
+      top: 11px;
+    }
+
+    &--3 {
+      width: 100%;
+      top: 22px;
+    }
+  }
+}

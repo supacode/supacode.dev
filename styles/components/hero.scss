@@ -1,0 +1,29 @@
+.hero {
+  display: flex;
+  justify-content: space-between;
+  min-height: 100vh;
+  align-items: center;
+  margin-top: -8rem;
+
+  &__lead-text {
+    font-size: var(--font-size-4xl);
+    color: var(--grey-dark);
+    margin-bottom: var(--spacing-24);
+
+    span {
+      color: var(--accent-primary);
+    }
+  }
+
+  &__tag-text {
+    font-size: 4rem;
+    font-weight: 800;
+    color: var(--grey-light);
+    margin-bottom: var(--spacing-24);
+  }
+
+  &__desc-text {
+    line-height: 2;
+    width: 85%;
+  }
+}
