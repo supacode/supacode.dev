@@ -1,0 +1,121 @@
+.project {
+  margin-bottom: 2rem;
+  background: var(--dark-tertiary);
+  border: 1px solid rgba(var(--white), 0.05);
+  padding: 3rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1.5fr;
+  grid-template-rows: auto;
+
+  &__content {
+    margin-right: 2rem;
+  }
+
+  &__title {
+    font-size: var(--font-size-xxl);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: var(--accent-primary);
+  }
+
+  &__desc {
+    margin-bottom: 1rem;
+    line-height: 2;
+  }
+
+  &__tools {
+    list-style: disc;
+    margin-bottom: 1rem;
+    color: var(--grey-dark);
+
+    li {
+      font-size: var(--font-size-xs);
+      font-family: var(--font-stack-monospace);
+      display: inline-block;
+      margin-right: 1rem;
+      span {
+        margin-right: 3px;
+      }
+    }
+  }
+
+  &__img {
+    img {
+      border: 1px solid rgba(var(--white), 0.04);
+    }
+
+    .gatsby-image-wrapper,
+    a {
+      height: 100%;
+      display: block;
+    }
+  }
+
+  &__links {
+    a {
+      margin-right: 1rem;
+    }
+
+    svg {
+      width: 25px;
+
+      path {
+        fill: var(--grey-light);
+      }
+    }
+
+    a:hover {
+      svg {
+        path {
+          fill: var(--accent-primary);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .project {
+    padding: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    &__img,
+    &__content {
+      grid-row: 1 / auto;
+      grid-column: 1 / 3;
+    }
+
+    &__content {
+      padding: 2rem;
+      position: relative;
+      z-index: var(--z-index-layer-2);
+      margin: 0;
+    }
+
+    &__img {
+      filter: grayscale(40%) brightness(15%) opacity(30%);
+      background: var(--dark-primary);
+    }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .project {
+    &:nth-child(odd) {
+      grid-template-columns: 1.5fr 2fr;
+
+      .project__content {
+        grid-column: 2/ 3;
+        margin-right: 0;
+        margin-left: 2rem;
+      }
+
+      .project__img {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+    }
+  }
+}

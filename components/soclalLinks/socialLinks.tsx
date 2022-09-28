@@ -1,8 +1,6 @@
-import React from 'react';
 import cn from 'classnames';
 
 import { socials } from '../../constants/socialLinks';
-import styles from './socialLinks.module.scss';
 
 type SocialLinksProps = {
   direction: 'stacked' | 'inline';
@@ -11,9 +9,9 @@ type SocialLinksProps = {
 export const SocialLinks: React.FC<SocialLinksProps> = ({ direction }) => {
   return (
     <ul
-      className={cn(styles['social-links'], {
-        [styles['social-links__stacked']]: direction === 'stacked',
-        [styles['social-links__inline']]: direction === 'inline',
+      className={cn('social-links', {
+        'social-links__stacked': direction === 'stacked',
+        'social-links__inline': direction === 'inline',
       })}
     >
       {socials.map((social) => (

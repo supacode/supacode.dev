@@ -20,10 +20,15 @@ body {
   margin: auto;
 }
 
-// components
-@import './components/header';
-@import './components/hero';
-@import './components/navbar';
-@import './components/about';
-@import './components/accordion';
-@import './components/experience';
+@import '../modules/mainHeader/Header/Header';
+@import '../modules/mainHeader/Navbar/Navbar';
+@import '../modules/project/ProjectCard/ProjectCard';
+
+@import '../components/HeroSection/HeroSection';
+@import '../components/AboutSection/AboutSection';
+@import '../components/AboutSection/AboutSection';
+@import '../components/AboutSection/AboutSection';
+@import '../components/ui/Accordion/Accordion';
+@import '../components/Experience/Experience';
+@import '../components/SoclalLinks/SocialLinks';
+@import '../components/SiteFooter/SiteFooter';
