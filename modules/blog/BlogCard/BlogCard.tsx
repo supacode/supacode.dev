@@ -1,21 +1,20 @@
-import Link from 'next/link';
-import Image from 'next/image';
-import { StaticImageData } from 'next/image';
+import React from 'react';
 import cn from 'classnames';
+import Link from 'next/link';
 
-export type Blog = {
-  title: string;
-  slug: string;
-  date: Date;
-  excerpt?: string;
-  featuredImage?: StaticImageData;
+import type { Blog as BlogType } from '../types';
+import { AppImage } from '../../../components/ui/AppImage';
+
+type BlogProps = BlogType & {
   layout?: 'inline' | 'stacked';
 };
 
-export const BlogCard: React.FC<Blog> = ({
+const BLOG_URL_PREFIX = '/blog';
+
+export const BlogCard: React.FC<BlogProps> = ({
   title,
   slug,
-  featuredImage,
+  coverImage,
   date,
   excerpt,
   layout,
@@ -23,18 +22,29 @@ export const BlogCard: React.FC<Blog> = ({
   const isInline = layout === 'inline';
   const isStacked = layout === 'stacked';
 
+  const blogLink = `${BLOG_URL_PREFIX}/${slug}`;
+
   return (
     <div
       className={cn('blog-card', {
-        'blog-card-inline': isInline,
         'blog-card-stacked': isStacked,
+        'blog-card-inline': isInline,
       })}
-      key={slug}
     >
-      <div className="blog-card__info">
+      {coverImage && (
+        <Link href={blogLink}>
+          <div className="blog-card__img">
+            <AppImage src={coverImage} alt={title} className="blog-card__img" />
+          </div>
+        </Link>
+      )}
+
+      <div className="blog-card__content">
         {title && (
           <h3 className="blog-card__title">
-            <Link href={slug}>{title}</Link>
+            <Link href={blogLink}>
+              <a className="blog-card__title--link">{title}</a>
+            </Link>
           </h3>
         )}
 
@@ -42,36 +52,12 @@ export const BlogCard: React.FC<Blog> = ({
 
         {date && (
           <p className="blog-card__date">
-            <span>
-              {date.toLocaleDateString('en-us', {
-                dateStyle: 'full',
-              })}
-            </span>
+            {date.toLocaleDateString('en-us', {
+              dateStyle: 'full',
+            })}
           </p>
         )}
       </div>
-
-      {featuredImage && isStacked && (
-        <div className="blog-card__cover">
-          <Image
-            src={featuredImage}
-            className="blog-card__cover--img"
-            alt={title}
-            title={title}
-          />
-        </div>
-      )}
-
-      {featuredImage && isInline && (
-        <a className="blog-card__cover" href={slug}>
-          <Image
-            src={featuredImage}
-            className="blog-card__cover--img"
-            alt={title}
-            title={title}
-          />
-        </a>
-      )}
     </div>
   );
 };

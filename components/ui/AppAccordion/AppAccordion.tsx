@@ -3,14 +3,14 @@ import cn from 'classnames';
 
 import { chevronRight } from '../../../assets/icons';
 
-type AccordionProps = {
+type AppAccordionProps = {
   children?: React.ReactNode;
   head?: React.ReactNode;
   index: number;
   title?: string;
 };
 
-export const Accordion: React.FC<AccordionProps> = ({
+export const AppAccordion: React.FC<AppAccordionProps> = ({
   children,
   head,
   index,

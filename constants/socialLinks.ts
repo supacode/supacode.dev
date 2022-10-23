@@ -23,7 +23,7 @@ export const socials = [
   },
   {
     name: 'E-mail',
-    url: 'mailto:https://supacode@gmail.com',
+    url: 'mailto:supacode@gmail.com',
     icon: email,
   },
 ];

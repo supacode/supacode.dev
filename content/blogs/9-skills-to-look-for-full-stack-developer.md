@@ -1,8 +1,10 @@
 ---
 template: blog-post
-date: 2021-10-18T00:00:00
+date: '2021-10-18T00:00:00'
 title: 9 Skills To Look For In A Full-Stack Developer
-featuredImage: ../../../static/blog-images/computer-programmer-123.jpeg
+coverImage: '/assets/blog/computer-programmer-123.jpeg'
+excerpt: "In today's advanced, competitive, and digital world, if you talk about taking
+your business online in a cost-effective way"
 published: true
 ---
 

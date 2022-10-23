@@ -5,9 +5,15 @@ import { AboutSection } from '../components/AboutSection';
 import { Experience } from '../components/Experience';
 import { HeroSection } from '../components/HeroSection';
 import { SiteFooter } from '../components/SiteFooter';
-import { Project } from '../modules/project/ProjectSection';
+import { getAllPosts } from '../lib/api';
+import { BlogSection } from '../modules/blog/BlogSection';
+import { Blog } from '../modules/blog/types';
 
-const Home: NextPage = () => {
+type HomeProps = {
+  allPosts: Blog[];
+};
+
+const Home: NextPage<HomeProps> = ({ allPosts }) => {
   return (
     <div>
       <Head>
@@ -18,10 +24,26 @@ const Home: NextPage = () => {
       <HeroSection />
       <AboutSection />
       <Experience />
-      <Project />
+      <BlogSection posts={allPosts} />
       <SiteFooter />
     </div>
   );
+};
+
+export const getStaticProps = async () => {
+  const allPosts = getAllPosts([
+    'title',
+    'date',
+    'slug',
+    'coverImage',
+    'excerpt',
+  ]);
+
+  return {
+    props: {
+      allPosts,
+    },
+  };
 };
 
 export default Home;

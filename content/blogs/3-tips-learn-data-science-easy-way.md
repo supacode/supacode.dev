@@ -1,8 +1,10 @@
 ---
 template: blog-post
-date: 2021-09-28T00:00:00.000Z
+date: '2021-09-28T00:00:00.000Z'
 title: 3 Tips to Learn Data Science the Easy Way
-featuredImage: ../../../static/blog-images/data-science-xyz.jpg
+coverImage: '/assets/blog/data-science-xyz.jpg'
+excerpt: "There is no doubt that there is a huge demand for data scientists. In the United
+States, professionals make more than $113,000 a year."
 published: true
 ---
 

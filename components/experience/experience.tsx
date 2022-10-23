@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Accordion } from '../ui/Accordion';
+import { AppAccordion } from '../ui/AppAccordion';
 
 type Experience = {
   title?: string;
@@ -53,7 +53,7 @@ export const Experience: React.FC = () => {
       {experiences.map((exp) => {
         return (
           <div key={exp.duration}>
-            <Accordion
+            <AppAccordion
               key={exp.title}
               title={exp.title}
               index={experiences.indexOf(exp)}
@@ -74,7 +74,7 @@ export const Experience: React.FC = () => {
                   }}
                 />
               )}
-            </Accordion>
+            </AppAccordion>
           </div>
         );
       })}

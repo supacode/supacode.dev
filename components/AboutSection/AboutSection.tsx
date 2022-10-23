@@ -1,7 +1,8 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import aboutImg from '../../assets/images/mave.jpeg';
+import Image from 'next/image';
 import { tools } from '../../assets/icons';
+import { AppImage } from '../ui/AppImage';
 
 const skills = [
   { name: 'HTML', icon: tools.html5 },
@@ -29,8 +30,9 @@ export const AboutSection: React.FC = () => {
   return (
     <section className="about section" id="about">
       <div className="about__img">
-        <Image
+        <AppImage
           src={aboutImg}
+          loading="lazy"
           alt="Maverick"
           className="about__img--img"
           placeholder="blur"
