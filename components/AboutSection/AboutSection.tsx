@@ -36,32 +36,42 @@ export const AboutSection: React.FC = () => {
           alt="Maverick"
           className="about__img--img"
           placeholder="blur"
+          width={500}
+          height={500}
         />
       </div>
 
       <div className="about__content">
         <h2 className="about__heading">
-          A little <span>About Me</span>
+          A little <span className="about__heading--highlight">About Me</span>
         </h2>
-        <p>
+        <p className="about__text">
           I started Software Development in 2015 as a hobby, just out of
           curiosity after reading that video games are made from computer
           programming.
         </p>
-        <p>
+        <p className="about__text">
           I&apos;ve been working professionally as a Software Developer for the
           last ~4 years. I&apos;m currently a Frontend Engineer at{' '}
-          <Link href="https://neighborhoods.com">Neighborhoods.com™</Link> (a
-          real estate resource company in Chicago).
+          <Link href="https://neighborhoods.com" target="_blank">
+            Neighborhoods.com™
+          </Link>{' '}
+          (a real estate resource company in Chicago).
         </p>
-        <p>Here are some technologies I enjoy working with:</p>
+
+        <p className="about__text">
+          Here are some technologies I enjoy working with:
+        </p>
+
         <ul className="tools">
-          {skills.map((skill) => (
-            <li key={skill.name} className="tools__tool">
-              <span className="tools__tool--icon">{skill.icon}</span>
-              <span className="tools__tool--name">{skill.name}</span>
-            </li>
-          ))}
+          {skills.map((skill) => {
+            return (
+              <li key={skill.name} className="tools__tool">
+                <span className="tools__tool--icon">{skill.icon}</span>
+                <span className="tools__tool--name">{skill.name}</span>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>
