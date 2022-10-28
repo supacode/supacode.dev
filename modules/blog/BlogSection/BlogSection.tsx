@@ -11,21 +11,17 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ posts = [] }) => {
       <h2 className="blog-section__title">Blog</h2>
 
       <div className="blog-section__featured">
-        {posts.map((blog) => {
-          const blogDate = new Date(blog.date);
-
-          return (
-            <BlogCard
-              date={blogDate}
-              slug={blog.slug}
-              title={blog.title}
-              excerpt={blog.excerpt}
-              coverImage={blog.coverImage}
-              key={blog.slug}
-              layout="stacked"
-            />
-          );
-        })}
+        {posts.map((blog) => (
+          <BlogCard
+            date={blog.date}
+            slug={blog.slug}
+            title={blog.title}
+            excerpt={blog.excerpt}
+            coverImage={blog.coverImage}
+            key={blog.slug}
+            layout="stacked"
+          />
+        ))}
       </div>
     </section>
   );

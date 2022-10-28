@@ -28,30 +28,34 @@
     }
   }
 
+  &__img {
+    object-fit: cover;
+  }
+
   &__date {
     font-family: monospace;
     font-size: var(--font-size-xs);
-  }
-
-  &__img {
-    object-fit: cover;
   }
 }
 
 // Stacked variant of blog card
 .blog-card-stacked {
   min-height: 300px;
+  overflow: hidden;
 
   .blog-card__content {
     display: flex;
     height: 100%;
     width: 100%;
-    background: rgba(22, 27, 37, 0.85);
-    flex-direction: column;
     justify-content: flex-end;
-    align-self: flex-end;
+    flex-direction: column;
+    background: rgba(22, 27, 37, 0.85);
     padding: 2rem;
     z-index: 2;
+  }
+
+  .blog-card__img {
+    position: absolute;
   }
 }
 
@@ -61,19 +65,19 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
 
-  .blog-card__content {
-    padding: 0;
+  .blog-card__title {
+    font-size: 1.2rem;
   }
 
-  // Ugly hack for Next.js image component
-  .blog-card__img > span {
-    width: 300px !important;
-    height: 200px !important;
-    position: relative !important;
+  .blog-card__content {
+    p {
+      color: #cacaca;
+    }
   }
 
   .blog-card__img {
+    max-height: 180px;
     position: relative;
-    margin-right: 2rem;
+    padding-right: 2rem;
   }
 }

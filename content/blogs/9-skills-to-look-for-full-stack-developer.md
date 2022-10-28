@@ -1,11 +1,9 @@
 ---
-template: blog-post
 date: '2021-10-18T00:00:00'
 title: 9 Skills To Look For In A Full-Stack Developer
 coverImage: '/assets/blog/computer-programmer-123.jpeg'
 excerpt: "In today's advanced, competitive, and digital world, if you talk about taking
 your business online in a cost-effective way"
-published: true
 ---
 
 In today's advanced, competitive, and digital world, if you talk about taking
@@ -116,6 +114,6 @@ So, this is the complete list of skills a full-stack developer possesses. And
 there's no better choice than availing full-stack development services when you
 want to go online with your business in a cost-effective way.
 
-Article Source: http://EzineArticles.com/10526862 <br>
+Article Source: <a href="http://EzineArticles.com/10526862"><http://EzineArticles.com/10526862> </a>
 
-Image Credit: https://unsplash.com/photos/9SoCnyQmkzI
+Image Credit: <a href="https://unsplash.com/photos/9SoCnyQmkzI"><https://unsplash.com/photos/9SoCnyQmkzI></a>

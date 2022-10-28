@@ -5,14 +5,14 @@ type AppImageProps = {
   alt: string;
   title?: string;
   className?: string;
-  width?: number;
-  height?: number;
-  layout?: 'fill' | 'fixed' | 'intrinsic' | 'responsive';
+  width: number | undefined;
+  height: number | undefined;
   objectFit?: 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
   priority?: boolean;
   quality?: number;
   loading?: 'eager' | 'lazy';
   placeholder?: 'blur' | 'empty';
+  style?: React.CSSProperties;
   blurDataURL?: string;
 };
 
@@ -23,10 +23,9 @@ export const AppImage: React.FC<AppImageProps> = ({
   className,
   width,
   height,
-  layout = 'fill',
-  objectFit,
   priority,
   quality,
+  style,
   loading,
   placeholder,
   blurDataURL,
@@ -34,13 +33,12 @@ export const AppImage: React.FC<AppImageProps> = ({
   return (
     <Image
       src={src}
+      style={style}
       alt={alt}
       title={title}
       className={className}
       width={width}
       height={height}
-      layout={layout}
-      objectFit={objectFit}
       priority={priority}
       quality={quality}
       loading={loading}

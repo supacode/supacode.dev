@@ -33,26 +33,30 @@ export const BlogCard: React.FC<BlogProps> = ({
     >
       {coverImage && (
         <Link href={blogLink}>
-          <div className="blog-card__img">
-            <AppImage src={coverImage} alt={title} className="blog-card__img" />
-          </div>
+          <AppImage
+            className="blog-card__img"
+            src={coverImage}
+            alt={title}
+            width={700}
+            height={300}
+          />
         </Link>
       )}
 
       <div className="blog-card__content">
         {title && (
           <h3 className="blog-card__title">
-            <Link href={blogLink}>
-              <a className="blog-card__title--link">{title}</a>
+            <Link href={blogLink} className="blog-card__title--link">
+              {title}
             </Link>
           </h3>
         )}
 
         {excerpt && <p className="blog-card__excerpt">{excerpt}</p>}
 
-        {date && (
+        {typeof date === 'string' && (
           <p className="blog-card__date">
-            {date.toLocaleDateString('en-us', {
+            {new Date(date).toLocaleDateString('en-us', {
               dateStyle: 'full',
             })}
           </p>

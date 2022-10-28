@@ -29,3 +29,14 @@
     }
   }
 }
+
+.overlay {
+  &__nav {
+    &--list {
+      font-family: var(--font-stack-monospace);
+      display: inline-block;
+      font-size: var(--font-size-sm);
+      margin-left: var(--spacing-40);
+    }
+  }
+}

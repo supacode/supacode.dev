@@ -5,7 +5,8 @@ export const HeroSection: React.FC = () => {
     <section className="hero" id="content">
       <div className="hero__left">
         <h2 className="hero__lead-text">
-          My name is <span>Maverick</span>.
+          My name is{' '}
+          <span className="hero__lead-text--highlight">Maverick</span>.
         </h2>
 
         <h3 className="hero__tag-text">I code for fun, and as a job.</h3>

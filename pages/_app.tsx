@@ -1,8 +1,9 @@
+import React, { useEffect } from 'react';
 import type { AppProps } from 'next/app';
 import { Header } from '../modules/mainHeader/Header';
 import '../styles/globals.scss';
 
-const MyApp = ({ Component, pageProps }: AppProps): JSX.Element => {
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
   return (
     <>
       <Header />

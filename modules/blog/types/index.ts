@@ -1,7 +1,7 @@
 export type Blog = {
   title: string;
   slug: string;
-  date: Date;
+  date: string;
   excerpt?: string;
   coverImage?: string;
 };
