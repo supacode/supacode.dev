@@ -5,6 +5,16 @@
   margin-bottom: var(--spacing-64);
   justify-content: space-between;
 
+  &__title {
+    font-size: var(--font-size-3xl);
+    color: var(--grey-light);
+    font-weight: bold;
+
+    &--highlight {
+      color: var(--accent-primary);
+    }
+  }
+
   &__img {
     flex: 1;
     position: relative;
@@ -16,10 +26,12 @@
 
     &--img {
       object-fit: cover;
+      border-radius: var(--border-radius-sm);
     }
 
     // Create an outline around the image
     &::after {
+      border-radius: var(--border-radius-sm);
       content: '';
       border: 1px solid var(--accent-primary);
       height: 100%;
@@ -27,16 +39,6 @@
       position: absolute;
       top: var(--spacing-10);
       left: var(--spacing-10);
-    }
-  }
-
-  &__heading {
-    font-size: var(--font-size-3xl);
-    color: var(--grey-light);
-    font-weight: bold;
-
-    &--highlight {
-      color: var(--accent-primary);
     }
   }
 
@@ -67,11 +69,11 @@
       margin-right: var(--spacing-10);
       margin-bottom: var(--spacing-10);
       font-size: var(--font-size-xs);
-      background: rgba(9, 9, 9, 0.28);
+      background: var(--dark-tertiary);
       padding: var(--spacing-10) var(--spacing-14);
       color: var(--grey-light);
       font-weight: 500;
-      border-radius: 50rem;
+      border-radius: var(--border-radius-lg);
       line-height: 0;
 
       &--icon {

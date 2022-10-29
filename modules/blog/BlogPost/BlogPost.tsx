@@ -31,8 +31,6 @@ export const BlogPost: React.FC<BlogPostProps> = ({ post }) => {
         )}
       </header>
 
-      <hr className="article__divider" />
-
       {post.content && (
         <section
           className="article__content"

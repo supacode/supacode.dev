@@ -143,7 +143,21 @@ def calculate_average(numbers):
 <div class="remark-highlight">
   <pre class="language-js">
     <code>
-      <span class="token keyword">const</span> doc <span class="token operator">=</span> <span class="token function">getDocBySlug</span><span class="token punctuation">(</span>params<span class="token punctuation">.</span><span class="token property-access">slug</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+      <span class="token keyword">const</span> 
+      <span class="token operator">=</span> 
+      <span class="token function">getDocBySlug</span>
+      
+      <span class="token punctuation">(</span>
+      
+      params
+      
+      <span class="token punctuation">.</span>
+      
+      <span class="token property-access">slug</span>
+      
+      <span class="token punctuation">)</span>
+      
+      <span class="token punctuation">;</span>
     </code>
   </pre>
 </div>

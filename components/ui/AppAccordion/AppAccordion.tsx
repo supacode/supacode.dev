@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import cn from 'classnames';
 
-import { chevronRight } from '../../../assets/icons';
+import { chevronRight as chevronRightIcon } from '../../../assets/icons';
 
 type AppAccordionProps = {
   children?: React.ReactNode;
@@ -23,25 +23,26 @@ export const AppAccordion: React.FC<AppAccordionProps> = ({
   return (
     <div className="accordion">
       <h3 id={`experience-${index}`}>
-        <button
+        <div
           className="accordion__btn"
           onClick={clickHandler}
-          type="button"
           aria-expanded={isActive}
+          role="button"
           aria-controls={`experience-body-${index}`}
           aria-label={
             title ? (isActive ? `Expand ${title}` : `Collapse ${title}`) : ''
           }
         >
-          <span className="accordion__head">{head && head}</span>
+          <div className="accordion__head">{head && head}</div>
+
           <span
             className={cn('accordion__icon', {
               'accordion__icon--active': isActive,
             })}
           >
-            {chevronRight}
+            {chevronRightIcon}
           </span>
-        </button>
+        </div>
       </h3>
 
       <div

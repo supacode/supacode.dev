@@ -2,7 +2,7 @@
   display: flex;
 
   &--list {
-    margin-bottom: 1.5rem;
+    margin-bottom: var(--spacing-24);
     color: var(--white);
   }
 
@@ -43,18 +43,18 @@
       fill: var(--grey-light);
     }
   }
-}
 
-.social-links__stacked {
-  flex-direction: column;
-  .social-links--list {
-    margin-bottom: 2rem;
+  &__stacked {
+    flex-direction: column;
+    .social-links--list {
+      margin-bottom: var(--spacing-32);
+    }
   }
-}
 
-.social-links__inline {
-  flex-direction: row;
-  .social-links--list {
-    margin-right: 1rem;
+  &__inline {
+    flex-direction: row;
+    .social-links--list {
+      margin-right: var(--spacing-32);
+    }
   }
 }

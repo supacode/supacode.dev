@@ -5,11 +5,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 body {
-  font-family: var(--font-stack-main);
+  font: var(--font-size-base) var(--font-stack-main);
   background: var(--dark-primary);
-  line-height: 1.5;
   color: var(--grey-light);
-  font-size: var(--font-size-base);
+  line-height: 1.5;
 }
 
 .site-wrapper {
@@ -27,16 +26,15 @@ body {
 @import '../modules/project/ProjectCard/ProjectCard';
 @import '../modules/blog/BlogCard/BlogCard';
 @import '../modules/blog/BlogSection/BlogSection';
+@import '../modules/blog/BlogPost/BlogPost';
 
 @import '../components/HeroSection/HeroSection';
 @import '../components/AboutSection/AboutSection';
 @import '../components/ui/AppAccordion/AppAccordion';
-@import '../components/Experience/Experience';
+@import '../components/ExperienceSection/ExperienceSection';
+@import '../components/ProjectSection/ProjectSection.scss';
 @import '../components/SoclalLinks/SocialLinks';
 @import '../components/SiteFooter/SiteFooter';
 
 // Pages
-@import './blog-page.scss';
-
-// misc
-@import '../modules/blog/BlogPost/BlogPost';
+@import './pages/BlogPage';

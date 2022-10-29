@@ -1,21 +1,12 @@
 .accordion {
   &__btn {
-    margin-bottom: 2rem;
     width: 100%;
     display: flex;
     cursor: pointer;
     align-items: center;
-    text-align: left;
     color: var(--grey-dark);
-    background: var(--dark-tertiary);
-    border: 1px solid rgba(var(--white), 0.05);
     width: 100%;
-    padding: 2rem;
-
-    h3 {
-      color: var(--white);
-      font-weight: 600;
-    }
+    padding: var(--spacing-32);
   }
 
   &__head {
@@ -32,7 +23,7 @@
       width: 30px;
       height: 30px;
       transition: 0.8s ease-out;
-      margin-left: 3rem;
+      margin-left: var(--spacing-48);
 
       polyline {
         transition: 0.4s ease-out;
@@ -78,13 +69,13 @@
   }
 
   &__content {
-    padding: 1rem 0 4rem 0;
+    padding: var(--spacing-32) 0 var(--spacing-64) 0;
   }
 }
 
 @keyframes slideUp {
   from {
-    transform: translateY(30px);
+    transform: translateY(10px);
     opacity: 0;
   }
   to {

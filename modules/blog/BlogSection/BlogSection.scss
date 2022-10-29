@@ -1,7 +1,7 @@
 .blog-section {
   &__title {
-    font-size: 3rem;
-    margin-bottom: 2rem;
+    font-size: var(--font-size-3xl);
+    margin-bottom: var(--spacing-32);
   }
 
   .blog-card {
@@ -10,10 +10,6 @@
 
       .blog-card__title {
         font-size: 1.5rem;
-
-        @media screen and (max-width: var(--screen-md-max)) {
-          font-size: 1.5rem;
-        }
       }
 
       @media screen and (max-width: var(--screen-md-max)) {
@@ -25,8 +21,7 @@
   &__featured {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 3rem;
-    margin-bottom: 5rem;
+    gap: var(--spacing-40);
 
     @media screen and (max-width: var(--screen-md-max)) {
       grid-template-columns: repeat(2, 1fr);

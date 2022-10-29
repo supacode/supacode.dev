@@ -2,18 +2,23 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 
 import { AboutSection } from '../components/AboutSection';
-import { Experience } from '../components/Experience';
+import { Experience, ExperienceSection } from '../components/ExperienceSection';
 import { HeroSection } from '../components/HeroSection';
+// import { ProjectSection } from '../components/ProjectSection';
 import { SiteFooter } from '../components/SiteFooter';
-import { getAllPosts } from '../lib/api';
+import { getAllPosts } from '../api/getAllPosts';
 import { BlogSection } from '../modules/blog/BlogSection';
-import { Blog } from '../modules/blog/types';
+import type { Blog } from '../modules/blog/types';
+import { Project } from '../modules/project/types';
+import { getAllExperiences } from '../api/getAllExperiences';
 
 type HomeProps = {
   allPosts: Blog[];
+  allExperiences: Experience[];
+  allProjects: Project[];
 };
 
-const Home: NextPage<HomeProps> = ({ allPosts }) => {
+const Home: NextPage<HomeProps> = ({ allPosts, allExperiences }) => {
   return (
     <div>
       <Head>
@@ -23,7 +28,8 @@ const Home: NextPage<HomeProps> = ({ allPosts }) => {
 
       <HeroSection />
       <AboutSection />
-      <Experience />
+      <ExperienceSection experiences={allExperiences} />
+      {/* <ProjectSection projects={allProjects} /> */}
       <BlogSection posts={allPosts} />
       <SiteFooter />
     </div>
@@ -39,9 +45,12 @@ export const getStaticProps = async () => {
     'excerpt',
   ]);
 
+  const allExperiences = getAllExperiences();
+
   return {
     props: {
       allPosts,
+      allExperiences,
     },
   };
 };

@@ -1,6 +1,7 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
-import { getAllPosts } from '../lib/api';
+
+import { getAllPosts } from '../api/getAllPosts';
 import { BlogCard } from '../modules/blog/BlogCard';
 import type { Blog } from '../modules/blog/types';
 
@@ -24,7 +25,7 @@ const BlogPage: NextPage<BlogProps> = ({ allPosts = [] }) => {
                 title={post.title}
                 slug={post.slug}
                 excerpt={post.excerpt}
-                date={new Date(post.date)}
+                date={post.date}
                 coverImage={post.coverImage}
                 key={post.slug}
                 layout="inline"

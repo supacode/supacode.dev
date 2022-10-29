@@ -42,8 +42,8 @@ export const AboutSection: React.FC = () => {
       </div>
 
       <div className="about__content">
-        <h2 className="about__heading">
-          A little <span className="about__heading--highlight">About Me</span>
+        <h2 className="about__title">
+          A little <span className="about__title--highlight">About Me</span>
         </h2>
         <p className="about__text">
           I started Software Development in 2015 as a hobby, just out of

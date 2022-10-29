@@ -1,17 +1,20 @@
 import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
-
-import { getPostBySlug, getAllPosts } from '../../lib/api';
-import markdownToHtml from '../../lib/markdownToHtml';
-import { BlogPost } from '../../modules/blog/BlogPost';
-import type { Blog as BlogType } from '../../modules/blog/types';
 import Head from 'next/head';
+
+import markdownToHtml from '../../api/markdownToHtml';
+import { BlogPost } from '../../modules/blog/BlogPost';
+import { Blog as BlogType } from '../../modules/blog/types';
+import { getAllPosts } from '../../api/getAllPosts';
+import { getEntryBySlug } from '../../api/getEntryBySlug';
 import 'prismjs/themes/prism-solarizedlight.min.css';
 
+type PostType = BlogType & {
+  content: string;
+};
+
 type Props = {
-  post: BlogType & {
-    content: string;
-  };
+  post: PostType;
 };
 
 const Post: React.FC<Props> = ({ post }: Props) => {
@@ -46,15 +49,20 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const post = getPostBySlug(params.slug, [
-    'title',
-    'date',
-    'slug',
-    'author',
-    'content',
-    'ogImage',
-    'coverImage',
-  ]);
+  const post = getEntryBySlug<PostType>({
+    slug: params.slug,
+    fields: [
+      'title',
+      'date',
+      'slug',
+      'author',
+      'content',
+      'ogImage',
+      'coverImage',
+    ],
+    dir: 'content/blogs',
+  });
+
   const content = await markdownToHtml(post.content || '');
 
   return {

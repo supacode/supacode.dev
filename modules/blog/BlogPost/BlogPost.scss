@@ -1,22 +1,20 @@
 .article {
   margin: 5rem auto;
-  width: 75%;
+  width: 80%;
 
   &__header {
     display: flex;
     justify-content: space-between;
-  }
-
-  &__divider {
-    margin: 2rem 0;
-    height: 1px;
-    background: var(--grey-dark);
+    background: var(--dark-tertiary);
+    padding: var(--spacing-32);
+    border-radius: var(--border-radius-md);
   }
 
   &__featured-img {
     object-fit: cover;
     width: 300px;
     height: 200px;
+    border-radius: var(--border-radius-md);
   }
 
   &__title {
@@ -105,13 +103,11 @@
     thead {
       border-bottom: 0.0625rem;
       border-bottom-style: solid;
-      // border-color: $grey-light;
     }
 
     tfoot {
       border-top: 0.0625rem;
       border-top-style: solid;
-      // border-color: $grey-light;
     }
 
     th,
@@ -136,7 +132,6 @@
     }
 
     blockquote {
-      // border-left: 3px solid lighten(var(--accent-primary), 2);
       padding: 0 0.75rem;
       font-style: italic;
       margin-left: 2.25rem;
@@ -155,12 +150,21 @@
       background: var(--dark-secondary);
       padding: 0.25rem 0.5rem;
       border-radius: 0.25rem;
+      word-wrap: break-word;
     }
 
     // Syntax highlighting edit
-    code[class*='language-'],
+
+    code[class*='language-'] {
+      background: none;
+      font-size: var(--font-size-sm);
+    }
+
     pre[class*='language-'] {
-      background: #121620;
+      border: none;
+      border-radius: var(--border-radius-md);
+      background: var(--dark-tertiary);
+      padding: var(--spacing-28);
     }
   }
 }

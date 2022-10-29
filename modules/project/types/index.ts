@@ -1,5 +1,3 @@
-import { StaticImageData } from 'next/image';
-
 export type Project = {
   title: string;
   tools: string[];
@@ -7,5 +5,6 @@ export type Project = {
   link?: string;
   company?: string;
   html?: string;
-  image?: StaticImageData;
+  image?: string;
+  index: number;
 };
