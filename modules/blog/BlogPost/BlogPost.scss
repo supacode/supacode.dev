@@ -1,6 +1,10 @@
 .article {
-  margin: var(--spacing-80) auto;
-  width: 80%;
+  margin: var(--spacing-16) auto;
+
+  @media (--screen-md-min) {
+    width: 80%;
+    margin: var(--spacing-80) auto;
+  }
 
   &__content {
     margin-top: var(--spacing-32);

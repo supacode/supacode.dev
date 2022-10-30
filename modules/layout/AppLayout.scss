@@ -7,6 +7,10 @@ body {
 
 .app-container {
   max-width: 1080px;
-  padding: 0 var(--spacing-40);
+  padding: 0 var(--spacing-32);
   margin: auto;
+
+  @media (--screen-md-min) {
+    padding: 0 var(--spacing-40);
+  }
 }
