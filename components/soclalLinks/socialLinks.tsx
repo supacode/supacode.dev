@@ -15,11 +15,11 @@ export const SocialLinks: React.FC<SocialLinksProps> = ({ direction }) => {
       })}
     >
       {socials.map((social) => (
-        <li key={social.url} className="social-links--list">
+        <li key={social.url} className="social-links__list">
           <a
             href={social.url}
             title={social.name}
-            className="social-links--link"
+            className="social-links__link"
           >
             {social.icon}
           </a>

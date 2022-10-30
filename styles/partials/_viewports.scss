@@ -1,18 +1,15 @@
 // Screen size for a small phone
-@custom-media --screen-xs-min (width <= 320px);
+@custom-media --screen-xs-min (width >= 320px);
 @custom-media --screen-xs-max (width <= 539px);
 
 // Screen size for a large phone
-@custom-media --screen-sm-min (width <= 540px);
+@custom-media --screen-sm-min (width >= 540px);
 @custom-media --screen-sm-max (width <= 767px);
 
 // Screen size for a tablet
-@custom-media --screen-md-min (width <= 768px);
+@custom-media --screen-md-min (width >= 768px);
 @custom-media --screen-md-max (width <= 990px);
 
 // Screen size for a large tablet
-@custom-media --screen-lg-min (width <= 991px);
+@custom-media --screen-lg-min (width >= 991px);
 @custom-media --screen-lg-max (width <= 1079px);
-
-// Screen size for a large screen
-@custom-media --screen-xl-min (width <= 1080px);
