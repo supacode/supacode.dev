@@ -12,6 +12,7 @@
   &__excerpt {
     margin-bottom: var(--spacing-20);
     font-size: var(--font-size-xs);
+    line-height: 2;
   }
 
   &__title {
@@ -44,7 +45,6 @@
 
 // Stacked variant of blog card
 .blog-card-stacked {
-  min-height: 300px;
   overflow: hidden;
 
   .blog-card__content {
@@ -60,6 +60,8 @@
 
   .blog-card__img {
     position: absolute;
+    height: 100%;
+    width: 100%;
   }
 }
 
@@ -68,7 +70,7 @@
   background: var(--dark-tertiary);
   display: grid;
   column-gap: var(--spacing-32);
-  grid-template-columns: 1fr 2fr;
+  grid-template: auto / 1fr 2fr;
 
   .blog-card__title {
     font-size: var(--font-size-2xl);
