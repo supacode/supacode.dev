@@ -29,15 +29,15 @@ export const ExperienceSection: React.FC<ExperienceProps> = ({
                 title={exp.title}
                 index={experiences.indexOf(exp)}
                 head={
-                  <>
-                    <span className="accordion__title">
+                  <div className="experience__head">
+                    <p className="accordion__title">
                       {exp.title}{' '}
                       <span className="accordion__title--highlight">
                         {exp.company}
                       </span>
-                    </span>
-                    <span className="accordion__duration">{exp.duration}</span>
-                  </>
+                    </p>
+                    <p className="accordion__duration">{exp.duration}</p>
+                  </div>
                 }
               >
                 {exp.content && (
