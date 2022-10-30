@@ -1,12 +1,11 @@
 .main-header {
   &__inner {
     margin: auto;
-
+    padding: var(--spacing-48);
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    padding: var(--spacing-48) var(--spacing-40);
-    transition: 0.4s ease-out;
+    position: relative;
+    justify-content: space-between;
   }
 
   &__logo {

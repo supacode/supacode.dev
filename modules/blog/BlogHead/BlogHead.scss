@@ -1,0 +1,29 @@
+.blog-head {
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    background: var(--dark-tertiary);
+    padding: var(--spacing-32);
+    border-radius: var(--border-radius-md);
+  }
+
+  &__featured-img {
+    object-fit: cover;
+    width: 300px;
+    height: 200px;
+    border-radius: var(--border-radius-md);
+  }
+
+  &__title {
+    font-size: var(--font-size-xxl);
+    font-weight: bold;
+    margin: var(--spacing-16) var(--spacing-8) var(--spacing-8) 0;
+  }
+
+  &__date {
+    font-family: var(--font-stack-monospace);
+    color: var(--accent-primary);
+    font-size: var(--font-size-xs);
+    margin-bottom: var(--spacing-8);
+  }
+}

@@ -5,7 +5,6 @@ import { AboutSection } from '../components/AboutSection';
 import { Experience, ExperienceSection } from '../components/ExperienceSection';
 import { HeroSection } from '../components/HeroSection';
 // import { ProjectSection } from '../components/ProjectSection';
-import { SiteFooter } from '../components/SiteFooter';
 import { getAllPosts } from '../api/getAllPosts';
 import { BlogSection } from '../modules/blog/BlogSection';
 import type { Blog } from '../modules/blog/types';
@@ -31,7 +30,6 @@ const Home: NextPage<HomeProps> = ({ allPosts, allExperiences }) => {
       <ExperienceSection experiences={allExperiences} />
       {/* <ProjectSection projects={allProjects} /> */}
       <BlogSection posts={allPosts} />
-      <SiteFooter />
     </>
   );
 };

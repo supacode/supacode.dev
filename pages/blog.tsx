@@ -15,6 +15,7 @@ const BlogPage: NextPage<BlogProps> = ({ allPosts = [] }) => {
       <Head>
         <title>Blog</title>
       </Head>
+
       <div className="blog-page">
         <h2 className="blog-page__title">Blog</h2>
 

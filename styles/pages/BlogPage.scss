@@ -2,16 +2,12 @@
   max-width: 800px;
   margin: auto;
 
-  .blog-card {
-    margin-bottom: var(--spacing-24);
-
-    &__excerpt {
-      font-size: var(--font-size-sm);
-    }
-  }
-
   &__title {
     font-size: var(--font-size-3xl);
     margin-bottom: var(--spacing-32);
+  }
+
+  .blog-card {
+    margin-bottom: var(--spacing-24);
   }
 }

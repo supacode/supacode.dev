@@ -1,0 +1,12 @@
+body {
+  font: var(--font-size-base) var(--font-stack-main);
+  background: var(--dark-primary);
+  color: var(--grey-light);
+  line-height: 1.5;
+}
+
+.app-container {
+  max-width: 1080px;
+  padding: 0 var(--spacing-40);
+  margin: auto;
+}

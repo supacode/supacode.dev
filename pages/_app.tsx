@@ -1,17 +1,11 @@
-import React, { useEffect } from 'react';
 import type { AppProps } from 'next/app';
-import { Header } from '../modules/mainHeader/Header';
+import { AppLayout } from '../modules/layout';
 import '../styles/globals.scss';
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => {
-  return (
-    <>
-      <Header />
-      <div className="app-container">
-        <Component {...pageProps} />
-      </div>
-    </>
-  );
-};
+const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => (
+  <AppLayout>
+    <Component {...pageProps} />
+  </AppLayout>
+);
 
 export default MyApp;
