@@ -1,7 +1,5 @@
-import Link from 'next/link';
-import aboutImg from '../../assets/images/mave.jpeg';
-import Image from 'next/image';
 import { tools } from '../../assets/icons';
+import AboutImg from './../../assets/images/mave.jpeg';
 import { AppImage } from '../ui/AppImage';
 
 const skills = [
@@ -29,37 +27,31 @@ const skills = [
 export const AboutSection: React.FC = () => {
   return (
     <section className="about section" id="about">
-      <div className="about__img">
-        <AppImage
-          src={aboutImg}
-          loading="lazy"
-          alt="Maverick"
-          className="about__img--img"
-          placeholder="blur"
-          width={500}
-          height={500}
-        />
-      </div>
+      <h2 className="about__title">
+        A little <span className="about__title--highlight">About Me</span>
+      </h2>
 
       <div className="about__content">
-        <h2 className="about__title">
-          A little <span className="about__title--highlight">About Me</span>
-        </h2>
-        <p className="about__text">
+        <p className="about__content--text">
           I started Software Development in 2015 as a hobby, just out of
           curiosity after reading that video games are made from computer
           programming.
         </p>
-        <p className="about__text">
+        <p className="about__content--text">
           I&apos;ve been working professionally as a Software Developer for the
           last ~4 years. I&apos;m currently a Frontend Engineer at{' '}
-          <Link href="https://neighborhoods.com" target="_blank">
+          <a
+            href="https://neighborhoods.com"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
             Neighborhoods.com™
-          </Link>{' '}
-          (a real estate resource company in Chicago).
+          </a>{' '}
+          (a real estate resource company in Chicago - available in the US only)
+          .
         </p>
 
-        <p className="about__text">
+        <p className="about__content--text">
           Here are some technologies I enjoy working with:
         </p>
 
@@ -73,6 +65,15 @@ export const AboutSection: React.FC = () => {
             );
           })}
         </ul>
+      </div>
+
+      <div className="about__img--wrapper">
+        <AppImage
+          src={AboutImg}
+          loading="lazy"
+          alt="Maverick"
+          className="about__img"
+        />
       </div>
     </section>
   );

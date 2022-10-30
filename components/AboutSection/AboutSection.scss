@@ -1,14 +1,24 @@
 .about {
   min-height: 100vh;
-  display: flex;
   padding: var(--spacing-64) 0;
   margin-bottom: var(--spacing-64);
-  justify-content: space-between;
+  display: grid;
+  grid-template: auto/1fr;
+  gap: var(--spacing-32);
+
+  @media (--screen-md-min) {
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(2, max-content);
+  }
 
   &__title {
     font-size: var(--font-size-3xl);
     color: var(--grey-light);
     font-weight: bold;
+
+    @media (--screen-md-min) {
+      grid-column: 2 / 3;
+    }
 
     &--highlight {
       color: var(--accent-primary);
@@ -16,36 +26,16 @@
   }
 
   &__img {
-    flex: 1;
-    position: relative;
-    display: flex;
-    height: 350px;
-    flex-direction: column;
-    align-self: flex-start;
-    margin: var(--spacing-64) var(--spacing-64) 0 0;
-
-    &--img {
-      object-fit: cover;
-      border-radius: var(--border-radius-sm);
+    &--wrapper {
+      grid-row: 2 / 3;
+      grid-column: 1 / 2;
     }
-
-    // Create an outline around the image
-    &::after {
-      border-radius: var(--border-radius-sm);
-      content: '';
-      border: 1px solid var(--accent-primary);
-      height: 100%;
-      width: 100%;
-      position: absolute;
-      top: var(--spacing-10);
-      left: var(--spacing-10);
-    }
-  }
-
-  &__text {
-    margin-bottom: var(--spacing-6);
-    color: var(--grey-light);
-    font-size: var(--font-size-sm);
+    object-fit: cover;
+    border-radius: var(--border-radius-sm);
+    width: 250px;
+    display: block;
+    margin: auto;
+    height: 250px;
   }
 
   &__content {
@@ -53,7 +43,16 @@
     flex: 1.5;
     line-height: 2;
 
-    a[target='_blank'] {
+    @media (--screen-md-min) {
+      grid-column: 2 / 3;
+    }
+
+    &--text {
+      margin-bottom: var(--spacing-32);
+      color: var(--grey-light);
+    }
+
+    a {
       text-decoration: underline;
       color: var(--accent-primary);
     }

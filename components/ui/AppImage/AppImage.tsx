@@ -5,8 +5,8 @@ type AppImageProps = {
   alt: string;
   title?: string;
   className?: string;
-  width: number | undefined;
-  height: number | undefined;
+  width?: number | undefined;
+  height?: number | undefined;
   objectFit?: 'contain' | 'cover' | 'fill' | 'none' | 'scale-down';
   priority?: boolean;
   quality?: number;
