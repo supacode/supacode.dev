@@ -28,6 +28,7 @@
     "autoprefixer": "^10.4.13",
     "eslint": "^8.26.0",
     "eslint-config-next": "12.3.0",
+    "eslint-config-standard-with-typescript": "^23.0.0",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-n": "^15.3.0",
     "eslint-plugin-promise": "^6.1.1",
@@ -35,6 +36,10 @@
     "postcss-preset-env": "^7.8.2",
     "prettier": "^2.7.1",
     "typescript": "^4.8.4"
+  },
+  "engines": {
+    "node": ">=14.0.0",
+    "npm": ">=6.0.0"
   },
   "postcss": {
     "plugins": {

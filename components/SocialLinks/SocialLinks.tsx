@@ -1,6 +1,6 @@
 import cn from 'classnames';
 
-import { socials } from '../../constants/socialLinks';
+import { socials } from 'constants/socialLinks';
 
 type SocialLinksProps = {
   direction: 'stacked' | 'inline';

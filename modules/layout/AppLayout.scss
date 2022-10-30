@@ -9,6 +9,7 @@ body {
   max-width: 1080px;
   padding: 0 var(--spacing-32);
   margin: auto;
+  overflow-x: hidden;
 
   @media (--screen-md-min) {
     padding: 0 var(--spacing-40);

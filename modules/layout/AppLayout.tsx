@@ -1,5 +1,5 @@
-import { SiteFooter } from '../../components/SiteFooter';
-import { Header } from '../mainHeader/Header';
+import { SiteFooter } from 'components/SiteFooter';
+import { Header } from 'modules/mainHeader/Header';
 
 type AppLayoutProps = {
   children: React.ReactNode;

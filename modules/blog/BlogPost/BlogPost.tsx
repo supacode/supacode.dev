@@ -1,5 +1,5 @@
-import type { Blog } from '../types/index';
-import { BlogHead } from '../BlogHead';
+import type { Blog } from 'modules/blog/types';
+import { BlogHead } from 'modules/blog/BlogHead';
 
 type BlogPostProps = {
   post: Blog & {

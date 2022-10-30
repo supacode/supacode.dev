@@ -1,8 +1,8 @@
 import cn from 'classnames';
 import Link from 'next/link';
 
-import type { Blog as BlogType } from '../types';
-import { AppImage } from '../../../components/ui/AppImage';
+import { AppImage } from 'components/ui/AppImage';
+import type { Blog as BlogType } from 'modules/blog/types';
 
 type BlogProps = BlogType & {
   layout?: 'inline' | 'stacked';

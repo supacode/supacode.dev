@@ -1,5 +1,5 @@
-import { ProjectCard } from '../../modules/project/ProjectCard';
-import type { Project } from '../../modules/project/types';
+import { ProjectCard } from 'modules/project/ProjectCard';
+import type { Project } from 'modules/project/types';
 
 type ProjectSectionProps = {
   projects: Project[];

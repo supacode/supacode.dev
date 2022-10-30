@@ -1,5 +1,5 @@
-import { AppImage } from '../../../components/ui/AppImage';
-import { Blog } from '../types';
+import { AppImage } from 'components/ui/AppImage';
+import { Blog } from 'modules/blog/types';
 
 type BlogHeadProps = {
   post: Blog;

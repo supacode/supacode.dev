@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { join } from 'path';
 import { getEntryBySlug } from './getEntryBySlug';
-import type { Experience } from '../components/ExperienceSection';
+import type { Experience } from 'components/ExperienceSection';
 
 export const getAllExperiences = (): Experience[] => {
   const dir = 'content/experience';

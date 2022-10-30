@@ -2,11 +2,11 @@ import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import Head from 'next/head';
 
-import markdownToHtml from '../../api/markdownToHtml';
-import { BlogPost } from '../../modules/blog/BlogPost';
-import { Blog as BlogType } from '../../modules/blog/types';
-import { getAllPosts } from '../../api/getAllPosts';
-import { getEntryBySlug } from '../../api/getEntryBySlug';
+import markdownToHtml from 'api/markdownToHtml';
+import { BlogPost } from 'modules/blog/BlogPost';
+import { Blog as BlogType } from 'modules/blog/types';
+import { getAllPosts } from 'api/getAllPosts';
+import { getEntryBySlug } from 'api/getEntryBySlug';
 import 'prismjs/themes/prism-solarizedlight.min.css';
 
 type PostType = BlogType & {

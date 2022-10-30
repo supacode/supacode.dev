@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { SocialLinks } from '../SoclalLinks';
+import { SocialLinks } from 'components/SocialLinks';
 
 export const SiteFooter: React.FC = () => {
   return (

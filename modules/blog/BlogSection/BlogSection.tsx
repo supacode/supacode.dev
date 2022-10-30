@@ -1,5 +1,5 @@
-import { BlogCard } from '../BlogCard';
-import type { Blog as BlogType } from '../types';
+import { BlogCard } from 'modules/blog/BlogCard/BlogCard';
+import type { Blog as BlogType } from 'modules/blog/types';
 
 type BlogSectionProps = {
   posts: BlogType[];

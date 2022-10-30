@@ -1,4 +1,4 @@
-import { AppAccordion } from '../ui/AppAccordion';
+import { AppAccordion } from 'components/ui/AppAccordion';
 
 export type Experience = {
   title?: string;

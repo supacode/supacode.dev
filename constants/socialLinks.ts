@@ -1,4 +1,4 @@
-import { codepen, email, twitter, linkedIn, github } from '../assets/icons';
+import { codepen, email, twitter, linkedIn, github } from 'assets/icons';
 
 export const socials = [
   {

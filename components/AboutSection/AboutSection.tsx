@@ -1,6 +1,6 @@
-import { tools } from '../../assets/icons';
-import AboutImg from './../../assets/images/mave.jpeg';
-import { AppImage } from '../ui/AppImage';
+import { tools } from 'assets/icons';
+import AboutImg from 'assets/images/mave.jpeg';
+import { AppImage } from 'components/ui/AppImage';
 
 const skills = [
   { name: 'HTML', icon: tools.html5 },

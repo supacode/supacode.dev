@@ -1,19 +1,13 @@
-import { useEffect, useRef, MouseEventHandler, useState } from 'react';
+import { useRef, MouseEventHandler, useState } from 'react';
 import Link from 'next/link';
 import cn from 'classnames';
 
-import { routes } from '../../../constants/path';
-import { useWindowSize, useOnClickOutside } from '../../../hooks';
+import { routes } from 'constants/path';
+import { useOnClickOutside } from 'hooks';
 
 export const Navbar: React.FC = () => {
-  const isMobile = useWindowSize().width < 768;
-
   // State for sidebar drawer.
-  const [isDrawerOpen, setIsDrawerOpen] = useState(!isMobile);
-
-  useEffect(() => {
-    setIsDrawerOpen(!isMobile);
-  }, [isMobile]);
+  const [isDrawerOpen, setIsDrawerOpen] = useState(true);
 
   // State for checking if the menu is animating to close.
   const [isClosingDrawer, setIsClosingDrawer] = useState(false);

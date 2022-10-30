@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import cn from 'classnames';
 
-import { chevronRight as chevronRightIcon } from '../../../assets/icons';
+import { chevronRight as chevronRightIcon } from 'assets/icons';
 
 type AppAccordionProps = {
   children?: React.ReactNode;

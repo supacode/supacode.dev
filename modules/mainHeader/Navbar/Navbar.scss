@@ -138,12 +138,14 @@
 
 @keyframes slideLeft {
   from {
-    transform: translateX(50rem);
+    // transform: translateX(50rem);
+    right: -100%;
   }
 }
 
 @keyframes slideRight {
   to {
-    transform: translateX(50rem);
+    // transform: translateX(50rem);
+    right: 0;
   }
 }

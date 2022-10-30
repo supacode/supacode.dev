@@ -1,6 +1,6 @@
 import Image from 'next/image';
-import { externalLink, github as githubIcon } from '../../../assets/icons';
-import type { Project } from '../types';
+import { externalLink, github as githubIcon } from 'assets/icons';
+import type { Project } from 'modules/project/types';
 
 export const ProjectCard: React.FC<Project> = ({
   title,

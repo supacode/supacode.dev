@@ -1,4 +1,4 @@
-import { SocialLinks } from '../SoclalLinks';
+import { SocialLinks } from '@/components/SocialLinks';
 
 export const HeroSection: React.FC = () => {
   return (

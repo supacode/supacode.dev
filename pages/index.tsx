@@ -1,15 +1,15 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import { AboutSection } from '../components/AboutSection';
-import { Experience, ExperienceSection } from '../components/ExperienceSection';
-import { HeroSection } from '../components/HeroSection';
-// import { ProjectSection } from '../components/ProjectSection';
-import { getAllPosts } from '../api/getAllPosts';
-import { BlogSection } from '../modules/blog/BlogSection';
-import type { Blog } from '../modules/blog/types';
-import { Project } from '../modules/project/types';
-import { getAllExperiences } from '../api/getAllExperiences';
+import { AboutSection } from 'components/AboutSection';
+import { Experience, ExperienceSection } from 'components/ExperienceSection';
+import { HeroSection } from 'components/HeroSection';
+// import { ProjectSection } from 'components/ProjectSection';
+import { getAllPosts } from 'api/getAllPosts';
+import { BlogSection } from 'modules/blog/BlogSection';
+import type { Blog } from 'modules/blog/types';
+import { Project } from 'modules/project/types';
+import { getAllExperiences } from 'api/getAllExperiences';
 
 type HomeProps = {
   allPosts: Blog[];
