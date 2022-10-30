@@ -20,7 +20,7 @@ type HomeProps = {
 
 const Home: NextPage<HomeProps> = ({ allPosts, allExperiences }) => {
   return (
-    <div>
+    <>
       <Head>
         <title>Supacode.dev</title>
         <link rel="icon" href="/favicon.ico" />
@@ -32,7 +32,7 @@ const Home: NextPage<HomeProps> = ({ allPosts, allExperiences }) => {
       {/* <ProjectSection projects={allProjects} /> */}
       <BlogSection posts={allPosts} />
       <SiteFooter />
-    </div>
+    </>
   );
 };
 

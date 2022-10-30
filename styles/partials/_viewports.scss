@@ -1,27 +1,18 @@
-// Small Phone: 320px(or less) - 539px
-$screen-xs-min: 320px;
+// Screen size for a small phone
+@custom-media --screen-xs-min (width <= 320px);
+@custom-media --screen-xs-max (width <= 539px);
 
-// Large Phone: 540px - 600px
-$screen-sm-min: 540px;
+// Screen size for a large phone
+@custom-media --screen-sm-min (width <= 540px);
+@custom-media --screen-sm-max (width <= 767px);
 
-// Large Phone: 600px - 767px
-$screen-sm-mid-min: 600px;
+// Screen size for a tablet
+@custom-media --screen-md-min (width <= 768px);
+@custom-media --screen-md-max (width <= 990px);
 
-// Tablet: 768px - 990px
-$screen-md-min: 768px;
+// Screen size for a large tablet
+@custom-media --screen-lg-min (width <= 991px);
+@custom-media --screen-lg-max (width <= 1079px);
 
-// Normal screen / Large Tablet: 991px - 1079px
-$screen-lg-min: 991px;
-
-//$screen-lg-min: 1080px ;
-
-// Large screen / Wide Desktop: 1080px+
-$screen-xl-min: 1080px;
-
-// Add to prevent overlaps
-$screen-xs-max: ($screen-sm-min - 1);
-$screen-sm-max: ($screen-md-min - 1);
-$screen-sm-mid-max: ($screen-sm-mid-min - 1);
-$screen-md-max: ($screen-lg-min - 1);
-$screen-lg-max: ($screen-xl-min - 1);
-$site-width: 1100px;
+// Screen size for a large screen
+@custom-media --screen-xl-min (width <= 1080px);

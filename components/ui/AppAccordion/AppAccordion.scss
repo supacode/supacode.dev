@@ -74,12 +74,11 @@
 }
 
 @keyframes slideUp {
-  from {
-    transform: translateY(10px);
+  0% {
+    transform: translateY(var(--spacing-8));
     opacity: 0;
   }
-  to {
-    transform: translateY(0);
+  100% {
     opacity: 1;
   }
 }

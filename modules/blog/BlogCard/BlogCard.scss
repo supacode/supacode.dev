@@ -31,8 +31,9 @@
   &__img {
     object-fit: cover;
     overflow: hidden;
-    border-radius: 2rem;
-    margin-right: 2rem;
+    height: auto;
+    width: auto;
+    border-radius: var(--border-radius-md);
   }
 
   &__date {
@@ -70,7 +71,7 @@
   grid-template-columns: 1fr 2fr;
 
   .blog-card__title {
-    font-size: 1.2rem;
+    font-size: var(--font-size-2xl);
   }
 
   .blog-card__content {

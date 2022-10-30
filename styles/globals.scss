@@ -1,3 +1,5 @@
+/* autoprefixer grid: autoplace */
+
 @import './partials/index';
 @import './reset';
 
@@ -11,13 +13,9 @@ body {
   line-height: 1.5;
 }
 
-.site-wrapper {
-  margin: auto;
-  padding: 0 var(--spacing-40);
-}
-
 .app-container {
-  max-width: 1000px;
+  max-width: 1080px;
+  padding: 0 var(--spacing-40);
   margin: auto;
 }
 

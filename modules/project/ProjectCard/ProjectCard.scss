@@ -1,39 +1,39 @@
 .project {
-  margin-bottom: 2rem;
+  margin-bottom: var(--spacing-32);
   background: var(--dark-tertiary);
   border: 1px solid rgba(var(--white), 0.05);
-  padding: 3rem;
+  padding: var(--spacing-48);
   position: relative;
   display: grid;
   grid-template-columns: 2fr 1.5fr;
   grid-template-rows: auto;
 
   &__content {
-    margin-right: 2rem;
+    margin-right: var(--spacing-32);
   }
 
   &__title {
     font-size: var(--font-size-xxl);
     font-weight: 600;
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-16);
     color: var(--accent-primary);
   }
 
   &__desc {
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-16);
     line-height: 2;
   }
 
   &__tools {
     list-style: disc;
-    margin-bottom: 1rem;
+    margin-bottom: var(--spacing-16);
     color: var(--grey-dark);
 
     li {
       font-size: var(--font-size-xs);
       font-family: var(--font-stack-monospace);
       display: inline-block;
-      margin-right: 1rem;
+      margin-right: var(--spacing-16);
       span {
         margin-right: 3px;
       }
@@ -54,7 +54,7 @@
 
   &__links {
     a {
-      margin-right: 1rem;
+      margin-right: var(--spacing-16);
     }
 
     svg {
@@ -88,7 +88,7 @@
     }
 
     &__content {
-      padding: 2rem;
+      padding: var(--spacing-32);
       position: relative;
       z-index: var(--z-index-layer-2);
       margin: 0;
@@ -109,7 +109,7 @@
       .project__content {
         grid-column: 2/ 3;
         margin-right: 0;
-        margin-left: 2rem;
+        margin-left: var(--spacing-32);
       }
 
       .project__img {
