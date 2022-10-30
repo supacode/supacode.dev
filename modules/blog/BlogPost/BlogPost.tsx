@@ -9,12 +9,12 @@ type BlogPostProps = {
 
 export const BlogPost: React.FC<BlogPostProps> = ({ post }) => {
   return (
-    <article className="article" id="content">
+    <article className="post" id="content">
       <BlogHead post={post} />
 
       {post.content && (
         <section
-          className="article__content"
+          className="post__content"
           dangerouslySetInnerHTML={{ __html: post.content }}
           itemProp="articleBody"
         />

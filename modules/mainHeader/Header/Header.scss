@@ -1,11 +1,16 @@
 .main-header {
+  position: relative;
   &__inner {
-    margin: auto;
-    padding: var(--spacing-48);
     display: flex;
     align-items: center;
     position: relative;
     justify-content: space-between;
+    margin: auto;
+    padding: var(--spacing-32) var(--spacing-16);
+
+    @media (--screen-md-min) {
+      padding: var(--spacing-80);
+    }
   }
 
   &__logo {

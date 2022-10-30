@@ -1,5 +1,6 @@
-.article {
+.post {
   margin: var(--spacing-16) auto;
+  padding: var(--spacing-16);
 
   @media (--screen-md-min) {
     width: 80%;
@@ -8,7 +9,6 @@
 
   &__content {
     margin-top: var(--spacing-32);
-    font-family: var(--font-stack-serif);
     line-height: 2;
 
     // Markdown generated links
@@ -24,7 +24,7 @@
       line-height: 3;
       word-wrap: break-word;
       margin-bottom: var(--spacing-32);
-      font-family: var(--font-stack-serif);
+      font-size: var(--font-size-base);
     }
 
     hr {

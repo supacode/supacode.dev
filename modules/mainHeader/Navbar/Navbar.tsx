@@ -26,11 +26,10 @@ export const Navbar: React.FC = () => {
     setIsClosingDrawer(true); // Set state to true to trigger animation.
 
     // Wait for animation to finish before setting state to false.
-    navRef.current &&
-      navRef.current.addEventListener('animationend', () => {
-        setIsDrawerOpen(false);
-        setIsClosingDrawer(false);
-      });
+    navRef.current?.addEventListener('animationend', () => {
+      setIsDrawerOpen(false);
+      setIsClosingDrawer(false);
+    });
   };
 
   const toggleSideDrawer: MouseEventHandler<HTMLElement> = (evt) => {

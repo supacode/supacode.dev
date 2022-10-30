@@ -71,14 +71,32 @@
   right: 0;
   padding: var(--spacing-120) var(--spacing-40) 0 0;
   justify-content: flex-end;
-  animation: slideLeft 0.4s forwards;
   box-shadow: 0 0 1rem rgba(0, 0, 0, 0.5);
   background: var(--dark-light);
-
+  display: block;
   z-index: var(--z-index-layer-4);
+  animation: fade-in 0.3s ease-in-out forwards;
 
   &__slide-out {
-    animation: slideRight 0.4s forwards;
+    animation: fade-out 0.3s ease-in-out forwards;
+  }
+
+  @keyframes fade-out {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
   }
 
   @media (--screen-md-min) {
@@ -133,19 +151,5 @@
 
   &__hide {
     opacity: 0;
-  }
-}
-
-@keyframes slideLeft {
-  from {
-    // transform: translateX(50rem);
-    right: -100%;
-  }
-}
-
-@keyframes slideRight {
-  to {
-    // transform: translateX(50rem);
-    right: 0;
   }
 }
