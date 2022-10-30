@@ -3,18 +3,31 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  padding: var(--spacing-80) var(--spacing-40);
+  padding: var(--spacing-40);
+
+  @media (--screen-md-min) {
+    padding: var(--spacing-80) var(--spacing-40);
+  }
 
   &__lead-txt {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-lg);
     font-weight: bold;
     margin-bottom: var(--spacing-24);
     color: var(--accent-primary);
+
+    @media (--screen-md-min) {
+      font-size: var(--font-size-3xl);
+    }
   }
 
   &__txt {
     margin-bottom: var(--spacing-24);
     text-align: center;
     line-height: 2;
+    font-size: var(--font-size-sm);
+
+    @media (--screen-md-min) {
+      font-size: var(--font-size-base);
+    }
   }
 }
