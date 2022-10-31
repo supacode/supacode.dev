@@ -33,7 +33,7 @@ export const Navbar: React.FC = () => {
     setTimeout(() => {
       setIsDrawerOpen(false);
       setIsClosingDrawer(false);
-    }, 300);
+    }, 200);
   };
 
   const toggleSideDrawer: MouseEventHandler<HTMLElement> = (evt) => {
