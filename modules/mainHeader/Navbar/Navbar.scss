@@ -75,11 +75,11 @@
   background: var(--dark-light);
   display: block;
   z-index: var(--z-index-layer-4);
-  animation: fade-in 0.2s ease-in forwards;
-  will-change: opacity transform visibility animation;
+  animation: fade-in 0.3s ease-in forwards;
+  // will-change: opacity transform visibility animation;
 
   &__slide-out {
-    animation: fade-out 0.2s ease-out forwards;
+    animation: fade-out 0.3s ease-out forwards;
   }
 
   @keyframes fade-out {
