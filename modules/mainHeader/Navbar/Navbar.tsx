@@ -1,11 +1,13 @@
-import { useRef, MouseEventHandler, useState } from 'react';
+import { useRef, MouseEventHandler, useState, useEffect } from 'react';
 import Link from 'next/link';
 import cn from 'classnames';
 
 import { routes } from 'constants/path';
-import { useOnClickOutside } from 'hooks';
+import { useOnClickOutside, useWindowSize } from 'hooks';
 
 export const Navbar: React.FC = () => {
+  const isMobile = useWindowSize().width < 768;
+
   // State for sidebar drawer.
   const [isDrawerOpen, setIsDrawerOpen] = useState(true);
 
@@ -26,14 +28,14 @@ export const Navbar: React.FC = () => {
     setIsClosingDrawer(true); // Set state to true to trigger animation.
 
     // Wait for animation to finish before setting state to false.
-    // navRef.current?.addEventListener('animationend', () => {
-    //   setIsDrawerOpen(false);
-    //   setIsClosingDrawer(false);
-    // });
-    setTimeout(() => {
+    navRef.current?.addEventListener('animationend', () => {
       setIsDrawerOpen(false);
       setIsClosingDrawer(false);
-    }, 200);
+    });
+    // setTimeout(() => {
+    //   setIsDrawerOpen(false);
+    //   setIsClosingDrawer(false);
+    // }, 200);
   };
 
   const toggleSideDrawer: MouseEventHandler<HTMLElement> = (evt) => {
