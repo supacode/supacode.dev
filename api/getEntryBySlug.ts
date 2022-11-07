@@ -1,13 +1,6 @@
 import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
-import md from 'markdown-it';
-
-const mdRenderer = md({
-  html: true,
-  linkify: true,
-  typographer: true,
-});
 
 type getEntryBySlugType = {
   slug: string;
