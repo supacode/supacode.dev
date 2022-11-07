@@ -31,7 +31,7 @@ export const HeroSection: React.FC = () => {
         </div>
       </div>
 
-      <SocialLinks direction={'stacked'} />
+      <SocialLinks direction="row" />
     </section>
   );
 };

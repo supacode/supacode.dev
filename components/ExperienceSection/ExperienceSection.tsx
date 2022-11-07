@@ -1,4 +1,7 @@
 import { AppAccordion } from 'components/ui/AppAccordion';
+import markdown from 'markdown-it';
+
+const { render } = markdown();
 
 export type Experience = {
   title?: string;
@@ -44,7 +47,7 @@ export const ExperienceSection: React.FC<ExperienceProps> = ({
                   <div
                     className="accordion__description"
                     dangerouslySetInnerHTML={{
-                      __html: exp.content,
+                      __html: markdown().render(exp.content),
                     }}
                   />
                 )}

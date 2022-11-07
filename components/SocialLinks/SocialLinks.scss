@@ -9,8 +9,8 @@
   &__link {
     border-radius: 50%;
     border: 1px solid var(--grey-light);
-    width: var(--spacing-32);
-    height: var(--spacing-32);
+    width: 40px;
+    height: 40px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -34,8 +34,8 @@
   }
 
   svg {
-    width: 18px;
-    height: 18px;
+    width: 20px;
+    height: 20px;
 
     path {
       transition: 0.4s ease-out;
@@ -44,7 +44,7 @@
     }
   }
 
-  &__stacked {
+  &__row {
     flex-direction: column;
 
     .social-links--list {
@@ -52,7 +52,7 @@
     }
   }
 
-  &__inline {
+  &__column {
     flex-direction: row;
 
     .social-links__list {

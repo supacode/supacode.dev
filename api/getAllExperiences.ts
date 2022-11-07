@@ -13,6 +13,7 @@ export const getAllExperiences = (): Experience[] => {
   const fields = [
     'tools',
     'title',
+    'duration',
     'company',
     'location',
     'content',

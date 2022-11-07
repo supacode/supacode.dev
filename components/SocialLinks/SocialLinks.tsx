@@ -3,15 +3,15 @@ import cn from 'classnames';
 import { socials } from 'constants/socialLinks';
 
 type SocialLinksProps = {
-  direction: 'stacked' | 'inline';
+  direction: 'row' | 'column';
 };
 
 export const SocialLinks: React.FC<SocialLinksProps> = ({ direction }) => {
   return (
     <ul
       className={cn('social-links', {
-        'social-links__stacked': direction === 'stacked',
-        'social-links__inline': direction === 'inline',
+        'social-links__row': direction === 'row',
+        'social-links__column': direction === 'column',
       })}
     >
       {socials.map((social) => (

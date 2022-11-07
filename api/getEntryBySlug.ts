@@ -1,6 +1,13 @@
 import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
+import md from 'markdown-it';
+
+const mdRenderer = md({
+  html: true,
+  linkify: true,
+  typographer: true,
+});
 
 type getEntryBySlugType = {
   slug: string;
@@ -19,7 +26,7 @@ export const getEntryBySlug = <T>({
 
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
-  const { data, content } = matter(fileContents, {});
+  const { data, matter: frontmatter, content } = matter(fileContents, {});
 
   const items: {
     [key: string]: string;

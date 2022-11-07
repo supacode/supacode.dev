@@ -6,6 +6,9 @@ description: 'Example using Prism / Markdown with Next.js including switching sy
 
 # Using Prism with Next.js
 
+- Hello
+- World
+
 [**Prism**](https://prismjs.com/) is a popular syntax highlighter commonly used with Markdown.
 This example shows how to use Prism with [**Next.js**](https://nextjs.org/). Use the theme dropdown
 in the header to switch syntax highlighting themes.

@@ -8,5 +8,6 @@ export default async function markdownToHtml(markdown: string) {
     .use(html, { sanitize: false })
     .use(prism)
     .process(markdown);
+
   return result.toString();
 }

@@ -9,7 +9,7 @@
 
   &__content {
     margin-top: var(--spacing-32);
-    line-height: 2;
+    line-height: 3;
 
     // Markdown generated links
     a {
@@ -21,7 +21,6 @@
     }
 
     p {
-      line-height: 3;
       word-wrap: break-word;
       margin-bottom: var(--spacing-32);
       font-size: var(--font-size-base);
@@ -82,11 +81,10 @@
       padding-inline-start: var(--spacing-40);
       margin-block-start: var(--spacing-20);
       margin-block-end: var(--spacing-20);
-      line-height: var(--spacing-8);
     }
 
     ul li {
-      list-style: circle;
+      list-style: disc inside;
     }
 
     ol li {

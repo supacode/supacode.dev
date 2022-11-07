@@ -13,7 +13,7 @@ export const SiteFooter: React.FC = () => {
         Don&apos;t be shy, you can reach out to me anytime.
       </p>
 
-      <SocialLinks direction="inline" />
+      <SocialLinks direction="column" />
     </footer>
   );
 };
