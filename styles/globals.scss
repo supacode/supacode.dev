@@ -1,9 +1,6 @@
 @import './partials/index';
 @import './reset';
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
-
 @import '../modules/mainHeader/Header/Header';
 @import '../modules/mainHeader/Navbar/Navbar';
 @import '../modules/project/ProjectCard/ProjectCard';
@@ -13,6 +10,8 @@
 @import '../modules/blog/BlogHead/BlogHead';
 @import '../modules/layout/AppLayout';
 
+@import '../components/SkipToContent/SkipToContent';
+@import '../components/BouncingBall/BouncingBall';
 @import '../components/HeroSection/HeroSection';
 @import '../components/AboutSection/AboutSection';
 @import '../components/ui/AppAccordion/AppAccordion';
@@ -21,5 +20,4 @@
 @import '../components/SocialLinks/SocialLinks';
 @import '../components/SiteFooter/SiteFooter';
 
-// Pages
-@import './pages/BlogPage';
+@import '../pages/blog/[slug]';

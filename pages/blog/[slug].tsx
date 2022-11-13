@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import Head from 'next/head';
 
-import markdownToHtml from 'api/markdownToHtml';
+import { markdownToHtml } from 'api/markdownToHtml';
 import { BlogPost } from 'modules/blog/BlogPost';
 import { Blog as BlogType } from 'modules/blog/types';
 import { getAllPosts } from 'api/getAllPosts';
@@ -17,7 +17,7 @@ type Props = {
   post: PostType;
 };
 
-const Post: React.FC<Props> = ({ post }: Props) => {
+const Posts: React.FC<Props> = ({ post }: Props) => {
   const router = useRouter();
 
   if (!router.isFallback && !post?.slug) {
@@ -33,9 +33,8 @@ const Post: React.FC<Props> = ({ post }: Props) => {
           <Head>
             <title>{post.title}</title>
           </Head>
-          <article>
-            <BlogPost post={post} />
-          </article>
+
+          <BlogPost post={post} />
         </>
       )}
     </>
@@ -48,7 +47,7 @@ type Params = {
   };
 };
 
-export async function getStaticProps({ params }: Params) {
+export const getStaticProps = async ({ params }: Params) => {
   const post = getEntryBySlug<PostType>({
     slug: params.slug,
     fields: [
@@ -73,9 +72,9 @@ export async function getStaticProps({ params }: Params) {
       },
     },
   };
-}
+};
 
-export async function getStaticPaths() {
+export const getStaticPaths = () => {
   const posts = getAllPosts(['slug']);
 
   return {
@@ -88,6 +87,6 @@ export async function getStaticPaths() {
     }),
     fallback: false,
   };
-}
+};
 
-export default Post;
+export default Posts;

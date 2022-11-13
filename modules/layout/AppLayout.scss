@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font: var(--font-size-base) var(--font-stack-main);
   background: var(--dark-primary);
