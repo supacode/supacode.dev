@@ -1,5 +1,11 @@
+import { AppLink } from 'components/ui/AppLink';
+
 export const SkipToContent: React.FC<{ to: string }> = ({ to }) => (
-  <a className="btn skip-link" title="Skip to Content" href={to}>
-    Skip to Content
-  </a>
+  <AppLink
+    title="Skip to Content"
+    to={to}
+    className="skip-link"
+    text="Skip to Content"
+    asButton
+  />
 );

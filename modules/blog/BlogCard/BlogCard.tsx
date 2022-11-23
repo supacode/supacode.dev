@@ -1,8 +1,8 @@
 import cn from 'classnames';
-import Link from 'next/link';
 
 import { AppImage } from 'components/ui/AppImage';
 import type { Blog as BlogType } from 'modules/blog/types';
+import { AppLink } from 'components/ui/AppLink';
 
 type BlogProps = BlogType & {
   layout?: 'inline' | 'stacked';
@@ -31,7 +31,7 @@ export const BlogCard: React.FC<BlogProps> = ({
       })}
     >
       {coverImage && (
-        <Link href={blogLink}>
+        <AppLink to={blogLink}>
           <AppImage
             className="blog-card__img"
             src={coverImage}
@@ -39,15 +39,15 @@ export const BlogCard: React.FC<BlogProps> = ({
             width={700}
             height={300}
           />
-        </Link>
+        </AppLink>
       )}
 
       <div className="blog-card__content">
         {title && (
           <h3 className="blog-card__title">
-            <Link href={blogLink} className="blog-card__title--link">
+            <AppLink to={blogLink} className="blog-card__title--link">
               {title}
-            </Link>
+            </AppLink>
           </h3>
         )}
 

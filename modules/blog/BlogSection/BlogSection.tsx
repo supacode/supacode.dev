@@ -1,3 +1,4 @@
+import { AppLink } from 'components/ui/AppLink';
 import { BlogCard } from 'modules/blog/BlogCard/BlogCard';
 import type { Blog as BlogType } from 'modules/blog/types';
 
@@ -23,6 +24,13 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ posts = [] }) => {
           />
         ))}
       </div>
+
+      <AppLink
+        asButton
+        text="Read More"
+        to="/blog"
+        className="blog-section__read-more-btn"
+      />
     </section>
   );
 };

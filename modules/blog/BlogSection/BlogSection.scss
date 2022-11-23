@@ -4,6 +4,11 @@
     margin-bottom: var(--spacing-32);
   }
 
+  &__read-more-btn {
+    margin: auto;
+    margin-top: var(--spacing-64);
+  }
+
   .blog-card {
     //
     &:first-child {

@@ -1,7 +1,7 @@
 ---
 title: 'Frontend Web Developer'
 company: 'Cloud9 ICT Solutions'
-location: 'Abuja, Nigeria'
+location: 'Nigeria'
 duration: 'Oct 2018 - Mar 2019'
 url: '#'
 index: 1

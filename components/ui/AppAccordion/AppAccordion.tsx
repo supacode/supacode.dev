@@ -21,8 +21,8 @@ export const AppAccordion: React.FC<AppAccordionProps> = ({
   const clickHandler = () => setIsActive(!isActive);
 
   return (
-    <div className="accordion">
-      <h3 id={`experience-${index}`}>
+    <div className="accordion" tabIndex={0}>
+      <div id={`experience-${index}`}>
         <div
           className="accordion__btn"
           onClick={clickHandler}
@@ -43,7 +43,7 @@ export const AppAccordion: React.FC<AppAccordionProps> = ({
             {chevronRightIcon}
           </span>
         </div>
-      </h3>
+      </div>
 
       <div
         aria-labelledby={`experience-${index}`}

@@ -1,5 +1,15 @@
 .main-header {
   position: relative;
+
+  &__fixed {
+    position: fixed;
+    inset: 0;
+    bottom: auto;
+    z-index: var(--z-index-layer-5);
+    background: var(--dark-tertiary);
+    backdrop-filter: blur(10px);
+  }
+
   &__inner {
     display: flex;
     align-items: center;
@@ -9,7 +19,7 @@
     padding: var(--spacing-32);
 
     @media (--screen-md-min) {
-      padding: var(--spacing-40) var(--spacing-120);
+      padding: var(--spacing-40) var(--spacing-48);
     }
   }
 

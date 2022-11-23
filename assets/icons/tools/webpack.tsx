@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const webpack = (
   <svg viewBox="0 0 128 128">
     <path

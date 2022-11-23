@@ -25,8 +25,9 @@
   }
 
   &__title {
-    font-weight: bolder;
+    font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-10);
+    width: fit-content;
     line-height: 2;
 
     &--link {
@@ -51,7 +52,7 @@
   }
 
   &__date {
-    font-family: monospace;
+    font-family: var(--font-stack-monospace);
     font-size: var(--font-size-xs);
   }
 }
@@ -83,7 +84,7 @@
   display: grid;
   column-gap: var(--spacing-32);
   grid-template: 1fr;
-  z-index: 1 !important;
+  z-index: 1;
   row-gap: var(--spacing-20);
 
   @media (--screen-md-min) {

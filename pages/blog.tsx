@@ -1,7 +1,7 @@
 import { NextPage } from 'next';
 import Head from 'next/head';
 
-import { getAllPosts } from 'api/getAllPosts';
+import { getAllPosts } from 'modules/blog/api/getAllPosts';
 import { BlogCard } from 'modules/blog/BlogCard';
 import type { Blog } from 'modules/blog/types';
 

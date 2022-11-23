@@ -1,12 +1,15 @@
 html {
-  scroll-behavior: smooth;
-}
-
-body {
+  scroll-behavior: smooth !important;
   font: var(--font-size-base) var(--font-stack-main);
   background: var(--dark-primary);
   color: var(--grey-light);
   line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  overscroll-behavior: none;
+
+  @media (prefers-reduced-motion: reduce) {
+    scroll-behavior: auto !important;
+  }
 }
 
 .app-container {

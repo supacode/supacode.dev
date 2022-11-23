@@ -1,7 +1,7 @@
 ---
 title: 'Web Developer'
 company: 'FluxTech Africa'
-location: 'Lagos'
+location: 'Nigeria'
 duration: 'Oct 2020 - Dec 2020'
 url: '#'
 index: 2

@@ -14,7 +14,7 @@
   &__title {
     margin-bottom: var(--spacing-32);
     font-size: var(--font-size-3xl);
-    font-weight: bold;
+    font-weight: var(--font-weight-bold);
   }
 
   &__item {
@@ -42,10 +42,10 @@
 
     &__title {
       font-size: var(--font-size-sm);
-      font-weight: lighter;
       display: flex;
       flex-direction: column;
       margin-bottom: var(--spacing-8);
+      font-weight: var(--font-weight-medium);
 
       @media (--screen-md-min) {
         flex-direction: row;
@@ -55,6 +55,7 @@
       &--highlight {
         color: var(--accent-primary);
         margin-top: var(--spacing-8);
+        font-weight: var(--font-weight-light);
 
         @media (--screen-md-min) {
           margin-left: var(--spacing-16);

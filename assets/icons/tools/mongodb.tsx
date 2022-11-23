@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const mongodb = (
   <svg viewBox="0 0 128 128" role="img">
     <path

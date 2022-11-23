@@ -1,15 +1,6 @@
 import { AppAccordion } from 'components/ui/AppAccordion';
+import type { Experience } from 'modules/experience/types';
 import markdown from 'markdown-it';
-
-const { render } = markdown();
-
-export type Experience = {
-  title?: string;
-  index: number;
-  duration: string;
-  company: string;
-  content: string;
-};
 
 type ExperienceProps = {
   experiences: Experience[];
@@ -33,12 +24,14 @@ export const ExperienceSection: React.FC<ExperienceProps> = ({
                 index={experiences.indexOf(exp)}
                 head={
                   <div className="experience__head">
-                    <p className="accordion__title">
-                      {exp.title}{' '}
-                      <span className="accordion__title--highlight">
+                    <div className="accordion__title">
+                      <h3>{exp.title}</h3>
+
+                      <p className="accordion__title--highlight">
                         {exp.company}
-                      </span>
-                    </p>
+                        {exp.location ? `, ${exp.location}` : null}
+                      </p>
+                    </div>
                     <p className="accordion__duration">{exp.duration}</p>
                   </div>
                 }

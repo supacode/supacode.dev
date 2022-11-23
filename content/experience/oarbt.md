@@ -1,7 +1,7 @@
 ---
 title: 'Web Developer'
 company: 'Oarbt'
-location: 'London'
+location: 'U.K Remote'
 duration: 'Nov 2020 - Apr 2021'
 url: '#'
 index: 3

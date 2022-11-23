@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const chevronRight = (
   <svg
     xmlns="http://www.w3.org/2000/svg"
@@ -10,12 +8,11 @@ export const chevronRight = (
   >
     <polyline
       points="184 112 328 256 184 400"
-      style={{
-        fill: 'none',
-        strokeLinecap: 'round',
-        strokeLinejoin: 'round',
-        strokeWidth: '35px',
-      }}
+      fill="none"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      strokeWidth="35px"
+      stroke="currentColor"
     />
   </svg>
 );

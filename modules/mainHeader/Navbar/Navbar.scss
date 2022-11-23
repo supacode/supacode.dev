@@ -1,5 +1,4 @@
 .hamburger {
-  position: absolute;
   width: 35px;
   height: 35px;
   right: var(--spacing-40);
@@ -60,6 +59,7 @@
 
 .main-nav {
   height: 100vh;
+
   position: absolute;
   width: 70%;
   top: 0;
@@ -86,14 +86,35 @@
     box-shadow: none;
   }
 
-  ul {
+  &__list {
     display: flex;
     flex-direction: column;
     margin-right: var(--spacing-40);
 
+    margin-top: var(--spacing-56);
+
     @media (--screen-md-min) {
       flex-direction: row;
       margin-right: 0;
+      margin-top: 0;
+    }
+
+    &--item {
+      font-family: var(--font-stack-monospace);
+      font-size: var(--font-size-md);
+      margin-left: var(--spacing-40);
+      margin-bottom: var(--spacing-40);
+      width: 100%;
+      counter-increment: item 1;
+      text-align: center;
+
+      @media (--screen-md-min) {
+        font-size: var(--font-size-sm);
+        text-align: right;
+        margin-bottom: var(--spacing-28);
+        margin-bottom: 0;
+        width: fit-content;
+      }
     }
   }
 
@@ -101,25 +122,23 @@
     animation: fade-out 0.4s ease-out forwards;
   }
 
-  &__list {
-    font-family: var(--font-stack-monospace);
-    text-align: right;
-    margin-bottom: var(--spacing-28);
-    margin-left: var(--spacing-40);
-    font-size: var(--font-size-lg);
-    width: 100%;
-
-    @media (--screen-md-min) {
-      font-size: var(--font-size-sm);
-      margin-bottom: 0;
-      width: fit-content;
-    }
-  }
-
   &__link {
+    padding: var(--spacing-2);
+
     &:hover {
       color: var(--accent-primary);
       transition: 0.4s ease-out;
+    }
+
+    &:before {
+      color: var(--accent-primary);
+      content: '0' counter(item) '.';
+      display: block;
+
+      @media (--screen-md-min) {
+        display: inline-block;
+        margin-right: var(--spacing-4);
+      }
     }
 
     &--highlight {

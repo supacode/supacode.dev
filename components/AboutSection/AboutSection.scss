@@ -13,8 +13,9 @@
 
   &__title {
     font-size: var(--font-size-3xl);
+    visibility: hidden;
     color: var(--grey-light);
-    font-weight: bold;
+    font-weight: var(--font-weight-medium);
 
     @media (--screen-md-min) {
       grid-column: 2 / 3;
@@ -26,16 +27,17 @@
   }
 
   &__img {
-    &--wrapper {
-      grid-row: 2 / 3;
-      grid-column: 1 / 2;
-    }
     object-fit: cover;
     border-radius: var(--border-radius-sm);
     width: 250px;
     display: block;
     margin: auto;
     height: 250px;
+
+    &--wrapper {
+      grid-row: 2 / 3;
+      grid-column: 1 / 2;
+    }
   }
 
   &__content {
@@ -71,7 +73,7 @@
       background: var(--dark-tertiary);
       padding: var(--spacing-10) var(--spacing-14);
       color: var(--grey-light);
-      font-weight: 500;
+      font-weight: var(--font-weight-medium);
       border-radius: var(--border-radius-lg);
       line-height: 0;
 

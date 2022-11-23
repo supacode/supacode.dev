@@ -30,7 +30,7 @@
 
   &__title {
     font-size: var(--font-size-lg);
-    font-weight: bold;
+    font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-14);
 
     @media (--screen-md-min) {

@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const k8s = (
   <svg viewBox="0 0 128 128" role="img">
     <g fill="#486bb3">

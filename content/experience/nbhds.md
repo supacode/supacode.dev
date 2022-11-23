@@ -1,7 +1,7 @@
 ---
 title: 'Frontend Engineer'
 company: 'Neighborhoods.com'
-location: 'Chicago'
+location: 'U.S Remote'
 duration: 'Feb 2021 - Apr 2022'
 url: '#'
 index: 4

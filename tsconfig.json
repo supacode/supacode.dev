@@ -20,7 +20,7 @@
       "modules/*": ["modules/*"],
       "pages/*": ["pages/*"],
       "styles/*": ["styles/*"],
-      "api/*": ["api/*"],
+      "api/*": ["lib/*"],
       "hooks/*": ["hooks/*"]
     }
   },

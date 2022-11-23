@@ -17,11 +17,11 @@ export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
 
       <SkipToContent to="#content" />
 
-      <Header />
+      {/* <Header /> */}
 
       <div className="app-container">{children}</div>
 
-      <SiteFooter />
+      {/* <SiteFooter /> */}
     </>
   );
 };

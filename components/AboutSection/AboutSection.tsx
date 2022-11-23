@@ -1,6 +1,10 @@
-import { tools } from 'assets/icons';
+import { useRef } from 'react';
+
 import AboutImg from 'assets/images/mave.jpeg';
+import { tools } from 'assets/icons';
 import { AppImage } from 'components/ui/AppImage';
+import { AppLink } from 'components/ui/AppLink';
+import { useAboutSectionAnimation } from './useAboutSectionAnimation';
 
 const skills = [
   { name: 'HTML', icon: tools.html5 },
@@ -25,13 +29,25 @@ const skills = [
 ];
 
 export const AboutSection: React.FC = () => {
+  const titleRef = useRef<HTMLHeadingElement>(null);
+  const aboutSectionRef = useRef<HTMLDivElement>(null);
+  const aboutTextWrapRef = useRef<HTMLDivElement>(null);
+  const toolsRef = useRef<HTMLUListElement>(null);
+
+  // useAboutSectionAnimation({
+  //   aboutSectionRef,
+  //   toolsRef,
+  //   aboutTextWrapRef,
+  //   titleRef,
+  // });
+
   return (
-    <section className="about section" id="about">
-      <h2 className="about__title">
+    <section className="about section" id="about" ref={aboutSectionRef}>
+      <h2 className="about__title" ref={titleRef}>
         A little <span className="about__title--highlight">About Me</span>
       </h2>
 
-      <div className="about__content">
+      <div className="about__content" ref={aboutTextWrapRef}>
         <p className="about__content--text">
           I started Software Development in 2015 as a hobby, just out of
           curiosity after reading that video games are made from computer
@@ -39,24 +55,32 @@ export const AboutSection: React.FC = () => {
         </p>
         <p className="about__content--text">
           I&apos;ve been working professionally as a Software Developer for the
-          last ~4 years. I&apos;m currently a Frontend Engineer at{' '}
-          <a
-            href="https://neighborhoods.com"
+          last ~5 years. I&apos;m currently a Senior Frontend Engineer at{' '}
+          <AppLink
+            to="https://instafreight.de"
             target="_blank"
             rel="noreferrer noopener"
           >
-            Neighborhoods.com™
-          </a>{' '}
-          (a real estate resource company in Chicago - available in the US only)
-          .
+            InstaFreight
+          </AppLink>{' '}
+          (a logistics company in Germany). When I'm not programming, I'm
+          playing{' '}
+          <AppLink
+            to="https://www.youtube.com/channel/UCCAT1AZ-yJYjL1IobjmnpvQ"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            video games
+          </AppLink>
+          , or playing/watching football ⚽.
         </p>
 
         <p className="about__content--text">
           Here are some technologies I enjoy working with:
         </p>
 
-        <ul className="tools">
-          {skills.map((skill) => {
+        <ul className="tools" ref={toolsRef}>
+          {skills.map((skill, index) => {
             return (
               <li key={skill.name} className="tools__tool">
                 <span className="tools__tool--icon">{skill.icon}</span>

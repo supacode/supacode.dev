@@ -1,5 +1,3 @@
-import React from 'react';
-
 export const typescript = (
   <svg viewBox="0 0 128 128" role="img">
     <path fill="#fff" d="M22.67 47h99.67v73.67H22.67z" />
