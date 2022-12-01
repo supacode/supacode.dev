@@ -29,21 +29,19 @@ export const AppImage: React.FC<AppImageProps> = ({
   loading,
   placeholder,
   blurDataURL,
-}) => {
-  return (
-    <Image
-      src={src}
-      style={style}
-      alt={alt}
-      title={title}
-      className={className}
-      width={width}
-      height={height}
-      priority={priority}
-      quality={quality}
-      loading={loading}
-      placeholder={placeholder}
-      blurDataURL={blurDataURL}
-    />
-  );
-};
+}) => (
+  <Image
+    src={src}
+    style={style}
+    alt={alt}
+    title={title}
+    className={className}
+    width={width}
+    height={height}
+    priority={priority}
+    quality={quality}
+    loading={loading}
+    placeholder={placeholder}
+    blurDataURL={blurDataURL}
+  />
+);

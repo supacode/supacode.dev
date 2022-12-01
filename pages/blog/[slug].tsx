@@ -7,7 +7,6 @@ import { BlogPost } from 'modules/blog/BlogPost';
 import { Blog as BlogType } from 'modules/blog/types';
 import { getAllPosts } from 'modules/blog/api/getAllPosts';
 import { getEntryBySlug } from 'lib/getEntryBySlug';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import 'prismjs/themes/prism-solarizedlight.min.css';
 
 type PostType = BlogType & {
@@ -25,19 +24,17 @@ const Posts: React.FC<Props> = ({ post }: Props) => {
     return <ErrorPage statusCode={404} />;
   }
 
+  if (router.isFallback) {
+    return <p>Loading</p>;
+  }
+
   return (
     <>
-      {router.isFallback ? (
-        <p>Loading</p>
-      ) : (
-        <>
-          <Head>
-            <title>{post.title}</title>
-          </Head>
+      <Head>
+        <title>{post.title}</title>
+      </Head>
 
-          <BlogPost post={post} />
-        </>
-      )}
+      <BlogPost post={post} />
     </>
   );
 };
@@ -84,7 +81,7 @@ export const getStaticPaths = () => {
         slug: post.slug,
       },
     })),
-    fallback: false,
+    fallback: true,
   };
 };
 

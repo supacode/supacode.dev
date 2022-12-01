@@ -7,18 +7,17 @@ type BlogPostProps = {
   };
 };
 
-export const BlogPost: React.FC<BlogPostProps> = ({ post }) => {
-  return (
-    <article className="post" id="content">
-      <BlogHead post={post} />
+export const BlogPost: React.FC<BlogPostProps> = ({ post }) => (
+  <article className="post" id="content">
+    <BlogHead post={post} />
 
-      {post.content && (
-        <section
-          className="post__content"
-          dangerouslySetInnerHTML={{ __html: post.content }}
-          itemProp="articleBody"
-        />
-      )}
-    </article>
-  );
-};
+    {post.content && (
+      <section
+        className="post__content"
+        // eslint-disable-next-line react/no-danger
+        dangerouslySetInnerHTML={{ __html: post.content }}
+        itemProp="articleBody"
+      />
+    )}
+  </article>
+);

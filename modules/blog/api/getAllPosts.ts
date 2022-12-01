@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { join } from 'path';
-import { getEntryBySlug } from '../../../lib/getEntryBySlug';
+import { getEntryBySlug } from 'lib/getEntryBySlug';
 import type { Blog } from 'modules/blog/types';
 
 export const getAllPosts = (fields: string[]): Blog[] => {

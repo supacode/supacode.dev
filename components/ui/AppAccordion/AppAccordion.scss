@@ -9,6 +9,10 @@
     color: var(--grey-dark);
     width: 100%;
     padding: var(--spacing-32);
+
+    &:focus {
+      outline: none;
+    }
   }
 
   &__head {

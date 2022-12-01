@@ -37,6 +37,7 @@ export const ExperienceSection: React.FC<ExperienceProps> = ({
                         })}
                       >
                         {exp.company && (
+                          // eslint-disable-next-line react/jsx-no-useless-fragment
                           <>
                             {exp.website ? (
                               <AppLink

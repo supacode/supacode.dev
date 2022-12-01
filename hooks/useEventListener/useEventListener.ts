@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-redeclare */
 import { RefObject, useEffect, useRef } from 'react';
 
 import { useIsomorphicLayoutEffect } from 'hooks';

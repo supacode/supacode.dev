@@ -18,24 +18,28 @@ export const AppAccordion: React.FC<AppAccordionProps> = ({
 }) => {
   const [isActive, setIsActive] = useState(false);
 
-  const clickHandler = (evt: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+  const toggleAccordion = (
+    evt:
+      | React.MouseEvent<HTMLDivElement, MouseEvent>
+      | React.KeyboardEvent<HTMLDivElement>,
+  ) => {
     if (evt.target instanceof HTMLAnchorElement) return;
 
     setIsActive(!isActive);
   };
 
   return (
-    <div className="accordion" tabIndex={0}>
+    <div className="accordion">
       <div id={`experience-${index}`}>
         <div
           className="accordion__btn"
-          onClick={clickHandler}
+          onClick={toggleAccordion}
+          onKeyDown={toggleAccordion}
           aria-expanded={isActive}
           role="button"
+          tabIndex={0}
           aria-controls={`experience-body-${index}`}
-          aria-label={
-            title ? (isActive ? `Expand ${title}` : `Collapse ${title}`) : ''
-          }
+          aria-label={title ? `Expand ${title}` : `Collapse ${title}`}
         >
           <div className="accordion__head">{head && head}</div>
 
