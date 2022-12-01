@@ -7,6 +7,7 @@ import { BlogPost } from 'modules/blog/BlogPost';
 import { Blog as BlogType } from 'modules/blog/types';
 import { getAllPosts } from 'modules/blog/api/getAllPosts';
 import { getEntryBySlug } from 'lib/getEntryBySlug';
+// eslint-disable-next-line import/no-extraneous-dependencies
 import 'prismjs/themes/prism-solarizedlight.min.css';
 
 type PostType = BlogType & {
@@ -78,13 +79,11 @@ export const getStaticPaths = () => {
   const posts = getAllPosts(['slug']);
 
   return {
-    paths: posts.map((post) => {
-      return {
-        params: {
-          slug: post.slug,
-        },
-      };
-    }),
+    paths: posts.map((post) => ({
+      params: {
+        slug: post.slug,
+      },
+    })),
     fallback: false,
   };
 };

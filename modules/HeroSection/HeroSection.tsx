@@ -1,13 +1,10 @@
 import { SocialLinks } from 'components/SocialLinks';
 import { chevronRight } from 'assets/icons';
 import { AppLink } from 'components/ui/AppLink';
-import { useHeroAnimations } from './useHeroAnimations';
 
 export const HeroSection: React.FC = () => {
-  useHeroAnimations();
-
   return (
-    <section className="hero" id="content">
+    <section className="hero" id="hero">
       <div className="hero__left">
         <h2 className="hero__lead-text">
           My name is{' '}
@@ -31,9 +28,8 @@ export const HeroSection: React.FC = () => {
             className="hero__btn--link"
             text="Contact Me"
             title="Send me an email"
-            target="_blank"
-            rel="noopener noreferrer"
             to="mailto:supacode@gmail.com"
+            newTab
             asButton
           >
             {chevronRight}

@@ -1,7 +1,6 @@
 .about {
   min-height: 100vh;
-  padding: var(--spacing-64) 0;
-  margin-bottom: var(--spacing-64);
+  padding: var(--spacing-120) 0 0 0;
   display: grid;
   grid-template: auto/1fr;
   gap: var(--spacing-32);
@@ -13,7 +12,6 @@
 
   &__title {
     font-size: var(--font-size-3xl);
-    visibility: hidden;
     color: var(--grey-light);
     font-weight: var(--font-weight-medium);
 

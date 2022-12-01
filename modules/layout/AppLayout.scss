@@ -1,24 +1,13 @@
 html {
-  scroll-behavior: smooth !important;
   font: var(--font-size-base) var(--font-stack-main);
   background: var(--dark-primary);
   color: var(--grey-light);
-  line-height: 1.5;
   text-rendering: optimizeLegibility;
-  overscroll-behavior: none;
-
-  @media (prefers-reduced-motion: reduce) {
-    scroll-behavior: auto !important;
-  }
+  scroll-behavior: smooth !important;
 }
 
 .app-container {
-  max-width: 1080px;
-  padding: 0 var(--spacing-32);
   margin: auto;
-  overflow-x: hidden;
-
-  @media (--screen-md-min) {
-    padding: 0 var(--spacing-40);
-  }
+  max-width: 1080px;
+  padding: 0 var(--spacing-40);
 }

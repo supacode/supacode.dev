@@ -9,27 +9,24 @@ type SocialLinksProps = {
 
 export const SocialLinks: React.FC<SocialLinksProps> = ({
   direction = 'row',
-}) => {
-  return (
-    <ul
-      className={cn('social-links', {
-        'social-links__row': direction === 'row',
-        'social-links__column': direction === 'column',
-      })}
-    >
-      {socials.map((social) => (
-        <li key={social.url} className="social-links__list">
-          <AppLink
-            to={social.url}
-            title={social.name}
-            className="social-links__link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {social.icon}
-          </AppLink>
-        </li>
-      ))}
-    </ul>
-  );
-};
+}) => (
+  <ul
+    className={cn('social-links', {
+      'social-links__row': direction === 'row',
+      'social-links__column': direction === 'column',
+    })}
+  >
+    {socials.map((social) => (
+      <li key={social.url} className="social-links__list">
+        <AppLink
+          to={social.url}
+          title={social.name}
+          className="social-links__link"
+          newTab
+        >
+          {social.icon}
+        </AppLink>
+      </li>
+    ))}
+  </ul>
+);

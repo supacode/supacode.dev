@@ -1,1 +1,0 @@
-export { FullPageContainer } from './FullPageScroll';

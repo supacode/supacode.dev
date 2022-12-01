@@ -9,35 +9,31 @@ type BlogProps = {
   allPosts: Blog[];
 };
 
-const BlogPage: NextPage<BlogProps> = ({ allPosts = [] }) => {
-  return (
-    <>
-      <Head>
-        <title>Blog</title>
-      </Head>
+const BlogPage: NextPage<BlogProps> = ({ allPosts = [] }) => (
+  <>
+    <Head>
+      <title>Blog</title>
+    </Head>
 
-      <div className="blog-page">
-        <h2 className="blog-page__title">Blog</h2>
+    <div className="blog-page">
+      <h2 className="blog-page__title">Blog</h2>
 
-        <div className="blog-page__blogs">
-          {allPosts.map((post) => {
-            return (
-              <BlogCard
-                title={post.title}
-                slug={post.slug}
-                excerpt={post.excerpt}
-                date={post.date}
-                coverImage={post.coverImage}
-                key={post.slug}
-                layout="inline"
-              />
-            );
-          })}
-        </div>
+      <div className="blog-page__blogs">
+        {allPosts.map((post) => (
+          <BlogCard
+            title={post.title}
+            slug={post.slug}
+            excerpt={post.excerpt}
+            date={post.date}
+            coverImage={post.coverImage}
+            key={post.slug}
+            layout="inline"
+          />
+        ))}
       </div>
-    </>
-  );
-};
+    </div>
+  </>
+);
 
 export const getStaticProps = async () => {
   const allPosts = getAllPosts([

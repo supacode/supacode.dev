@@ -18,7 +18,11 @@ export const AppAccordion: React.FC<AppAccordionProps> = ({
 }) => {
   const [isActive, setIsActive] = useState(false);
 
-  const clickHandler = () => setIsActive(!isActive);
+  const clickHandler = (evt: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+    if (evt.target instanceof HTMLAnchorElement) return;
+
+    setIsActive(!isActive);
+  };
 
   return (
     <div className="accordion" tabIndex={0}>
@@ -48,7 +52,7 @@ export const AppAccordion: React.FC<AppAccordionProps> = ({
       <div
         aria-labelledby={`experience-${index}`}
         id={`experience-body-${index}`}
-        tabIndex={isActive ? 0 : -1}
+        // tabIndex={isActive ? 0 : -1}
         className={cn('accordion__item', {
           'accordion__item--collapsed': !isActive,
           'accordion__item--animated': isActive,

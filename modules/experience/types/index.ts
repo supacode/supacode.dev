@@ -3,6 +3,7 @@ export type Experience = {
   index: number;
   duration: string;
   company: string;
-  location: string;
+  website?: string;
+  location?: string;
   content: string;
 };

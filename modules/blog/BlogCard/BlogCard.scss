@@ -18,12 +18,6 @@
     z-index: var(--z-index-layer-2);
   }
 
-  &__excerpt {
-    margin-bottom: var(--spacing-20);
-    font-size: var(--font-size-xs);
-    line-height: 2;
-  }
-
   &__title {
     font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-10);
@@ -37,6 +31,13 @@
         color: var(--accent-primary);
       }
     }
+  }
+
+  &__excerpt {
+    margin-bottom: var(--spacing-20);
+    font-size: var(--font-size-xs);
+    line-height: 2;
+    color: var(--grey-light);
   }
 
   &__img {

@@ -6,31 +6,29 @@ type BlogSectionProps = {
   posts: BlogType[];
 };
 
-export const BlogSection: React.FC<BlogSectionProps> = ({ posts = [] }) => {
-  return (
-    <section className="blog-section" id="blog">
-      <h2 className="blog-section__title">Blog</h2>
+export const BlogSection: React.FC<BlogSectionProps> = ({ posts = [] }) => (
+  <section className="blog-section" id="blog">
+    <h2 className="blog-section__title">Blog</h2>
 
-      <div className="blog-section__featured">
-        {posts.map((blog) => (
-          <BlogCard
-            date={blog.date}
-            slug={blog.slug}
-            title={blog.title}
-            excerpt={blog.excerpt}
-            coverImage={blog.coverImage}
-            key={blog.slug}
-            layout="stacked"
-          />
-        ))}
-      </div>
+    <div className="blog-section__featured">
+      {posts.map((blog) => (
+        <BlogCard
+          date={blog.date}
+          slug={blog.slug}
+          title={blog.title}
+          excerpt={blog.excerpt}
+          coverImage={blog.coverImage}
+          key={blog.slug}
+          layout="stacked"
+        />
+      ))}
+    </div>
 
-      <AppLink
-        asButton
-        text="Read More"
-        to="/blog"
-        className="blog-section__read-more-btn"
-      />
-    </section>
-  );
-};
+    <AppLink
+      asButton
+      text="Read More"
+      to="/blog"
+      className="blog-section__read-more-btn"
+    />
+  </section>
+);

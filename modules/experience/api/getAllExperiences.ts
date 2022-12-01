@@ -1,6 +1,6 @@
 import fs from 'fs';
 import { join } from 'path';
-import { getEntryBySlug } from '../../../lib/getEntryBySlug';
+import { getEntryBySlug } from 'lib/getEntryBySlug';
 import type { Experience } from 'modules/experience/types';
 
 export const getAllExperiences = (): Experience[] => {
@@ -11,14 +11,15 @@ export const getAllExperiences = (): Experience[] => {
   const slugs = fs.readdirSync(postsDirectory);
 
   const fields = [
-    'tools',
-    'title',
-    'duration',
     'company',
-    'location',
     'content',
+    'duration',
     'index',
     'link',
+    'location',
+    'title',
+    'tools',
+    'website',
   ];
 
   const experiences = slugs

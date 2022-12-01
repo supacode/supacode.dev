@@ -1,1 +1,0 @@
-export { FullPageSection } from './FullPageSection';

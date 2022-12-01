@@ -1,17 +1,13 @@
 .site-footer {
-  margin: auto;
+  margin: var(--spacing-40) auto;
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-direction: column;
-  padding: var(--spacing-40);
-
-  @media (--screen-md-min) {
-    padding: var(--spacing-80) var(--spacing-40);
-  }
+  padding: var(--spacing-40) var(--spacing-20);
 
   &__lead-txt {
     font-size: var(--font-size-lg);
-    font-weight: var(--font-weight-bold);
     margin-bottom: var(--spacing-24);
     color: var(--accent-primary);
 

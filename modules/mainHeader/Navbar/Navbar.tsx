@@ -1,9 +1,13 @@
-import { useRef, MouseEventHandler, useState, useEffect, useId } from 'react';
+import { useRef, MouseEventHandler, useState } from 'react';
 import cn from 'classnames';
 import gsap from 'gsap';
 
 import { routes } from 'constants/path';
-import { useOnClickOutside, useWindowSize } from 'hooks';
+import {
+  useIsomorphicLayoutEffect,
+  useOnClickOutside,
+  useWindowSize,
+} from 'hooks';
 import { AppLink } from 'components/ui/AppLink';
 
 export const Navbar: React.FC = () => {
@@ -17,13 +21,18 @@ export const Navbar: React.FC = () => {
   // State for checking if the menu is animating to close.
   const [isClosingDrawer, setIsClosingDrawer] = useState(false);
 
-  const drawerRef = useRef<HTMLDivElement>(null) as any;
+  const drawerRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    isMobile ? setIsDrawerOpen(false) : setIsDrawerOpen(true);
+  useIsomorphicLayoutEffect(() => {
+    if (isMobile) {
+      setIsDrawerOpen(false);
+      return;
+    }
+
+    setIsDrawerOpen(true);
   }, [isMobile]);
 
-  useEffect(() => setIsMounted(true), []);
+  useIsomorphicLayoutEffect(() => setIsMounted(true), []);
 
   const openDrawer = () => {
     document.body.style.overflowY = 'hidden'; // prevent scrolling when drawer is open
@@ -31,18 +40,17 @@ export const Navbar: React.FC = () => {
   };
 
   const closeDrawer = () => {
-    if (!isMobile) return; // don't close drawer if not mobile
+    if (!isMobile) return; // don't close drawer/navbar if not mobile
 
     document.body.style.overflowY = ''; // Allow scrolling when drawer is closed
 
     setIsClosingDrawer(true); // Set state to true to trigger animation.
 
-    // Wait for animation to finish before setting state.
-    drawerRef.current?.addEventListener('animationend', () => {
+    setTimeout(() => {
       setIsDrawerOpen(false);
       setIsClosingDrawer(false);
       drawerRef.current?.removeEventListener('animationend', () => {});
-    });
+    }, 200);
   };
 
   const toggleSideDrawer: MouseEventHandler<HTMLElement> = () => {
@@ -54,32 +62,41 @@ export const Navbar: React.FC = () => {
     closeDrawer();
   };
 
-  useOnClickOutside<HTMLElement>(drawerRef, closeDrawer);
+  useOnClickOutside<HTMLDivElement>(drawerRef, closeDrawer);
 
-  // useEffect(() => {
-  //   gsap.to(drawerRef.current, {
-  //     opacity: 0,
-  //     width: 0,
-  //     transform: 'translateX(100%)',
-  //   });
-  // }, [isClosingDrawer]);
+  useIsomorphicLayoutEffect(() => {
+    // Animate drawer in
 
-  // useEffect(() => {
-  //   gsap.fromTo(
-  //     drawerRef.current,
-  //     {
-  //       opacity: 0,
-  //       transform: 'translateX(100%)',
-  //       width: '0',
-  //     },
-  //     {
-  //       transform: 'translateX(0)',
-  //       opacity: 1,
-  //       width: '50%',
-  //       duration: 0.3,
-  //     },
-  //   );
-  // }, [isDrawerOpen]);
+    if (isMobile && drawerRef.current) {
+      gsap.fromTo(
+        drawerRef.current,
+        {
+          transform: 'translateX(100%)',
+        },
+        {
+          transform: 'translateX(0)',
+          opacity: 1,
+          duration: 0.2,
+        },
+      );
+    }
+
+    return () => gsap.killTweensOf(drawerRef.current);
+  }, [isDrawerOpen, isMobile]);
+
+  useIsomorphicLayoutEffect(() => {
+    // Animate drawer out
+    if (!isMounted) return;
+
+    if (isClosingDrawer) {
+      gsap.to(drawerRef.current, {
+        duration: 0.2,
+        transform: 'translateX(105%)',
+      });
+    }
+
+    return () => gsap.killTweensOf(drawerRef.current);
+  }, [isClosingDrawer]);
 
   return (
     <>
@@ -94,7 +111,8 @@ export const Navbar: React.FC = () => {
       >
         {[...Array(3)].map((_, index) => (
           <span
-            key={useId()}
+            // eslint-disable-next-line react/no-array-index-key
+            key={index}
             className={`hamburger__line hamburger__line--${index + 1}`}
           />
         ))}
@@ -109,17 +127,19 @@ export const Navbar: React.FC = () => {
           />
 
           <nav
-            ref={(el) => (drawerRef.current = el)}
+            ref={drawerRef}
             className={cn('main-nav', {
               'main-nav__slide-out': isClosingDrawer,
             })}
           >
             <ol className="main-nav__list">
-              {routes.map((link, index) => (
+              {routes.map((link) => (
                 <li
                   key={link.id}
                   className="main-nav__list--item"
                   onClick={closeDrawer}
+                  onKeyDown={closeDrawer}
+                  role="presentation"
                 >
                   <AppLink
                     className={cn('main-nav__link', {

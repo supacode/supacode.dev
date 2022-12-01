@@ -9,3 +9,4 @@ export { useMediaQuery } from './useMediaQuery/useMediaQuery';
 export { useIsomorphicLayoutEffect } from './useIsomorphicLayoutEffect';
 export { useEventListener } from './useEventListener';
 export { useEventCallback } from './useEventCallback';
+export { useIntersectionObserver } from './useIntersectionObserver';

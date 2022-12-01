@@ -2,6 +2,7 @@
 title: 'Frontend Web Developer'
 company: 'Cloud9 ICT Solutions'
 location: 'Nigeria'
+website: 'https://cloud9.ng/'
 duration: 'Oct 2018 - Mar 2019'
 url: '#'
 index: 1

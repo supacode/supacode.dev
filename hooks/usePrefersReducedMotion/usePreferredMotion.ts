@@ -1,9 +1,10 @@
 /**
  * https://www.joshwcomeau.com/snippets/react-hooks/use-prefers-reduced-motion/
  */
-
 import { useState, useEffect } from 'react';
+
 const QUERY = '(prefers-reduced-motion: no-preference)';
+
 const isRenderingOnServer = typeof window === 'undefined';
 
 const getInitialState = () =>

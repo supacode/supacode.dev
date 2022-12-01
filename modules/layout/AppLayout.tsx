@@ -8,20 +8,19 @@ type AppLayoutProps = {
   children: React.ReactNode;
 };
 
-export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => {
-  return (
-    <>
-      <Head>
-        <meta name="theme-color" content="#1a2130" />
-      </Head>
+export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => (
+  <>
+    <Head>
+      <meta name="theme-color" content="#1a2130" />
+      <link rel="icon" href="/favicon.ico" />
+    </Head>
 
-      <SkipToContent to="#content" />
+    <SkipToContent to="#content" />
 
-      {/* <Header /> */}
+    <Header />
 
-      <div className="app-container">{children}</div>
+    <div className="app-container">{children}</div>
 
-      {/* <SiteFooter /> */}
-    </>
-  );
-};
+    <SiteFooter />
+  </>
+);

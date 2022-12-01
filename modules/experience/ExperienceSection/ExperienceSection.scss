@@ -1,5 +1,6 @@
 .experience {
   margin-bottom: var(--spacing-64);
+  padding: var(--spacing-104) 0;
 
   &__head {
     display: flex;
@@ -11,10 +12,10 @@
       flex-direction: row;
     }
   }
+
   &__title {
-    margin-bottom: var(--spacing-32);
+    margin-bottom: var(--spacing-48);
     font-size: var(--font-size-3xl);
-    font-weight: var(--font-weight-bold);
   }
 
   &__item {
@@ -52,7 +53,7 @@
         justify-content: space-between;
       }
 
-      &--highlight {
+      &--company {
         color: var(--accent-primary);
         margin-top: var(--spacing-8);
         font-weight: var(--font-weight-light);
@@ -60,6 +61,12 @@
         @media (--screen-md-min) {
           margin-left: var(--spacing-16);
           margin-top: 0;
+        }
+      }
+
+      &--link {
+        &:hover {
+          text-decoration: underline;
         }
       }
     }

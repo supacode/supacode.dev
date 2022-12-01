@@ -1,10 +1,11 @@
 ---
-title: 'Frontend Engineer'
-company: 'Neighborhoods.com'
+index: 4
+company: 'Neighborhoods.com (U.S Only)'
 location: 'U.S Remote'
+title: 'Frontend Engineer'
 duration: 'Feb 2021 - Apr 2022'
 url: '#'
-index: 4
+website: 'https://www.neighborhoods.com/'
 ---
 
 - Creating new features for a real estate resource website that serves more than a million users.

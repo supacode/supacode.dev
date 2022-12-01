@@ -1,6 +1,7 @@
 .blog-page {
   max-width: 800px;
-  margin: auto;
+
+  margin: var(--spacing-104) auto;
 
   &__title {
     font-size: var(--font-size-3xl);

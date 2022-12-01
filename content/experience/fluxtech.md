@@ -1,7 +1,8 @@
 ---
 title: 'Web Developer'
 company: 'FluxTech Africa'
-location: 'Nigeria'
+location: 'Nigeria Remote'
+website: 'https://fluxtechafrica.com/'
 duration: 'Oct 2020 - Dec 2020'
 url: '#'
 index: 2

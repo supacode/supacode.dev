@@ -1,5 +1,9 @@
 .main-header {
-  position: relative;
+  position: fixed;
+  inset: 0;
+  height: fit-content;
+  z-index: var(--z-index-layer-4);
+  backdrop-filter: blur(50px);
 
   &__fixed {
     position: fixed;
@@ -19,7 +23,7 @@
     padding: var(--spacing-32);
 
     @media (--screen-md-min) {
-      padding: var(--spacing-40) var(--spacing-48);
+      padding: var(--spacing-24) var(--spacing-48);
     }
   }
 

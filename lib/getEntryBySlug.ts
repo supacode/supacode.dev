@@ -19,7 +19,7 @@ export const getEntryBySlug = <T>({
 
   const fileContents = fs.readFileSync(fullPath, 'utf8');
 
-  const { data, matter: frontmatter, content } = matter(fileContents, {});
+  const { data, content } = matter(fileContents, {});
 
   const items: {
     [key: string]: string;

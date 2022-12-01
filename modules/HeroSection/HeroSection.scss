@@ -1,17 +1,18 @@
 .hero {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   min-height: 100vh;
 
   @media (--screen-md-min) {
     align-items: center;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: calc(var(--spacing-128) * -1);
   }
 
   &__btn {
     margin-top: var(--spacing-32);
+
     svg {
       width: 30px;
       margin-right: var(--spacing-10);

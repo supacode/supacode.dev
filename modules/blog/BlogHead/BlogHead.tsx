@@ -16,7 +16,13 @@ export const BlogHead: React.FC<BlogHeadProps> = ({ post }) => {
             {post.title}
           </h1>
         )}
-        {post.date && <p className="blog-head__date">{`${post.date}`}</p>}
+        {post.date && (
+          <p className="blog-head__date">
+            {new Date(post.date).toLocaleDateString('en-us', {
+              dateStyle: 'full',
+            })}
+          </p>
+        )}
       </div>
 
       {post.coverImage && (

@@ -1,6 +1,9 @@
+import cn from 'classnames';
+import markdown from 'markdown-it';
+
 import { AppAccordion } from 'components/ui/AppAccordion';
 import type { Experience } from 'modules/experience/types';
-import markdown from 'markdown-it';
+import { AppLink } from 'components/ui/AppLink';
 
 type ExperienceProps = {
   experiences: Experience[];
@@ -8,16 +11,17 @@ type ExperienceProps = {
 
 export const ExperienceSection: React.FC<ExperienceProps> = ({
   experiences,
-}) => {
-  return (
-    <section className="experience">
-      <h2 className="experience__title" id="experience">
-        Experience
-      </h2>
+}) => (
+  <section className="experience" id="experience">
+    <h2 className="experience__title">Experience</h2>
 
-      {experiences?.length > 0 ? (
-        <>
-          {experiences.map((exp) => (
+    {experiences?.length > 0 ? (
+      <>
+        {experiences.map((exp) => {
+          const companyName =
+            exp.company + (exp.location ? `, ${exp.location}` : '');
+
+          return (
             <div className="experience__item" key={exp.index}>
               <AppAccordion
                 title={exp.title}
@@ -25,11 +29,27 @@ export const ExperienceSection: React.FC<ExperienceProps> = ({
                 head={
                   <div className="experience__head">
                     <div className="accordion__title">
-                      <h3>{exp.title}</h3>
+                      {exp.title && <h3>{exp.title}</h3>}
 
-                      <p className="accordion__title--highlight">
-                        {exp.company}
-                        {exp.location ? `, ${exp.location}` : null}
+                      <p
+                        className={cn('accordion__title--company', {
+                          'accordion__title--link': !!exp.website,
+                        })}
+                      >
+                        {exp.company && (
+                          <>
+                            {exp.website ? (
+                              <AppLink
+                                className="accordion__title--link"
+                                text={companyName}
+                                to={exp.website}
+                                newTab
+                              />
+                            ) : (
+                              companyName
+                            )}
+                          </>
+                        )}
                       </p>
                     </div>
                     <p className="accordion__duration">{exp.duration}</p>
@@ -39,6 +59,7 @@ export const ExperienceSection: React.FC<ExperienceProps> = ({
                 {exp.content && (
                   <div
                     className="accordion__description"
+                    // eslint-disable-next-line react/no-danger
                     dangerouslySetInnerHTML={{
                       __html: markdown().render(exp.content),
                     }}
@@ -46,11 +67,11 @@ export const ExperienceSection: React.FC<ExperienceProps> = ({
                 )}
               </AppAccordion>
             </div>
-          ))}
-        </>
-      ) : (
-        <p>No experience</p>
-      )}
-    </section>
-  );
-};
+          );
+        })}
+      </>
+    ) : (
+      <p>No experience</p>
+    )}
+  </section>
+);

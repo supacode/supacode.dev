@@ -5,7 +5,7 @@ import { HTMLAttributeAnchorTarget } from 'react';
 
 type AppLinkProps = {
   asButton?: boolean;
-  openInNewTab?: boolean;
+  newTab?: boolean;
   children?: React.ReactNode;
   className?: string;
   rel?: string;
@@ -13,6 +13,7 @@ type AppLinkProps = {
   text?: string;
   title?: string;
   to: string;
+  onClick?: () => void;
 };
 
 export const AppLink: React.FC<AppLinkProps> = ({
@@ -22,9 +23,16 @@ export const AppLink: React.FC<AppLinkProps> = ({
   rel,
   target,
   to,
+  newTab,
   text,
   title,
+  onClick,
 }) => {
+  if (newTab) {
+    rel = 'noopener noreferrer';
+    target = '_blank';
+  }
+
   return (
     <Link
       href={to}
@@ -34,9 +42,10 @@ export const AppLink: React.FC<AppLinkProps> = ({
       rel={rel}
       target={target}
       title={title}
+      onClick={onClick}
     >
       {children && children}
-      {text && <span>{text}</span>}
+      {text && text}
     </Link>
   );
 };

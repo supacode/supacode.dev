@@ -8,7 +8,17 @@ import {
 
 import { useEventCallback, useEventListener } from 'hooks';
 
+const parseJSON = <T>(value: string | null): T | undefined => {
+  try {
+    return value === 'undefined' ? undefined : JSON.parse(value ?? '');
+  } catch {
+    console.log('parsing error on', { value });
+    return undefined;
+  }
+};
+
 declare global {
+  // eslint-disable-next-line no-unused-vars
   interface WindowEventMap {
     'local-storage': CustomEvent;
   }
@@ -24,9 +34,7 @@ export const useLocalStorage = <T>(
   // parse stored json or return initialValue
   const readValue = useCallback((): T => {
     // Prevent build error "window is undefined" but keeps working
-    if (typeof window === 'undefined') {
-      return initialValue;
-    }
+    if (typeof window === 'undefined') return initialValue;
 
     try {
       const item = window.localStorage.getItem(key);
@@ -70,7 +78,6 @@ export const useLocalStorage = <T>(
 
   useEffect(() => {
     setStoredValue(readValue());
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const handleStorageChange = useCallback(
@@ -94,13 +101,3 @@ export const useLocalStorage = <T>(
 };
 
 export default useLocalStorage;
-
-// A wrapper for "JSON.parse()"" to support "undefined" value
-const parseJSON = <T>(value: string | null): T | undefined => {
-  try {
-    return value === 'undefined' ? undefined : JSON.parse(value ?? '');
-  } catch {
-    console.log('parsing error on', { value });
-    return undefined;
-  }
-};
