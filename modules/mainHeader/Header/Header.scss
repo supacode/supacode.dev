@@ -1,17 +1,22 @@
 .main-header {
-  position: fixed;
   inset: 0;
   height: fit-content;
-  z-index: var(--z-index-layer-4);
-  backdrop-filter: blur(50px);
+  inset: 0;
+  z-index: var(--z-index-layer-5);
 
   &__fixed {
-    position: fixed;
-    inset: 0;
-    bottom: auto;
-    z-index: var(--z-index-layer-5);
     background: var(--dark-tertiary);
-    backdrop-filter: blur(10px);
+    animation: HeaderSlideDown 0.5s ease-in-out;
+    transform: translateY(0);
+    position: sticky;
+    top: 0;
+    transition: transform 0.3s ease-in-out;
+  }
+
+  &__hidden {
+    animation: SlideUp 0.4s ease-in-out forwards;
+    position: sticky;
+    top: 0;
   }
 
   &__inner {
@@ -20,7 +25,7 @@
     position: relative;
     justify-content: space-between;
     margin: auto;
-    padding: var(--spacing-32);
+    padding: var(--spacing-28) var(--spacing-16);
 
     @media (--screen-md-min) {
       padding: var(--spacing-24) var(--spacing-48);
@@ -30,5 +35,20 @@
   &__logo {
     font-size: var(--font-size-lg);
     color: var(--accent-primary);
+  }
+}
+
+@keyframes HeaderSlideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes SlideUp {
+  to {
+    transform: translateY(-100%);
   }
 }

@@ -1,42 +1,44 @@
 import { useRef, MouseEventHandler, useState } from 'react';
 import cn from 'classnames';
 import gsap from 'gsap';
+import { useClickAway, useIsomorphicLayoutEffect, useMount } from 'react-use';
 
 import { routes } from 'constants/path';
-import {
-  useIsomorphicLayoutEffect,
-  useOnClickOutside,
-  useWindowSize,
-} from 'hooks';
+
 import { AppLink } from 'components/ui/AppLink';
+import { useBreakpoint } from 'utils/breakpoint';
 
 export const Navbar: React.FC = () => {
-  const isMobile = useWindowSize().width < 768;
+  const breakpoint = useBreakpoint();
+
+  const isMobile = breakpoint === 'xs' || breakpoint === 'sm';
 
   const [isMounted, setIsMounted] = useState(false);
 
   // State for sidebar drawer.
-  const [isDrawerOpen, setIsDrawerOpen] = useState<boolean>(true);
+  const [isNavOpen, setIsNavOpen] = useState<boolean>(true);
 
   // State for checking if the menu is animating to close.
   const [isClosingDrawer, setIsClosingDrawer] = useState(false);
 
   const drawerRef = useRef<HTMLDivElement>(null);
 
+  useMount(() => {
+    setIsMounted(true);
+  });
+
   useIsomorphicLayoutEffect(() => {
     if (isMobile) {
-      setIsDrawerOpen(false);
+      setIsNavOpen(false);
       return;
     }
 
-    setIsDrawerOpen(true);
+    setIsNavOpen(true);
   }, [isMobile]);
-
-  useIsomorphicLayoutEffect(() => setIsMounted(true), []);
 
   const openDrawer = () => {
     document.body.style.overflowY = 'hidden'; // prevent scrolling when drawer is open
-    setIsDrawerOpen(true);
+    setIsNavOpen(true);
   };
 
   const closeDrawer = () => {
@@ -46,15 +48,19 @@ export const Navbar: React.FC = () => {
 
     setIsClosingDrawer(true); // Set state to true to trigger animation.
 
-    setTimeout(() => {
-      setIsDrawerOpen(false);
-      setIsClosingDrawer(false);
-      drawerRef.current?.removeEventListener('animationend', () => {});
-    }, 200);
+    // on animation end
+    drawerRef.current?.addEventListener(
+      'animationend',
+      () => {
+        setIsNavOpen(false);
+        setIsClosingDrawer(false);
+      },
+      { once: true },
+    );
   };
 
   const toggleSideDrawer: MouseEventHandler<HTMLElement> = () => {
-    if (!isDrawerOpen) {
+    if (!isNavOpen) {
       openDrawer();
       return;
     }
@@ -62,7 +68,7 @@ export const Navbar: React.FC = () => {
     closeDrawer();
   };
 
-  useOnClickOutside<HTMLDivElement>(drawerRef, closeDrawer);
+  useClickAway(drawerRef, closeDrawer);
 
   useIsomorphicLayoutEffect(() => {
     // Animate drawer in
@@ -82,7 +88,7 @@ export const Navbar: React.FC = () => {
     }
 
     return () => gsap.killTweensOf(drawerRef.current);
-  }, [isDrawerOpen, isMobile]);
+  }, [isNavOpen, isMobile]);
 
   useIsomorphicLayoutEffect(() => {
     // Animate drawer out
@@ -91,7 +97,7 @@ export const Navbar: React.FC = () => {
     if (isClosingDrawer) {
       gsap.to(drawerRef.current, {
         duration: 0.2,
-        transform: 'translateX(105%)',
+        transform: 'translateX(100%)',
       });
     }
 
@@ -103,26 +109,25 @@ export const Navbar: React.FC = () => {
       <button
         type="button"
         className={cn('hamburger', {
-          hamburger__active: isMounted && isDrawerOpen && !isClosingDrawer,
+          hamburger__active: isMounted && isNavOpen && !isClosingDrawer,
         })}
         onClick={toggleSideDrawer}
         tabIndex={0}
-        aria-label={isDrawerOpen ? 'Close Menu' : 'Open Menu'}
+        aria-label={isNavOpen ? 'Close Menu' : 'Open Menu'}
       >
         {[...Array(3)].map((_, index) => (
           <span
-            // eslint-disable-next-line react/no-array-index-key
-            key={index}
+            key={index.valueOf()}
             className={`hamburger__line hamburger__line--${index + 1}`}
           />
         ))}
       </button>
 
-      {isDrawerOpen && (
+      {isNavOpen && (
         <>
           <div
             className={cn('overlay', {
-              overlay__hide: isClosingDrawer,
+              overlay__hide: isClosingDrawer || !isNavOpen,
             })}
           />
 

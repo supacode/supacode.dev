@@ -1,1 +1,0 @@
-export { SnapScrollSection } from './SnapScrollSection';

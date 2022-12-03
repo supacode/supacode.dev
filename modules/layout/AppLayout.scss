@@ -9,5 +9,9 @@ html {
 .app-container {
   margin: auto;
   max-width: 1080px;
-  padding: 0 var(--spacing-40);
+  padding: 0 var(--spacing-28);
+
+  @media (--screen-md-min) {
+    padding: 0 var(--spacing-40);
+  }
 }
