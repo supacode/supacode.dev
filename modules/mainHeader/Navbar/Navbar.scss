@@ -69,7 +69,7 @@
   box-shadow: 0 0 1rem var(--dark-tertiary);
   background: var(--dark-light);
   z-index: var(--z-index-layer-4);
-  animation: fade-in 0.4s ease-in forwards;
+  animation: slide-in 0.2s ease-in forwards;
 
   @media (--screen-md-min) {
     height: fit-content;
@@ -116,7 +116,7 @@
   }
 
   &__slide-out {
-    animation: FadeOut 0.4s ease-out forwards;
+    animation: slide-out 0.2s ease-out forwards;
   }
 
   &__link {
@@ -154,8 +154,8 @@
   z-index: var(--z-index-layer-4);
   inset: 0;
   height: 100vh;
-  animation: fade-in 0.1s ease-in forwards;
   background: rgba(26, 33, 48, 0.4);
+  transition: all 0.4s ease;
   backdrop-filter: blur(6px);
 
   @media (--screen-md-min) {
@@ -167,14 +167,14 @@
   }
 }
 
-@keyframes fade-in {
+@keyframes slide-in {
   from {
-    opacity: 0;
+    transform: translateX(100%);
   }
 }
 
-@keyframes FadeOut {
+@keyframes slide-out {
   to {
-    opacity: 0;
+    transform: translateX(100%);
   }
 }

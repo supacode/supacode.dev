@@ -10,8 +10,8 @@
     background: rgba(22, 27, 37, 0.7);
     animation: HeaderSlideDown 0.5s ease-in-out;
     transform: translateY(0);
-    backdrop-filter: blur(35px);
     transition: transform 0.3s ease-in-out;
+    backdrop-filter: blur(35px);
   }
 
   &__hidden {

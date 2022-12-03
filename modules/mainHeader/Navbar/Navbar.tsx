@@ -1,6 +1,6 @@
 import { useRef, MouseEventHandler, useState } from 'react';
-import cn from 'classnames';
 import { useClickAway, useIsomorphicLayoutEffect, useMount } from 'react-use';
+import cn from 'classnames';
 
 import { routes } from 'constants/path';
 import { AppLink } from 'components/ui/AppLink';
@@ -19,12 +19,13 @@ export const Navbar: React.FC = () => {
   // State for checking if the menu is animating to close.
   const [isClosingDrawer, setIsClosingDrawer] = useState(false);
 
+  // Ref for the sidebar drawer/menu.
   const drawerRef = useRef<HTMLDivElement>(null);
 
-  useMount(() => {
-    setIsMounted(true);
-  });
+  // State for checking if the component is mounted.
+  useMount(() => setIsMounted(true));
 
+  // Close the sidebar drawer when clicking outside of it.
   useIsomorphicLayoutEffect(() => {
     if (isMobile) {
       setIsNavOpen(false);
@@ -40,6 +41,8 @@ export const Navbar: React.FC = () => {
   };
 
   const closeDrawer = () => {
+    if (!isMobile) return;
+
     document.body.style.overflowY = ''; // Allow scrolling when drawer is closed
 
     setIsClosingDrawer(true); // Set state to true to trigger animation.
