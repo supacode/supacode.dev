@@ -1,1 +1,1 @@
-export { useScrollDirection } from './useScrollDirection';
+export { useScrollDirection } from './useScrollDirection/useScrollDirection';

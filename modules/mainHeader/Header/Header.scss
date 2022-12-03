@@ -3,20 +3,20 @@
   height: fit-content;
   inset: 0;
   z-index: var(--z-index-layer-5);
+  position: fixed;
+  top: 0;
 
   &__fixed {
-    background: var(--dark-tertiary);
+    background: rgba(22, 27, 37, 0.7);
     animation: HeaderSlideDown 0.5s ease-in-out;
     transform: translateY(0);
-    position: sticky;
-    top: 0;
+    backdrop-filter: blur(35px);
     transition: transform 0.3s ease-in-out;
   }
 
   &__hidden {
     animation: SlideUp 0.4s ease-in-out forwards;
     position: sticky;
-    top: 0;
   }
 
   &__inner {

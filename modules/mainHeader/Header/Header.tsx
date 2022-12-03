@@ -1,21 +1,26 @@
 import { useRef } from 'react';
+import { useWindowScroll } from 'react-use';
 import cn from 'classnames';
 
 import { Navbar } from 'modules/mainHeader/Navbar';
 import { AppLink } from 'components/ui/AppLink';
-import { useScrollDirection } from 'hooks/useScrollDirection';
+import { useScrollDirection } from 'hooks';
 
 export const Header: React.FC = () => {
   const headerRef = useRef<HTMLDivElement>(null);
 
+  const { y: scrollPostionY } = useWindowScroll();
+
   const scrollDirection = useScrollDirection();
+
+  const headerThreshold = scrollPostionY > 60;
 
   return (
     <header
       ref={headerRef}
       className={cn('main-header', {
-        'main-header__fixed': scrollDirection === 'up',
-        'main-header__hidden': scrollDirection === 'down',
+        'main-header__fixed': headerThreshold && scrollDirection === 'up',
+        'main-header__hidden': headerThreshold && scrollDirection === 'down',
       })}
     >
       <div className="main-header__inner">

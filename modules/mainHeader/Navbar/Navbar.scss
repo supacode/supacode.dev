@@ -5,6 +5,7 @@
   display: flex;
   align-items: flex-end;
   flex-direction: column;
+  position: absolute;
   z-index: var(--z-index-layer-5);
 
   @media (--screen-md-min) {
@@ -60,7 +61,6 @@
 .main-nav {
   height: 100vh;
   position: absolute;
-  // width: 70%;
   width: min(75vw, 400px);
   top: 0;
   right: 0;
@@ -116,7 +116,7 @@
   }
 
   &__slide-out {
-    animation: fade-out 0.4s ease-out forwards;
+    animation: FadeOut 0.4s ease-out forwards;
   }
 
   &__link {
@@ -173,7 +173,7 @@
   }
 }
 
-@keyframes fade-out {
+@keyframes FadeOut {
   to {
     opacity: 0;
   }
