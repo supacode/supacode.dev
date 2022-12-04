@@ -1,3 +1,18 @@
+@keyframes slide-in {
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
 .hamburger {
   width: 35px;
   height: 35px;
@@ -66,12 +81,13 @@
   right: 0;
   bottom: 0;
   padding: var(--spacing-120) var(--spacing-40) 0 0;
-  box-shadow: 0 0 1rem var(--dark-tertiary);
+  box-shadow: 0 0 0.2rem var(--dark-tertiary);
   background: var(--dark-light);
   z-index: var(--z-index-layer-4);
-  animation: slide-in 0.2s ease-in forwards;
+  transform: translateX(100%);
 
   @media (--screen-md-min) {
+    transform: translateX(0);
     height: fit-content;
     position: relative;
     padding: 0;
@@ -81,6 +97,14 @@
     background: none;
     animation: none;
     box-shadow: none;
+  }
+
+  &__open {
+    animation: slide-in 0.2s ease-in forwards;
+  }
+
+  &__closing {
+    animation: slide-out 0.2s ease-in forwards;
   }
 
   &__list {
@@ -150,31 +174,14 @@
 }
 
 .overlay {
-  position: absolute;
+  position: fixed;
   z-index: var(--z-index-layer-4);
   inset: 0;
-  height: 100vh;
   background: rgba(26, 33, 48, 0.4);
   transition: all 0.4s ease;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(10px);
 
   @media (--screen-md-min) {
-    position: relative;
-    inset: 0;
-    width: fit-content;
-    height: fit-content;
-    background: none;
-  }
-}
-
-@keyframes slide-in {
-  from {
-    transform: translateX(100%);
-  }
-}
-
-@keyframes slide-out {
-  to {
-    transform: translateX(100%);
+    display: none;
   }
 }

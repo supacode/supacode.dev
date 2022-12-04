@@ -1,5 +1,5 @@
-import { useRef, MouseEventHandler, useState } from 'react';
-import { useClickAway, useIsomorphicLayoutEffect, useMount } from 'react-use';
+import { useEffect, useRef, useState } from 'react';
+import { useClickAway, useIsomorphicLayoutEffect } from 'react-use';
 import cn from 'classnames';
 
 import { routes } from 'constants/path';
@@ -7,11 +7,14 @@ import { AppLink } from 'components/ui/AppLink';
 import { useBreakpoint } from 'utils/breakpoint';
 
 export const Navbar: React.FC = () => {
-  const breakpoint = useBreakpoint();
+  // Ref for the sidebar drawer/menu.
+  const drawerRef = useRef<HTMLDivElement>(null);
 
+  const breakpoint = useBreakpoint();
   const isMobile = breakpoint === 'xs' || breakpoint === 'sm';
 
   const [isMounted, setIsMounted] = useState(false);
+  useEffect(() => setIsMounted(true), []);
 
   // State for sidebar drawer.
   const [isNavOpen, setIsNavOpen] = useState<boolean>(true);
@@ -19,62 +22,40 @@ export const Navbar: React.FC = () => {
   // State for checking if the menu is animating to close.
   const [isClosingDrawer, setIsClosingDrawer] = useState(false);
 
-  // Ref for the sidebar drawer/menu.
-  const drawerRef = useRef<HTMLDivElement>(null);
-
-  // State for checking if the component is mounted.
-  useMount(() => setIsMounted(true));
-
-  // Close the sidebar drawer when clicking outside of it.
-  useIsomorphicLayoutEffect(() => {
-    if (isMobile) {
-      setIsNavOpen(false);
-    } else if (isMounted) {
-      setIsNavOpen(true);
-    }
-  }, [isMobile, isMounted]);
-
-  const openDrawer = () => {
-    document.body.style.overflow = 'hidden'; // prevent scrolling when drawer is open
+  const openMenu = () => {
     setIsNavOpen(true);
+    document.body.style.overflowY = 'hidden';
   };
 
-  const closeDrawer = () => {
-    if (!isMobile) return;
+  const closeMenu = () => {
+    document.body.style.overflowY = '';
+    setIsClosingDrawer(true);
 
-    document.body.style.overflowY = ''; // Allow scrolling when drawer is closed
-
-    setIsClosingDrawer(true); // Set state to true to trigger animation.
-
-    // when animation is done, set state to remove the drawer from the DOM.
-    drawerRef.current?.addEventListener(
-      'animationend',
-      () => {
-        setIsNavOpen(false);
-        setIsClosingDrawer(false);
-      },
-      { once: true },
-    );
+    setTimeout(() => {
+      setIsNavOpen(false);
+      setIsClosingDrawer(false);
+    }, 200);
   };
 
-  const toggleSideDrawer: MouseEventHandler<HTMLElement> = () => {
-    if (!isNavOpen && isMounted) {
-      openDrawer();
-    } else {
-      closeDrawer();
-    }
+  useIsomorphicLayoutEffect(() => {
+    if (isMobile) setIsNavOpen(false);
+  }, [isMobile]);
+
+  const toggleMenu = () => {
+    if (isNavOpen) closeMenu();
+    else openMenu();
   };
 
-  useClickAway(drawerRef, closeDrawer);
+  useClickAway(drawerRef, () => isNavOpen && closeMenu());
 
   return (
     <>
       <button
         type="button"
         className={cn('hamburger', {
-          hamburger__active: isMounted && isNavOpen && !isClosingDrawer,
+          hamburger__active: isMounted && (isClosingDrawer || isNavOpen),
         })}
-        onClick={toggleSideDrawer}
+        onClick={toggleMenu}
         tabIndex={0}
         aria-label={isNavOpen ? 'Close Menu' : 'Open Menu'}
       >
@@ -86,43 +67,36 @@ export const Navbar: React.FC = () => {
         ))}
       </button>
 
-      {isNavOpen && (
-        <>
-          <div
-            className={cn('overlay', {
-              overlay__hide: isClosingDrawer,
-            })}
-          />
+      {isNavOpen && <div className="overlay" />}
 
-          <nav
-            ref={drawerRef}
-            className={cn('main-nav', {
-              'main-nav__slide-out': isClosingDrawer,
-            })}
-          >
-            <ol className="main-nav__list">
-              {routes.map((link) => (
-                <li
-                  key={link.id}
-                  className="main-nav__list--item"
-                  onClick={closeDrawer}
-                  onKeyDown={closeDrawer}
-                  role="presentation"
-                >
-                  <AppLink
-                    className={cn('main-nav__link', {
-                      'main-nav__link--active': false, // TODO: Replace with active link logic.
-                    })}
-                    to={link.url}
-                  >
-                    {link.text}
-                  </AppLink>
-                </li>
-              ))}
-            </ol>
-          </nav>
-        </>
-      )}
+      <nav
+        ref={drawerRef}
+        className={cn('main-nav', {
+          'main-nav__open': isNavOpen,
+          'main-nav__closing': isClosingDrawer,
+        })}
+      >
+        <ol className="main-nav__list">
+          {routes.map((link) => (
+            <li
+              key={link.id}
+              className="main-nav__list--item"
+              onClick={closeMenu}
+              onKeyDown={closeMenu}
+              role="presentation"
+            >
+              <AppLink
+                className={cn('main-nav__link', {
+                  'main-nav__link--active': false, // TODO: Replace with active link logic.
+                })}
+                to={link.url}
+              >
+                {link.text}
+              </AppLink>
+            </li>
+          ))}
+        </ol>
+      </nav>
     </>
   );
 };
