@@ -52,9 +52,12 @@ export const Navbar: React.FC = () => {
     <>
       <button
         type="button"
-        className={cn('hamburger', {
-          hamburger__active: isMounted && (isClosingDrawer || isNavOpen),
-        })}
+        className={cn(
+          'hamburger',
+          isMounted && {
+            hamburger__active: isClosingDrawer || isNavOpen,
+          },
+        )}
         onClick={toggleMenu}
         tabIndex={0}
         aria-label={isNavOpen ? 'Close Menu' : 'Open Menu'}
