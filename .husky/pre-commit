@@ -22,15 +22,15 @@ npm run check-lint ||
 # Check tsconfig standards
 npm run check-types ||
 (
-    echo '🤡😂❌🤡 Failed Type check. 🤡😂❌🤡
+    echo '😂❌ Failed Type check. 😂❌
             Make the changes required above.'
     false;
 )
 
-# Check tsconfig standards
+# Check SCSS Standards
 npm run lint:scss ||
 (
-    echo '🤡😂❌🤡 Error linting SCSS🤡😂❌🤡
+    echo '😂❌ Error linting SCSS 😂❌
             Make the changes required above.'
     false;
 )
@@ -47,7 +47,7 @@ npm run build ||
 )
 
 # If everything passes... Now we can commit
-echo '✅✅✅ Every looks 🆗. ✅✅✅'
+echo '✅✅✅ Every looks Ok. ✅✅✅'
 
 
 
