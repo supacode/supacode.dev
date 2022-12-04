@@ -41,6 +41,15 @@ module.exports = {
     'jsx-a11y/anchor-is-valid': 'off',
     'consistent-return': 'off',
     'no-param-reassign': 0,
+    'no-unused-vars': 'off',
+    '@typescript-eslint/no-unused-vars': [
+      'error',
+      {
+        argsIgnorePattern: '^_',
+        varsIgnorePattern: '^_',
+        caughtErrorsIgnorePattern: '^_',
+      },
+    ],
   },
   settings: {
     react: {

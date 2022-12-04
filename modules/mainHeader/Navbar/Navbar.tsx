@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
+import { useRef, useState } from 'react';
 import { useClickAway, useIsomorphicLayoutEffect } from 'react-use';
 import cn from 'classnames';
 
@@ -10,20 +10,20 @@ export const Navbar: React.FC = () => {
   // Ref for the sidebar drawer/menu.
   const drawerRef = useRef<HTMLDivElement>(null);
 
-  const breakpoint = useBreakpoint();
-  const isMobile = breakpoint === 'xs' || breakpoint === 'sm';
+  const breakpoints = useBreakpoint();
 
-  const [isMounted, setIsMounted] = useState(false);
-  useEffect(() => setIsMounted(true), []);
+  const isMobile = breakpoints === 'xs' || breakpoints === 'sm';
 
   // State for sidebar drawer.
-  const [isNavOpen, setIsNavOpen] = useState<boolean>(true);
+  const [isDesktopMenu, _setIsDesktopMenu] = useState<boolean>(true);
+  const [isMobileMenu, setIsMobileMenu] = useState<boolean>(false);
 
   // State for checking if the menu is animating to close.
   const [isClosingDrawer, setIsClosingDrawer] = useState(false);
 
   const openMenu = () => {
-    setIsNavOpen(true);
+    setIsMobileMenu(true);
+
     document.body.style.overflowY = 'hidden';
   };
 
@@ -32,35 +32,35 @@ export const Navbar: React.FC = () => {
     setIsClosingDrawer(true);
 
     setTimeout(() => {
-      setIsNavOpen(false);
+      setIsMobileMenu(false);
       setIsClosingDrawer(false);
     }, 200);
   };
 
-  useIsomorphicLayoutEffect(() => {
-    if (isMobile) setIsNavOpen(false);
-  }, [isMobile]);
-
   const toggleMenu = () => {
-    if (isNavOpen) closeMenu();
+    if (isMobileMenu) closeMenu();
     else openMenu();
   };
 
-  useClickAway(drawerRef, () => isNavOpen && closeMenu());
+  // Close the menu if on desktop and and the drawer is open.
+  // This is to prevent the drawer from being open
+  // when the user resizes the window or changes orientation.
+  useIsomorphicLayoutEffect(() => {
+    if (!isMobile && isMobileMenu) closeMenu();
+  }, [isMobile]);
+
+  useClickAway(drawerRef, () => isMobileMenu && closeMenu());
 
   return (
     <>
       <button
         type="button"
-        className={cn(
-          'hamburger',
-          isMounted && {
-            hamburger__active: isClosingDrawer || isNavOpen,
-          },
-        )}
+        className={cn('hamburger', {
+          hamburger__active: isMobileMenu,
+        })}
         onClick={toggleMenu}
         tabIndex={0}
-        aria-label={isNavOpen ? 'Close Menu' : 'Open Menu'}
+        aria-label={isDesktopMenu ? 'Close Menu' : 'Open Menu'}
       >
         {[...Array(3)].map((_, index) => (
           <span
@@ -70,12 +70,12 @@ export const Navbar: React.FC = () => {
         ))}
       </button>
 
-      {isNavOpen && <div className="overlay" />}
+      {isMobileMenu && <div className="overlay" />}
 
       <nav
         ref={drawerRef}
         className={cn('main-nav', {
-          'main-nav__open': isNavOpen,
+          'main-nav__open': isMobileMenu,
           'main-nav__closing': isClosingDrawer,
         })}
       >
