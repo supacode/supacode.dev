@@ -13,7 +13,7 @@ type BlogProps = {
 const BlogPage: NextPage<BlogProps> = ({ allPosts = [] }) => (
   <>
     <Head>
-      <title>Blog | {sideData.title}</title>
+      <title>{`Blog | ${sideData.title}`}</title>
     </Head>
 
     <div className="blog-page">

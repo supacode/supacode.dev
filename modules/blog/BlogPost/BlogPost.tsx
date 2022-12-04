@@ -14,7 +14,6 @@ export const BlogPost: React.FC<BlogPostProps> = ({ post }) => (
     {post.content && (
       <section
         className="post__content"
-        // eslint-disable-next-line react/no-danger
         dangerouslySetInnerHTML={{ __html: post.content }}
         itemProp="articleBody"
       />
