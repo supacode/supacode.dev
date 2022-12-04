@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document';
+import { sideData } from 'constants/siteData';
 
 const Document: React.FC = () => (
   <Html lang="en">
@@ -17,6 +18,9 @@ const Document: React.FC = () => (
         href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600&display=swap"
         rel="stylesheet"
       />
+      <meta property="og:image" content="assets/images/og.png" />
+      <meta property="og:description" content={sideData.description} />
+      <meta name="theme-color" content={sideData.themeColor} />
     </Head>
     <body>
       <Main />

@@ -85,6 +85,7 @@
   background: var(--dark-light);
   z-index: var(--z-index-layer-4);
   transform: translateX(100%);
+  transition: all 0.2s ease-in-out;
 
   @media (--screen-md-min) {
     transform: translateX(0);

@@ -1,6 +1,6 @@
 {
   "name": "supacode.dev",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "next dev",
@@ -17,7 +17,6 @@
   "dependencies": {
     "classnames": "^2.3.2",
     "gray-matter": "^4.0.3",
-    "gsap": "^3.11.3",
     "markdown-it": "^13.0.1",
     "next": "^13.0.0",
     "prismjs": "^1.29.0",
