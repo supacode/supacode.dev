@@ -32,12 +32,14 @@ echo '🤔🤔🤔🤔... Alright.... Code looks good to me... Trying to build n
 
 npm run build ||
 (
-    echo '❌👷🏿🔨❌ Buil failed. Please call the foreman. ❌👷🏿🔨❌
+    echo '❌👷🏿🔨❌ Buil failed. ❌👷🏿🔨❌
             Next build failed: View the errors above to see why. 
     '
     false;
 )
 
 # If everything passes... Now we can commit
-echo '✅✅✅ All good to commit '
+echo '✅✅✅ Every looks 🆗. ✅✅✅'
+
+
 
