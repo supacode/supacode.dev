@@ -27,6 +27,14 @@ npm run check-types ||
     false;
 )
 
+# Check tsconfig standards
+npm run lint:scss ||
+(
+    echo '🤡😂❌🤡 Error linting SCSS🤡😂❌🤡
+            Make the changes required above.'
+    false;
+)
+
 # If everything passes... Now we can commit
 echo '🤔🤔🤔🤔... Alright.... Code looks good to me... Trying to build now. 🤔🤔🤔🤔'
 
