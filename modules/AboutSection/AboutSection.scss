@@ -64,16 +64,20 @@
     &__tool {
       display: inline-flex;
       align-items: center;
-      border: 1px solid rgba(150, 150, 150, 0.28);
+      border: 1px solid rgba(150 150 150 / 28%);
       margin-right: var(--spacing-10);
       margin-bottom: var(--spacing-10);
       font-size: var(--font-size-xs);
       background: var(--dark-tertiary);
-      padding: var(--spacing-10) var(--spacing-14);
+      padding: var(--spacing-6) var(--spacing-10);
       color: var(--grey-light);
       font-weight: var(--font-weight-medium);
       border-radius: var(--border-radius-lg);
       line-height: 0;
+
+      @media (--screen-md-min) {
+        padding: var(--spacing-10) var(--spacing-14);
+      }
 
       &--icon {
         margin-right: var(--spacing-8);

@@ -7,12 +7,13 @@
     "build": "next build",
     "live": "next start",
     "lint": "next lint",
+    "lint:scss": "stylelint \"**/*.scss\"",
     "prepare": "husky install",
     "check-types": "tsc --pretty --noEmit",
     "check-format": "prettier --check .",
     "check-lint": "eslint . --ext ts --ext tsx --ext js --ext jsx",
     "format": "prettier --write .",
-    "test-all": "npm run check-format && npm run check-lint && npm run check-types && npm run build"
+    "test-all": "npm run check-format && npm run lint:scss && npm run check-lint && npm run check-types && npm run build"
   },
   "dependencies": {
     "classnames": "^2.3.2",
@@ -46,7 +47,11 @@
     "eslint-plugin-react": "^7.31.11",
     "husky": "^8.0.0",
     "postcss-preset-env": "^7.8.2",
+    "postcss-scss": "^4.0.6",
     "prettier": "^2.8.0",
+    "stylelint": "^14.16.0",
+    "stylelint-config-prettier": "^9.0.4",
+    "stylelint-config-standard": "^29.0.0",
     "typescript": "^4.9.3"
   },
   "engines": {

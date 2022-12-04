@@ -7,7 +7,6 @@
     cursor: pointer;
     align-items: center;
     color: var(--grey-dark);
-    width: 100%;
     padding: var(--spacing-32);
 
     &:focus {
@@ -55,7 +54,7 @@
     max-height: 99999px;
 
     &--animated {
-      animation: slideUp 0.4s ease-out;
+      animation: slide-up 0.4s ease-out;
 
       @media (prefers-reduced-motion: reduce) {
         animation: none;
@@ -68,21 +67,17 @@
     }
   }
 
-  &__head {
-    display: flex;
-    align-items: center;
-  }
-
   &__content {
     padding: var(--spacing-32) 0 var(--spacing-64) 0;
   }
 }
 
-@keyframes slideUp {
+@keyframes slide-up {
   0% {
     transform: translateY(var(--spacing-8));
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }

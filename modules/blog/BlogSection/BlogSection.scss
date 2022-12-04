@@ -10,7 +10,6 @@
   }
 
   .blog-card {
-    //
     &:first-child {
       @media (--screen-md-min) {
         grid-column: 1 / 3;

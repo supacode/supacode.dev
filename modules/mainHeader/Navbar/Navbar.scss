@@ -8,6 +8,7 @@
   from {
     transform: translateX(0);
   }
+
   to {
     transform: translateX(100%);
   }
@@ -93,7 +94,6 @@
     position: relative;
     padding: 0;
     flex-direction: row;
-    background: none;
     width: fit-content;
     background: none;
     animation: none;
@@ -116,7 +116,6 @@
     display: flex;
     flex-direction: column;
     margin-right: var(--spacing-40);
-
     margin-top: var(--spacing-56);
 
     @media (--screen-md-min) {
@@ -156,7 +155,7 @@
       transition: 0.4s ease-out;
     }
 
-    &:before {
+    &::before {
       color: var(--accent-primary);
       content: '0' counter(item) '.';
       display: block;
@@ -182,7 +181,7 @@
   position: fixed;
   z-index: var(--z-index-layer-4);
   inset: 0;
-  background: rgba(26, 33, 48, 0.3);
+  background: rgba(26 33 48 / 30%);
   height: 100vh;
   backdrop-filter: blur(4px);
   transition: all 0.4s ease;

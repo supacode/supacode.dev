@@ -1,7 +1,7 @@
 .project {
   margin-bottom: var(--spacing-32);
   background: var(--dark-tertiary);
-  border: 1px solid rgba(var(--white), 0.05);
+  // border: 1px solid rgba(var(--white) / %.05);
   padding: var(--spacing-48);
   position: relative;
   display: grid;
@@ -34,6 +34,7 @@
       font-family: var(--font-stack-monospace);
       display: inline-block;
       margin-right: var(--spacing-16);
+
       span {
         margin-right: 3px;
       }
@@ -42,7 +43,7 @@
 
   &__img {
     img {
-      border: 1px solid rgba(var(--white), 0.04);
+      // border: 1px solid rgba(var(--white) / %0.04);
     }
 
     .gatsby-image-wrapper,

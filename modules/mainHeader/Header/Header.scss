@@ -1,21 +1,20 @@
 .main-header {
   inset: 0;
   height: fit-content;
-  inset: 0;
   z-index: var(--z-index-layer-5);
   position: fixed;
   top: 0;
 
   &__fixed {
-    background: rgba(22, 27, 37, 0.7);
-    animation: HeaderSlideDown 0.5s ease-in-out;
+    background: rgba(22 27 37 / 70%);
+    animation: slide-down 0.5s ease-in-out;
     transform: translateY(0);
     transition: transform 0.3s ease-in-out;
     backdrop-filter: blur(35px);
   }
 
   &__hidden {
-    animation: SlideUp 0.4s ease-in-out forwards;
+    animation: slide-hide 0.4s ease-in-out forwards;
     position: fixed;
     background: var(--dark-tertiary);
   }
@@ -38,16 +37,17 @@
   }
 }
 
-@keyframes HeaderSlideDown {
+@keyframes slide-down {
   0% {
     transform: translateY(-100%);
   }
+
   100% {
     transform: translateY(0);
   }
 }
 
-@keyframes SlideUp {
+@keyframes slide-hide {
   to {
     transform: translateY(-100%);
   }
