@@ -1,14 +1,14 @@
 @keyframes slide-in {
-  100% {
+  to {
     transform: translateX(0);
   }
 }
 
 @keyframes slide-out {
-  0% {
+  from {
     transform: translateX(0);
   }
-  100% {
+  to {
     transform: translateX(100%);
   }
 }
