@@ -1,0 +1,127 @@
+.post {
+  margin: var(--spacing-128) auto var(--spacing-96) auto;
+
+  @media (--screen-md-min) {
+    width: 80%;
+  }
+
+  &__content {
+    margin-top: var(--spacing-32);
+    line-height: 3;
+
+    // Markdown generated links
+    a {
+      color: var(--accent-primary);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    p {
+      word-wrap: break-word;
+      margin-bottom: var(--spacing-32);
+      font-size: var(--font-size-base);
+    }
+
+    hr {
+      height: var(--spacing-2);
+      background: var(--grey-dark);
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      color: var(--accent-primary);
+      font-weight: var(--font-weight-bold);
+    }
+
+    h1 {
+      font-size: var(--font-size-xxl);
+    }
+
+    h2 {
+      font-size: var(--font-size-xl);
+    }
+
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-size: var(--font-size-lg);
+    }
+
+    table {
+      width: 100%;
+      max-width: 44rem;
+      border-collapse: collapse;
+      margin: var(--spacing-24) var(--spacing-8);
+    }
+
+    thead {
+      border: var(--spacing-2) solid;
+    }
+
+    tfoot {
+      border-top: var(--spacing-2) solid;
+    }
+
+    th,
+    td {
+      padding: var(--spacing-2);
+    }
+
+    ol,
+    ul {
+      padding-inline-start: var(--spacing-40);
+      margin-block-start: var(--spacing-20);
+      margin-block-end: var(--spacing-20);
+    }
+
+    ul li {
+      list-style: disc inside;
+    }
+
+    ol li {
+      list-style: decimal;
+    }
+
+    blockquote {
+      padding: 0 var(--spacing-12);
+      font-style: italic;
+      margin-left: var(--spacing-40);
+      margin-right: var(--spacing-40);
+    }
+
+    pre {
+      background: var(--dark-secondary);
+    }
+
+    code {
+      font-family: var(--font-stack-monospace);
+      font-size: var(--spacing-14);
+      color: var(--grey-dark);
+      background: var(--dark-secondary);
+      padding: var(--spacing-4) var(--spacing-8);
+      border-radius: var(--spacing-4);
+      word-wrap: break-word;
+    }
+
+    // Syntax highlighting edit
+
+    code[class*='language-'] {
+      background: none;
+      font-size: var(--font-size-sm);
+    }
+
+    pre[class*='language-'] {
+      border: none;
+      border-radius: var(--border-radius-md);
+      background: var(--dark-tertiary);
+      padding: var(--spacing-28);
+    }
+  }
+}

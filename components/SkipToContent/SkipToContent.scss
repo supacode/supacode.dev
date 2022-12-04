@@ -1,0 +1,13 @@
+.skip-link {
+  position: absolute;
+  transform: translateX(-50%);
+  z-index: var(--z-index-layer-5);
+  left: 50%;
+  top: -30%;
+
+  &:focus {
+    background: var(--accent-primary);
+    color: var(--dark-primary);
+    top: 1%;
+  }
+}

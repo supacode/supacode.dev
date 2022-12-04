@@ -1,0 +1,29 @@
+.site-footer {
+  margin: var(--spacing-40) auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: var(--spacing-40) var(--spacing-20);
+
+  &__lead-txt {
+    font-size: var(--font-size-lg);
+    margin-bottom: var(--spacing-24);
+    color: var(--accent-primary);
+
+    @media (--screen-md-min) {
+      font-size: var(--font-size-3xl);
+    }
+  }
+
+  &__txt {
+    margin-bottom: var(--spacing-24);
+    text-align: center;
+    line-height: 2;
+    font-size: var(--font-size-sm);
+
+    @media (--screen-md-min) {
+      font-size: var(--font-size-base);
+    }
+  }
+}

@@ -1,0 +1,111 @@
+.blog-card {
+  display: flex;
+  transition: 0.4s cubic-bezier(0.5, 2, 0.6, 1);
+  position: relative;
+  overflow: hidden;
+  border-radius: var(--border-radius-sm);
+
+  @media (--screen-md-min) {
+    border-radius: var(--border-radius-md);
+  }
+
+  &:hover {
+    transform: translateY(-5px);
+  }
+
+  &__content {
+    position: relative;
+    z-index: var(--z-index-layer-2);
+  }
+
+  &__title {
+    font-weight: var(--font-weight-bold);
+    margin-bottom: var(--spacing-10);
+    width: fit-content;
+    line-height: 2;
+
+    &--link {
+      display: block;
+
+      &:hover {
+        color: var(--accent-primary);
+      }
+    }
+  }
+
+  &__excerpt {
+    margin-bottom: var(--spacing-20);
+    font-size: var(--font-size-xs);
+    line-height: 2;
+    color: var(--grey-light);
+  }
+
+  &__img {
+    object-fit: cover;
+    overflow: hidden;
+    height: auto;
+    width: auto;
+    border-radius: var(--border-radius-sm);
+
+    @media (--screen-md-min) {
+      border-radius: var(--border-radius-md);
+    }
+  }
+
+  &__date {
+    font-family: var(--font-stack-monospace);
+    font-size: var(--font-size-xs);
+  }
+}
+
+// Stacked variant of blog card
+.blog-card-stacked {
+  overflow: hidden;
+
+  .blog-card__content {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    justify-content: flex-end;
+    flex-direction: column;
+    padding: var(--spacing-24);
+    background: rgba(22 27 37 / 85%);
+  }
+
+  .blog-card__img {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+  }
+}
+
+.blog-card-inline {
+  padding: var(--spacing-32);
+  background: var(--dark-tertiary);
+  display: grid;
+  column-gap: var(--spacing-32);
+  grid-template: 1fr;
+  z-index: 1;
+  row-gap: var(--spacing-20);
+
+  @media (--screen-md-min) {
+    row-gap: 0;
+    grid-template: auto / 1fr 2fr;
+  }
+
+  .blog-card__title {
+    font-size: var(--font-size-2xl);
+  }
+
+  .blog-card__content {
+    p {
+      color: var(--grey-light);
+    }
+  }
+
+  .blog-card__img {
+    position: relative;
+    width: 100%;
+    max-height: 200px;
+  }
+}

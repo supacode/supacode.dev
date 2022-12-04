@@ -1,0 +1,1 @@
+export { BlogHead } from './BlogHead';

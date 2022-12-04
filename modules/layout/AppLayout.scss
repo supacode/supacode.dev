@@ -1,0 +1,17 @@
+html {
+  font: var(--font-size-base) var(--font-stack-main);
+  background: var(--dark-primary);
+  color: var(--grey-light);
+  text-rendering: optimizeLegibility;
+  scroll-behavior: smooth !important;
+}
+
+.app-container {
+  margin: auto;
+  max-width: 1080px;
+  padding: 0 var(--spacing-20);
+
+  @media (--screen-md-min) {
+    padding: 0 var(--spacing-40);
+  }
+}

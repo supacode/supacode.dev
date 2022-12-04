@@ -1,0 +1,122 @@
+.project {
+  margin-bottom: var(--spacing-32);
+  background: var(--dark-tertiary);
+  // border: 1px solid rgba(var(--white) / %.05);
+  padding: var(--spacing-48);
+  position: relative;
+  display: grid;
+  grid-template-columns: 2fr 1.5fr;
+  grid-template-rows: auto;
+
+  &__content {
+    margin-right: var(--spacing-32);
+  }
+
+  &__title {
+    font-size: var(--font-size-xxl);
+    font-weight: var(--font-weight-medium);
+    margin-bottom: var(--spacing-16);
+    color: var(--accent-primary);
+  }
+
+  &__desc {
+    margin-bottom: var(--spacing-16);
+    line-height: 2;
+  }
+
+  &__tools {
+    list-style: disc;
+    margin-bottom: var(--spacing-16);
+    color: var(--grey-dark);
+
+    li {
+      font-size: var(--font-size-xs);
+      font-family: var(--font-stack-monospace);
+      display: inline-block;
+      margin-right: var(--spacing-16);
+
+      span {
+        margin-right: 3px;
+      }
+    }
+  }
+
+  &__img {
+    img {
+      // border: 1px solid rgba(var(--white) / %0.04);
+    }
+
+    .gatsby-image-wrapper,
+    a {
+      height: 100%;
+      display: block;
+    }
+  }
+
+  &__links {
+    a {
+      margin-right: var(--spacing-16);
+    }
+
+    svg {
+      width: 25px;
+
+      path {
+        fill: var(--grey-light);
+      }
+    }
+
+    a:hover {
+      svg {
+        path {
+          fill: var(--accent-primary);
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .project {
+    padding: 0;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    &__img,
+    &__content {
+      grid-row: 1 / auto;
+      grid-column: 1 / 3;
+    }
+
+    &__content {
+      padding: var(--spacing-32);
+      position: relative;
+      z-index: var(--z-index-layer-2);
+      margin: 0;
+    }
+
+    &__img {
+      filter: grayscale(40%) brightness(15%) opacity(30%);
+      background: var(--dark-primary);
+    }
+  }
+}
+
+@media screen and (min-width: 700px) {
+  .project {
+    &:nth-child(odd) {
+      grid-template-columns: 1.5fr 2fr;
+
+      .project__content {
+        grid-column: 2/ 3;
+        margin-right: 0;
+        margin-left: var(--spacing-32);
+      }
+
+      .project__img {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+    }
+  }
+}
