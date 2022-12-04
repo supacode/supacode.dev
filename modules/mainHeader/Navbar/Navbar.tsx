@@ -29,11 +29,10 @@ export const Navbar: React.FC = () => {
   useIsomorphicLayoutEffect(() => {
     if (isMobile) {
       setIsNavOpen(false);
-      return;
+    } else if (isMounted) {
+      setIsNavOpen(true);
     }
-
-    setIsNavOpen(true);
-  }, [isMobile]);
+  }, [isMobile, isMounted]);
 
   const openDrawer = () => {
     document.body.style.overflow = 'hidden'; // prevent scrolling when drawer is open
@@ -47,7 +46,7 @@ export const Navbar: React.FC = () => {
 
     setIsClosingDrawer(true); // Set state to true to trigger animation.
 
-    // on animation end
+    // when animation is done, set state to remove the drawer from the DOM.
     drawerRef.current?.addEventListener(
       'animationend',
       () => {
@@ -59,12 +58,11 @@ export const Navbar: React.FC = () => {
   };
 
   const toggleSideDrawer: MouseEventHandler<HTMLElement> = () => {
-    if (!isNavOpen) {
+    if (!isNavOpen && isMounted) {
       openDrawer();
-      return;
+    } else {
+      closeDrawer();
     }
-
-    closeDrawer();
   };
 
   useClickAway(drawerRef, closeDrawer);
@@ -92,7 +90,7 @@ export const Navbar: React.FC = () => {
         <>
           <div
             className={cn('overlay', {
-              overlay__hide: isClosingDrawer || !isNavOpen,
+              overlay__hide: isClosingDrawer,
             })}
           />
 
