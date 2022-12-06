@@ -11,7 +11,7 @@ export const getAllPosts = (fields: string[]): Blog[] => {
   const slugs = fs.readdirSync(postsDirectory);
 
   const posts = slugs
-    .map((slug) => getEntryBySlug<Blog>({ dir, slug, fields }))
+    .map((slug) => getEntryBySlug<Blog>({ dir, slug, keys: fields }))
     .sort((prevPost, nextPost) => (prevPost.date > nextPost.date ? -1 : 1));
 
   return posts;

@@ -1,4 +1,4 @@
-export const sideData = {
+export const siteData = {
   title: 'Supacode.dev',
   description:
     "Hey there! I'm Maverick, a Software Developer with a primary focus on Frontend Engineering.",

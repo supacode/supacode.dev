@@ -1,9 +1,8 @@
 ---
-date: '2021-10-18T00:00:00'
+date: '2021-10-18'
 title: 9 Skills To Look For In A Full-Stack Developer
 coverImage: '/assets/blog/computer-programmer-123.jpeg'
-excerpt: "In today's advanced, competitive, and digital world, if you talk about taking
-your business online in a cost-effective way"
+excerpt: In today's advanced, competitive, and digital world, if you talk about taking your business online in a cost-effective way
 ---
 
 In today's advanced, competitive, and digital world, if you talk about taking

@@ -8,6 +8,6 @@ export {
 
 export { socialLinks } from './socialLinks/socialLinks';
 
-export { sideData } from './siteData/siteData';
+export { siteData } from './siteData/siteData';
 
 export { breakpoints } from './breakpoints/breakpoints';
