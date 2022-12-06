@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import { sideData } from 'consts';
+import { siteData } from 'consts';
 import { AboutSection } from 'modules/AboutSection';
 import type { Experience } from 'modules/experience/types';
 import { ExperienceSection } from 'modules/experience/ExperienceSection';
@@ -9,30 +9,36 @@ import { HeroSection } from 'modules/HeroSection';
 import { getAllPosts } from 'modules/blog/api/getAllPosts';
 import { BlogSection } from 'modules/blog/BlogSection';
 import type { Blog } from 'modules/blog/types';
-import { Project } from 'modules/project/types';
 import { getAllExperiences } from 'modules/experience/api/getAllExperiences';
 
 type HomeProps = {
   allPosts: Blog[];
   allExperiences: Experience[];
-  allProjects: Project[];
 };
 
-const Home: NextPage<HomeProps> = ({ allPosts, allExperiences }) => (
-  //
-  <>
-    <Head>
-      <title>{sideData.title}</title>
+const Home: NextPage<HomeProps> = ({ allPosts, allExperiences }) => {
+  const pageTitle = siteData.title;
 
-      <link rel="icon" href="/favicon.ico" />
-    </Head>
+  return (
+    <>
+      <Head>
+        <title>{pageTitle}</title>
+        <meta name="description" content={siteData.description} />
 
-    <HeroSection />
-    <AboutSection />
-    <ExperienceSection experiences={allExperiences} />
-    <BlogSection posts={allPosts} />
-  </>
-);
+        <meta property="og:image" content="assets/images/og.png" />
+
+        <meta property="og:title" content={pageTitle} />
+
+        <meta property="og:description" content={siteData.description} />
+      </Head>
+
+      <HeroSection />
+      <AboutSection />
+      <ExperienceSection experiences={allExperiences} />
+      <BlogSection posts={allPosts} />
+    </>
+  );
+};
 
 export const getStaticProps = async () => {
   const allPosts = getAllPosts([

@@ -1,5 +1,5 @@
+import { siteData } from 'consts/index';
 import { Html, Head, Main, NextScript } from 'next/document';
-import { sideData } from 'consts';
 
 const Document: React.FC = () => (
   <Html lang="en">
@@ -10,7 +10,6 @@ const Document: React.FC = () => (
       />
 
       <link rel="preconnect" href="https://fonts.googleapis.com" />
-
       <link
         rel="preconnect"
         href="https://fonts.gstatic.com"
@@ -22,11 +21,8 @@ const Document: React.FC = () => (
         rel="stylesheet"
       />
 
-      <meta name="description" content={sideData.description} />
-
-      <meta property="og:image" content="assets/images/og.png" />
-      <meta property="og:description" content={sideData.description} />
-      <meta name="theme-color" content={sideData.themeColor} />
+      <meta name="theme-color" content={siteData.themeColor} />
+      <link rel="icon" href="/favicon.ico" />
     </Head>
 
     <body data-theme="light">

@@ -4,12 +4,12 @@ import matter from 'gray-matter';
 
 type getEntryBySlugType = {
   slug: string;
-  fields: string[];
+  keys: string[];
   dir: string;
 };
 
 export const getEntryBySlug = <T>({
-  fields,
+  keys: fields,
   slug,
   dir,
 }: getEntryBySlugType): T => {

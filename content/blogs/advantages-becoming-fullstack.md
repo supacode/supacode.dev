@@ -1,5 +1,5 @@
 ---
-date: '2021-10-18T00:00:00'
+date: '2021-10-18'
 title: Advantages of Becoming Full Stack Developer in Your IT Career
 coverImage: '/assets/blog/fullstack-programmer-xyz.jpg'
 excerpt: A versatile IT professional capable of efficiently catering to cross-functional requirements and possessing cross-domain knowledge of native technologies is an asset to any organization

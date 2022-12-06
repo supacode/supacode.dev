@@ -23,7 +23,7 @@ export const getAllExperiences = (): Experience[] => {
   ];
 
   const experiences = slugs
-    .map((slug) => getEntryBySlug<Experience>({ slug, fields, dir }))
+    .map((slug) => getEntryBySlug<Experience>({ slug, keys: fields, dir }))
     .sort((prevExp, nextExp) => (prevExp.index > nextExp.index ? -1 : 1));
 
   return experiences;
