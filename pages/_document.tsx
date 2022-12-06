@@ -28,7 +28,8 @@ const Document: React.FC = () => (
       <meta property="og:description" content={sideData.description} />
       <meta name="theme-color" content={sideData.themeColor} />
     </Head>
-    <body data-theme="dark">
+
+    <body data-theme="light">
       <Main />
       <NextScript />
     </body>
