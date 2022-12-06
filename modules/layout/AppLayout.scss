@@ -1,9 +1,12 @@
 html {
+  scroll-behavior: smooth !important;
+}
+
+body {
   font: var(--font-size-base) var(--font-stack-main);
   background: var(--dark-primary);
   color: var(--grey-light);
   text-rendering: optimizeLegibility;
-  scroll-behavior: smooth !important;
 }
 
 .app-container {

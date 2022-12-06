@@ -1,0 +1,16 @@
+.theme-toggle {
+  margin-top: var(--spacing-2);
+
+  svg {
+    position: relative;
+    z-index: var(--z-index-layer-4);
+    color: var(--grey-light);
+    height: 20px;
+  }
+
+  &:hover {
+    svg {
+      color: var(--accent-primary);
+    }
+  }
+}

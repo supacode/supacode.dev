@@ -1,4 +1,8 @@
 .blog-card {
+  body[data-theme='light'] {
+    background: red;
+  }
+
   display: flex;
   transition: 0.4s cubic-bezier(0.5, 2, 0.6, 1);
   position: relative;
@@ -69,7 +73,8 @@
     justify-content: flex-end;
     flex-direction: column;
     padding: var(--spacing-24);
-    background: rgba(22 27 37 / 85%);
+    /* stylelint-disable-next-line color-function-notation */
+    background: rgba(var(--dark-tertiary-rgb), 0.9);
   }
 
   .blog-card__img {

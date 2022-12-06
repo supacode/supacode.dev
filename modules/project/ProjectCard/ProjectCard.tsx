@@ -17,7 +17,6 @@ export const ProjectCard: React.FC<Project> = ({
       {html && (
         <div
           className="project__desc"
-          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{
             __html: html,
           }}

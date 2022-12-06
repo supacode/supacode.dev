@@ -42,6 +42,7 @@ module.exports = {
     'consistent-return': 'off',
     'no-param-reassign': 0,
     'no-unused-vars': 'off',
+    'react/no-danger': 'off',
     '@typescript-eslint/no-unused-vars': [
       'error',
       {

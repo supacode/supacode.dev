@@ -1,7 +1,7 @@
 import cn from 'classnames';
 
 import { AppLink } from 'components/ui/AppLink';
-import { socials } from 'constants/socialLinks';
+import { socialLinks } from 'consts';
 
 type SocialLinksProps = {
   direction?: 'row' | 'column';
@@ -16,7 +16,7 @@ export const SocialLinks: React.FC<SocialLinksProps> = ({
       'social-links__column': direction === 'column',
     })}
   >
-    {socials.map((social) => (
+    {socialLinks.map((social) => (
       <li key={social.url} className="social-links__list">
         <AppLink
           to={social.url}

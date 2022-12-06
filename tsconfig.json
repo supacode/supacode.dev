@@ -27,7 +27,8 @@
       "pages/*": ["pages/*"],
       "styles/*": ["styles/*"],
       "api/*": ["lib/*"],
-      "hooks/*": ["hooks/*"]
+      "hooks/*": ["hooks/*"],
+      "consts/*": ["consts/*"]
     },
     "incremental": true
   },

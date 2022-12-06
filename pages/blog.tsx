@@ -4,7 +4,7 @@ import Head from 'next/head';
 import { getAllPosts } from 'modules/blog/api/getAllPosts';
 import { BlogCard } from 'modules/blog/BlogCard';
 import type { Blog } from 'modules/blog/types';
-import { sideData } from 'constants/siteData';
+import { sideData } from 'consts';
 
 type BlogProps = {
   allPosts: Blog[];
@@ -13,7 +13,7 @@ type BlogProps = {
 const BlogPage: NextPage<BlogProps> = ({ allPosts = [] }) => (
   <>
     <Head>
-      <title>Blog | {sideData.title}</title>
+      <title>{`Blog | ${sideData.title}`}</title>
     </Head>
 
     <div className="blog-page">

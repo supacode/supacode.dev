@@ -82,7 +82,7 @@
   right: 0;
   bottom: 0;
   padding: var(--spacing-120) var(--spacing-40) 0 0;
-  box-shadow: 0 0 1rem var(--dark-tertiary);
+  box-shadow: 0 0 1rem rgba(0 0 0 / 20%);
   background: var(--dark-light);
   z-index: var(--z-index-layer-4);
   transform: translateX(100%);
@@ -132,6 +132,8 @@
       width: 100%;
       counter-increment: item 1;
       text-align: center;
+      justify-content: center;
+      display: flex;
 
       @media (--screen-md-min) {
         font-size: var(--font-size-sm);

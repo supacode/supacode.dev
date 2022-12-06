@@ -1,10 +1,9 @@
 import { useRef } from 'react';
-import { useWindowScroll } from 'react-use';
 import cn from 'classnames';
 
+import { useWindowScroll, useScrollDirection } from 'hooks';
 import { Navbar } from 'modules/mainHeader/Navbar';
 import { AppLink } from 'components/ui/AppLink';
-import { useScrollDirection } from 'hooks';
 
 export const Header: React.FC = () => {
   const headerRef = useRef<HTMLDivElement>(null);

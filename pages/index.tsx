@@ -1,7 +1,7 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
 
-import { sideData } from 'constants/siteData';
+import { sideData } from 'consts';
 import { AboutSection } from 'modules/AboutSection';
 import type { Experience } from 'modules/experience/types';
 import { ExperienceSection } from 'modules/experience/ExperienceSection';
@@ -19,6 +19,7 @@ type HomeProps = {
 };
 
 const Home: NextPage<HomeProps> = ({ allPosts, allExperiences }) => (
+  //
   <>
     <Head>
       <title>{sideData.title}</title>

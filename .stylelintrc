@@ -5,6 +5,7 @@
     "at-rule-no-unknown": null,
     "block-no-empty": null,
     "color-no-invalid-hex": true,
+    "color-function-notation": "modern",
     "comment-no-empty": true,
     "declaration-block-no-duplicate-properties": [
       true,

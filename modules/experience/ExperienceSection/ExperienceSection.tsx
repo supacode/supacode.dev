@@ -60,7 +60,6 @@ export const ExperienceSection: React.FC<ExperienceProps> = ({
                 {exp.content && (
                   <div
                     className="accordion__description"
-                    // eslint-disable-next-line react/no-danger
                     dangerouslySetInnerHTML={{
                       __html: markdown().render(exp.content),
                     }}

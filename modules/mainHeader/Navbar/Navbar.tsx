@@ -1,18 +1,17 @@
 import { useRef, useState } from 'react';
-import { useClickAway, useIsomorphicLayoutEffect } from 'react-use';
 import cn from 'classnames';
+import { useIsomorphicLayoutEffect, useOnClickOutside } from 'usehooks-ts';
 
-import { routes } from 'constants/path';
+import { routes } from 'consts';
+import { useIsMobile } from 'hooks/index';
 import { AppLink } from 'components/ui/AppLink';
-import { useBreakpoint } from 'utils/breakpoint';
+import { ThemeToggle } from 'modules/mainHeader/ThemeToggle';
 
 export const Navbar: React.FC = () => {
   // Ref for the sidebar drawer/menu.
   const drawerRef = useRef<HTMLDivElement>(null);
 
-  const breakpoints = useBreakpoint();
-
-  const isMobile = breakpoints === 'xs' || breakpoints === 'sm';
+  const isMobile = useIsMobile();
 
   // State for sidebar drawer.
   const [isDesktopMenu, _setIsDesktopMenu] = useState<boolean>(true);
@@ -49,7 +48,7 @@ export const Navbar: React.FC = () => {
     if (!isMobile && isMobileMenu) closeMenu();
   }, [isMobile]);
 
-  useClickAway(drawerRef, () => isMobileMenu && closeMenu());
+  useOnClickOutside(drawerRef, () => isMobileMenu && closeMenu());
 
   return (
     <>
@@ -98,6 +97,10 @@ export const Navbar: React.FC = () => {
               </AppLink>
             </li>
           ))}
+
+          <li className="main-nav__list--item">
+            <ThemeToggle />
+          </li>
         </ol>
       </nav>
     </>
