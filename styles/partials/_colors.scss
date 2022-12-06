@@ -1,12 +1,31 @@
-:root {
+// 1. Dark theme
+body[data-theme='dark'] {
   --white: #fff;
+  --black-rgb: 0, 0, 0;
   --accent-primary: #faab32;
   --accent-primary-dark: #ab6809;
   //
   --dark-primary: #1a2130;
   --dark-tertiary: #161b25;
+  --dark-tertiary-rgb: 22, 27, 37;
   --dark-light: #26324e;
   //
   --grey-light: #c5d1f7;
   --grey-dark: #7c85a0;
+}
+
+// 2. Light theme
+body[data-theme='light'] {
+  --white: #161b25;
+  --black-rgb: 255, 255, 255;
+  --accent-primary: #faab32;
+  --accent-primary-dark: #ab6809;
+  //
+  --dark-primary: #fff;
+  --dark-tertiary-rgb: 250, 250, 250;
+  --dark-tertiary: #f1f1f1;
+  --dark-light: #e5e5e5;
+  //
+  --grey-light: #1a2130;
+  --grey-dark: #272a32;
 }

@@ -6,3 +6,5 @@ export { linkedIn } from './linkedin';
 export { twitter } from './twitter';
 export { github } from './github';
 export { externalLink } from './externalLink';
+export { sunIcon } from './sunIcon';
+export { moonIcon } from './moonIcon';

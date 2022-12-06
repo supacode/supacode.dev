@@ -2,13 +2,13 @@ import { useRouter } from 'next/router';
 import ErrorPage from 'next/error';
 import Head from 'next/head';
 
+import { sideData } from 'consts';
 import { markdownToHtml } from 'lib/markdownToHtml';
 import { BlogPost } from 'modules/blog/BlogPost';
 import { Blog as BlogType } from 'modules/blog/types';
 import { getAllPosts } from 'modules/blog/api/getAllPosts';
 import { getEntryBySlug } from 'lib/getEntryBySlug';
 import 'prismjs/themes/prism-solarizedlight.min.css';
-import { sideData } from 'constants/siteData';
 
 type PostType = BlogType & {
   content: string;
@@ -32,9 +32,7 @@ const Posts: React.FC<Props> = ({ post }: Props) => {
   return (
     <>
       <Head>
-        <title>
-          {post.title} | {sideData.title}
-        </title>
+        <title>{`${post.title} | ${sideData.title}`}</title>
         <meta property="og:image" content={post.coverImage} />
       </Head>
 

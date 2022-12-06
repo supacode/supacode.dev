@@ -1,6 +1,6 @@
 import { codepen, email, twitter, linkedIn, github } from 'assets/icons';
 
-export const socials = [
+export const socialLinks = [
   {
     name: 'Twitter',
     url: 'https://twitter.com/supacode',
