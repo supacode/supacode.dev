@@ -29,6 +29,9 @@ export const ThemeToggle: React.FC = () => {
     }
 
     document.body.dataset.theme = theme;
+    document
+      .querySelector('meta[name=theme-color]')
+      ?.setAttribute('content', `${theme}`);
   }, [theme, ternaryDarkMode]);
 
   const toggleTheme = () => {
