@@ -26,7 +26,7 @@ export const BlogSection: React.FC<BlogSectionProps> = ({ posts = [] }) => (
 
     <AppLink
       asButton
-      text="Read More"
+      text="Blog posts"
       to="/blog"
       className="blog-section__read-more-btn"
     />
