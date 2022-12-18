@@ -4,7 +4,7 @@ import { useIsomorphicLayoutEffect, useOnClickOutside } from 'usehooks-ts';
 
 import { routes } from 'consts';
 import { useIsMobile } from 'hooks/index';
-import { AppLink } from 'components/ui/AppLink';
+import { AppLink } from 'components/AppLink';
 import { ThemeToggle } from 'modules/mainHeader/ThemeToggle';
 
 export const Navbar: React.FC = () => {

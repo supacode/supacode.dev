@@ -1,6 +1,6 @@
 import { SocialLinks } from 'components/SocialLinks';
 import { chevronRight } from 'assets/icons';
-import { AppLink } from 'components/ui/AppLink';
+import { AppLink } from 'components/AppLink';
 
 export const HeroSection: React.FC = () => (
   <section className="hero" id="hero">

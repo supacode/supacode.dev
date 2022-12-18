@@ -1,7 +1,7 @@
 import AboutImg from 'assets/images/mave.jpeg';
 import { tools } from 'assets/icons';
-import { AppImage } from 'components/ui/AppImage';
-import { AppLink } from 'components/ui/AppLink';
+import { AppImage } from 'components/AppImage';
+import { AppLink } from 'components/AppLink';
 
 const skills = [
   { name: 'HTML', icon: tools.html5 },

@@ -16,9 +16,9 @@
 @import '../modules/mainHeader/ThemeToggle/ThemeToggle.scss';
 
 @import '../components/SkipToContent/SkipToContent';
-@import '../components/ui/AppAccordion/AppAccordion';
-@import '../components/ui/AppLink/AppLink';
+@import '../components/AppAccordion/AppAccordion';
+@import '../components/AppLink/AppLink';
 @import '../components/SocialLinks/SocialLinks';
-@import '../components/SiteFooter/SiteFooter';
+@import '../components/AppFooter/AppFooter';
 
 @import '../pages/blog/[slug]';

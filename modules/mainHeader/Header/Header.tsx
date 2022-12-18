@@ -3,7 +3,7 @@ import cn from 'classnames';
 
 import { useWindowScroll, useScrollDirection } from 'hooks';
 import { Navbar } from 'modules/mainHeader/Navbar';
-import { AppLink } from 'components/ui/AppLink';
+import { AppLink } from 'components/AppLink';
 
 export const Header: React.FC = () => {
   const headerRef = useRef<HTMLDivElement>(null);
