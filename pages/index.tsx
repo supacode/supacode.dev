@@ -2,6 +2,8 @@ import type { NextPage } from 'next';
 import Head from 'next/head';
 
 import { siteData } from 'consts';
+
+import { SnapScrollContainer } from 'modules/SnapScroll/SnapScrollContainer';
 import { AboutSection } from 'modules/AboutSection';
 import type { Experience } from 'modules/experience/types';
 import { ExperienceSection } from 'modules/experience/ExperienceSection';
@@ -15,6 +17,8 @@ type HomeProps = {
   allPosts: Blog[];
   allExperiences: Experience[];
 };
+
+// const SnapScroll = withScroll(SnapScrollSection);
 
 const Home: NextPage<HomeProps> = ({ allPosts, allExperiences }) => {
   const pageTitle = siteData.title;
@@ -32,10 +36,12 @@ const Home: NextPage<HomeProps> = ({ allPosts, allExperiences }) => {
         <meta property="og:description" content={siteData.description} />
       </Head>
 
-      <HeroSection />
-      <AboutSection />
-      <ExperienceSection experiences={allExperiences} />
-      <BlogSection posts={allPosts} />
+      <SnapScrollContainer>
+        <HeroSection />
+        <AboutSection />
+        <ExperienceSection experiences={allExperiences} />
+        <BlogSection posts={allPosts} />
+      </SnapScrollContainer>
     </>
   );
 };

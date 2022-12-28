@@ -14,11 +14,15 @@
 @import '../modules/HeroSection/HeroSection';
 @import '../modules/AboutSection/AboutSection';
 @import '../modules/mainHeader/ThemeToggle/ThemeToggle.scss';
+@import '../modules/SnapScroll/SnapScrollContainer/SnapScrollContainer';
+@import '../modules/SnapScroll/SnapScrollIndicator/SnapScrollIndicator';
+@import '../modules/SnapScroll/SnapScrollSection/SnapScrollSection';
 
 @import '../components/SkipToContent/SkipToContent';
+@import '../components/SocialLinks/SocialLinks';
+
 @import '../components/AppAccordion/AppAccordion';
 @import '../components/AppLink/AppLink';
-@import '../components/SocialLinks/SocialLinks';
 @import '../components/AppFooter/AppFooter';
 
 @import '../pages/blog/[slug]';
