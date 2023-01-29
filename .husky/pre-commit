@@ -22,7 +22,7 @@ npm run check-lint ||
 # Check tsconfig standards
 npm run check-types ||
 (
-    echo '😂❌ Failed Type check. 😂❌
+    echo '❌ Failed Type check. ❌
             Make the changes required above.'
     false;
 )
@@ -30,7 +30,7 @@ npm run check-types ||
 # Check SCSS Standards
 npm run lint:scss ||
 (
-    echo '😂❌ Error linting SCSS 😂❌
+    echo '❌ Error linting SCSS ❌
             Make the changes required above.'
     false;
 )

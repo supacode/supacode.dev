@@ -26,59 +26,57 @@ const skills = [
 ];
 
 export const AboutSection: React.FC = () => (
-  <section className="about" id="about">
-    <h2 className="about__title">
-      A little <span className="about__title--highlight">About Me</span>
-    </h2>
+  <div className="about__container" id="about">
+    <section className="about">
+      <h2 className="about__title">
+        A little <span className="about__title--highlight">About Me</span>
+      </h2>
 
-    <div className="about__content">
-      <p className="about__content--text">
-        I started Software Development in 2015 as a hobby, just out of curiosity
-        after reading that video games are made from computer programming.
-      </p>
-      <p className="about__content--text">
-        I&apos;ve been working professionally as a Software Developer for the
-        last ~5 years. I&apos;m currently a Senior Frontend Engineer at{' '}
-        <AppLink
-          to="https://instafreight.de"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          InstaFreight
-        </AppLink>{' '}
-        (a logistics company in Germany). When I&apos;m not programming,
-        I&apos;m playing{' '}
-        <AppLink
-          to="https://www.youtube.com/channel/UCCAT1AZ-yJYjL1IobjmnpvQ"
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          video games
-        </AppLink>
-        , or playing/watching football ⚽.
-      </p>
+      <div className="about__content">
+        <p className="about__content--text">
+          I started Software Development in 2015 as a hobby, just out of
+          curiosity after reading that video games are made from computer
+          programming.
+        </p>
+        <p className="about__content--text">
+          I&apos;ve been working professionally as a Software Developer for the
+          last ~5 years. I&apos;m currently a Senior Frontend Engineer at{' '}
+          <AppLink to="https://instafreight.de/en/" newTab>
+            InstaFreight
+          </AppLink>{' '}
+          (a logistics company in Germany). When I&apos;m not programming,
+          I&apos;m playing{' '}
+          <AppLink
+            to="https://www.youtube.com/channel/UCCAT1AZ-yJYjL1IobjmnpvQ"
+            newTab
+          >
+            video games
+          </AppLink>
+          , or playing/watching football ⚽.
+        </p>
 
-      <p className="about__content--text">
-        Here are some technologies I enjoy working with:
-      </p>
+        <p className="about__content--text">
+          Here are some technologies I enjoy working with:
+        </p>
 
-      <ul className="tools">
-        {skills.map((skill) => (
-          <li key={skill.name} className="tools__tool">
-            <span className="tools__tool--icon">{skill.icon}</span>
-            <span className="tools__tool--name">{skill.name}</span>
-          </li>
-        ))}
-      </ul>
-    </div>
+        <ul className="tools">
+          {skills.map((skill) => (
+            <li key={skill.name} className="tools__tool">
+              <span className="tools__tool--icon">{skill.icon}</span>
+              <span className="tools__tool--name">{skill.name}</span>
+            </li>
+          ))}
+        </ul>
+      </div>
 
-    <div className="about__img--wrapper">
-      <AppImage
-        src={AboutImg}
-        loading="lazy"
-        alt="Maverick"
-        className="about__img"
-      />
-    </div>
-  </section>
+      <div className="about__img--wrapper">
+        <AppImage
+          src={AboutImg}
+          loading="lazy"
+          alt="Maverick"
+          className="about__img"
+        />
+      </div>
+    </section>
+  </div>
 );

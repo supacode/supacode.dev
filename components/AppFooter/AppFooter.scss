@@ -1,10 +1,10 @@
 .site-footer {
-  margin: var(--spacing-40) auto;
+  margin: var(--spacing-128) 0;
+  padding: var(--spacing-120) var(--spacing-20);
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  padding: var(--spacing-40) var(--spacing-20);
 
   &__lead-txt {
     font-size: var(--font-size-lg);

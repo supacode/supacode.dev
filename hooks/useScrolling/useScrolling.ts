@@ -8,9 +8,7 @@ export const useScrolling = (ref: RefObject<HTMLElement>): boolean => {
     if (ref.current) {
       let scrollingTimeout: NodeJS.Timeout;
 
-      const handleScrollEnd = () => {
-        setScrolling(false);
-      };
+      const handleScrollEnd = () => setScrolling(false);
 
       const handleScroll = () => {
         setScrolling(true);
@@ -32,5 +30,3 @@ export const useScrolling = (ref: RefObject<HTMLElement>): boolean => {
 
   return scrolling;
 };
-
-export default useScrolling;

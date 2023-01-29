@@ -1,1 +1,0 @@
-export { SnapScrollIndicator } from './SnapScrollIndicator';

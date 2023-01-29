@@ -1,4 +1,6 @@
 .blog-section {
+  padding-top: var(--spacing-64);
+
   &__title {
     font-size: var(--font-size-3xl);
     margin-bottom: var(--spacing-48);

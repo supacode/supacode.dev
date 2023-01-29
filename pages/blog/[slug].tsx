@@ -8,7 +8,6 @@ import { BlogPost } from 'modules/blog/BlogPost';
 import { Blog as BlogType } from 'modules/blog/types';
 import { getAllPosts } from 'modules/blog/api/getAllPosts';
 import { getEntryBySlug as getMarkdownBySlug } from 'lib/getEntryBySlug';
-import 'prismjs/themes/prism-solarizedlight.min.css';
 
 type PostType = BlogType & {
   content: string;
