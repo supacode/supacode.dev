@@ -1,8 +1,8 @@
 import cn from 'classnames';
 
-import { AppImage } from 'components/ui/AppImage';
+import { AppImage } from 'components/AppImage';
 import type { Blog as BlogType } from 'modules/blog/types';
-import { AppLink } from 'components/ui/AppLink';
+import { AppLink } from 'components/AppLink';
 
 type BlogProps = BlogType & {
   layout?: 'inline' | 'stacked';

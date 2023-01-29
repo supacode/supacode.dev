@@ -10,7 +10,7 @@ type BlogProps = {
   allPosts: Blog[];
 };
 
-const BlogPage: NextPage<BlogProps> = ({ allPosts = [] }) => (
+export const BlogPage: NextPage<BlogProps> = ({ allPosts = [] }) => (
   <>
     <Head>
       <title>{`Blog | ${siteData.title}`}</title>

@@ -1,9 +1,9 @@
 import cn from 'classnames';
 import markdown from 'markdown-it';
 
-import { AppAccordion } from 'components/ui/AppAccordion';
+import { AppAccordion } from 'components/AppAccordion';
 import type { Experience } from 'modules/experience/types';
-import { AppLink } from 'components/ui/AppLink';
+import { AppLink } from 'components/AppLink';
 
 type ExperienceProps = {
   experiences: Experience[];

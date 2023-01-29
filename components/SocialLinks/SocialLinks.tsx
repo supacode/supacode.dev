@@ -1,6 +1,6 @@
 import cn from 'classnames';
 
-import { AppLink } from 'components/ui/AppLink';
+import { AppLink } from 'components/AppLink';
 import { socialLinks } from 'consts';
 
 type SocialLinksProps = {

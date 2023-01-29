@@ -11,16 +11,10 @@ export const useRafState = <S>(
   const setRafState = useCallback((value: S | ((prevState: S) => S)) => {
     cancelAnimationFrame(frame.current);
 
-    frame.current = requestAnimationFrame(() => {
-      setState(value);
-    });
+    frame.current = requestAnimationFrame(() => setState(value));
   }, []);
 
-  useUnmount(() => {
-    cancelAnimationFrame(frame.current);
-  });
+  useUnmount(() => cancelAnimationFrame(frame.current));
 
   return [state, setRafState];
 };
-
-export default useRafState;

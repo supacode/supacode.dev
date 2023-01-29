@@ -1,6 +1,6 @@
 import { SocialLinks } from 'components/SocialLinks';
 
-export const SiteFooter: React.FC = () => (
+export const AppFooter: React.FC = () => (
   <footer className="site-footer" id="contact">
     <h2 className="site-footer__lead-txt">Reach out to me!</h2>
 

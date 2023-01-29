@@ -1,15 +1,31 @@
 import type { NextPage } from 'next';
 import Head from 'next/head';
+import dynamic from 'next/dynamic';
 
 import { siteData } from 'consts';
-import { AboutSection } from 'modules/AboutSection';
+
 import type { Experience } from 'modules/experience/types';
-import { ExperienceSection } from 'modules/experience/ExperienceSection';
-import { HeroSection } from 'modules/HeroSection';
 import { getAllPosts } from 'modules/blog/api/getAllPosts';
-import { BlogSection } from 'modules/blog/BlogSection';
 import type { Blog } from 'modules/blog/types';
 import { getAllExperiences } from 'modules/experience/api/getAllExperiences';
+
+const HeroSection = dynamic(() =>
+  import('modules/HeroSection').then((mod) => mod.HeroSection),
+);
+
+const AboutSection = dynamic(() =>
+  import('modules/AboutSection').then((mod) => mod.AboutSection),
+);
+
+const BlogSection = dynamic(() =>
+  import('modules/blog/BlogSection').then((mod) => mod.BlogSection),
+);
+
+const ExperienceSection = dynamic(() =>
+  import('modules/experience/ExperienceSection').then(
+    (mod) => mod.ExperienceSection,
+  ),
+);
 
 type HomeProps = {
   allPosts: Blog[];
@@ -18,6 +34,25 @@ type HomeProps = {
 
 const Home: NextPage<HomeProps> = ({ allPosts, allExperiences }) => {
   const pageTitle = siteData.title;
+
+  const sections = [
+    {
+      id: 'hero',
+      section: <HeroSection />,
+    },
+    {
+      id: 'about',
+      section: <AboutSection />,
+    },
+    {
+      id: 'experience',
+      section: <ExperienceSection experiences={allExperiences} />,
+    },
+    {
+      id: 'blog',
+      section: <BlogSection posts={allPosts} />,
+    },
+  ];
 
   return (
     <>
@@ -32,10 +67,13 @@ const Home: NextPage<HomeProps> = ({ allPosts, allExperiences }) => {
         <meta property="og:description" content={siteData.description} />
       </Head>
 
-      <HeroSection />
-      <AboutSection />
-      <ExperienceSection experiences={allExperiences} />
-      <BlogSection posts={allPosts} />
+      <>
+        {sections.map((section) => (
+          <div key={section.id} id={section.id}>
+            {section.section}
+          </div>
+        ))}
+      </>
     </>
   );
 };

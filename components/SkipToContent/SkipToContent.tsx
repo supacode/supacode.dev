@@ -1,4 +1,4 @@
-import { AppLink } from 'components/ui/AppLink';
+import { AppLink } from 'components/AppLink';
 
 export const SkipToContent: React.FC<{ to: string }> = ({ to }) => (
   <AppLink

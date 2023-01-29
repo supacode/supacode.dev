@@ -1,4 +1,4 @@
-import { AppLink } from 'components/ui/AppLink';
+import { AppLink } from 'components/AppLink';
 import { BlogCard } from 'modules/blog/BlogCard/BlogCard';
 import type { Blog as BlogType } from 'modules/blog/types';
 

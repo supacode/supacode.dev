@@ -1,9 +1,15 @@
 .about {
-  min-height: 100vh;
-  padding: var(--spacing-120) 0 0 0;
   display: grid;
-  grid-template: auto/1fr;
+  grid-template: auto / 1fr;
   gap: var(--spacing-32);
+  padding-top: var(--spacing-48);
+
+  &__container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
   @media (--screen-md-min) {
     grid-template-columns: 1fr 2fr;

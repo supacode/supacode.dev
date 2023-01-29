@@ -1,8 +1,4 @@
 .blog-card {
-  body[data-theme='light'] {
-    background: red;
-  }
-
   display: flex;
   transition: 0.4s cubic-bezier(0.5, 2, 0.6, 1);
   position: relative;
