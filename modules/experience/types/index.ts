@@ -1,5 +1,5 @@
 export type Experience = {
-  title?: string;
+  title: string;
   index: number;
   duration: string;
   company: string;
