@@ -3,3 +3,8 @@ public/sw.js.map
 public/workbox-*.js
 public/workbox-*.js.map
  
+.next
+next-env.d.ts
+node_modules
+yarn.lock
+package-lock.json

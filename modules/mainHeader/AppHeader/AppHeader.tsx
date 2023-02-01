@@ -18,7 +18,7 @@ export const AppHeader: React.FC = () => {
     <header
       ref={headerRef}
       className={cn('main-header', {
-        'main-header__fixed': true,
+        'main-header__fixed': headerThreshold,
         'main-header__hidden': headerThreshold && scrollDirection === 'down',
       })}
     >

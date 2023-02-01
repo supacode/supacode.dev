@@ -37,19 +37,19 @@ const Home: NextPage<HomeProps> = ({ allPosts, allExperiences }) => {
 
   const sections = [
     {
-      id: 'hero',
+      id: 'hero-section',
       section: <HeroSection />,
     },
     {
-      id: 'about',
+      id: 'about-section',
       section: <AboutSection />,
     },
     {
-      id: 'experience',
+      id: 'experience-section',
       section: <ExperienceSection experiences={allExperiences} />,
     },
     {
-      id: 'blog',
+      id: 'blog-section',
       section: <BlogSection posts={allPosts} />,
     },
   ];

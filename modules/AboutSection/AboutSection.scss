@@ -5,7 +5,6 @@
   padding-top: var(--spacing-48);
 
   &__container {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -13,6 +12,7 @@
 
   @media (--screen-md-min) {
     grid-template-columns: 1fr 2fr;
+    height: 100vh;
     grid-template-rows: repeat(2, max-content);
   }
 

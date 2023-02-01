@@ -1,6 +1,8 @@
 .experience {
-  margin-bottom: var(--spacing-64);
-  padding: var(--spacing-64) 0;
+  @media (--screen-md-min) {
+    margin-bottom: var(--spacing-64);
+    padding: var(--spacing-64) 0;
+  }
 
   &__head {
     display: flex;

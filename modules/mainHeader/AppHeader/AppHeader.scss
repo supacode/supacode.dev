@@ -6,9 +6,8 @@
 
   &__fixed {
     /* stylelint-disable-next-line color-function-notation */
-    // background: rgba(var(--dark-tertiary-rgb), 0.5);
-    // background: transparent;
-    // backdrop-filter: saturate(50%) blur(50px);
+    background: rgba(var(--dark-tertiary-rgb), 0.5);
+    backdrop-filter: saturate(50%) blur(50px);
     animation: slide-down 0.5s ease-in-out;
     transform: translateY(0);
     transition: transform 0.3s ease-in-out;
