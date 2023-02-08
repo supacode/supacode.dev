@@ -4,16 +4,16 @@
   gap: var(--spacing-32);
   padding-top: var(--spacing-48);
 
-  &__container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-
   @media (--screen-md-min) {
     grid-template-columns: 1fr 2fr;
     height: 100vh;
     grid-template-rows: repeat(2, max-content);
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   &__title {
