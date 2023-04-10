@@ -1,3 +1,7 @@
+:root {
+  --app-max-width: 1020px;
+}
+
 // Screen size for a small phone
 @custom-media --screen-xs-min (width >= 320px);
 @custom-media --screen-xs-max (width <= 539px);

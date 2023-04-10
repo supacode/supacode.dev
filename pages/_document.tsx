@@ -29,4 +29,6 @@ const Document: React.FC = () => (
   </Html>
 );
 
+Document.displayName = 'pages/document';
+
 export default Document;

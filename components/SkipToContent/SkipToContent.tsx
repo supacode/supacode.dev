@@ -9,3 +9,5 @@ export const SkipToContent: React.FC<{ to: string }> = ({ to }) => (
     asButton
   />
 );
+
+SkipToContent.displayName = 'components/SkipToContent';

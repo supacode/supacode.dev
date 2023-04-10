@@ -1,0 +1,12 @@
+.snap-section {
+  max-width: var(--app-max-width);
+  margin: auto;
+  scroll-snap-align: none;
+  min-height: auto;
+  position: relative;
+
+  @media (--screen-lg-min) {
+    min-height: 100vh;
+    scroll-snap-align: start;
+  }
+}

@@ -75,3 +75,5 @@ export const ExperienceSection: React.FC<ExperienceProps> = ({
     )}
   </section>
 );
+
+ExperienceSection.displayName = 'modules/experience/ExperienceSection';

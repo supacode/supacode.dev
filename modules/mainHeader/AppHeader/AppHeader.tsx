@@ -26,9 +26,7 @@ export const AppHeader: React.FC = () => {
         <h1 className="main-header__logo">
           <AppLink
             to="/"
-            onClick={() => {
-              document.querySelector('main')?.scrollTo(0, 0);
-            }}
+            onClick={() => document.querySelector('main')?.scrollTo(0, 0)}
           >
             Supacode
           </AppLink>

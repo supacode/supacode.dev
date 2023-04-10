@@ -38,3 +38,5 @@ export const HeroSection: React.FC = () => (
     <SocialLinks />
   </section>
 );
+
+HeroSection.displayName = 'modules/HeroSection/';

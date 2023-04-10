@@ -9,9 +9,13 @@ const AppFooter = dynamic(() =>
 
 type AppLayoutProps = {
   children: React.ReactNode;
+  fullHeightFooter?: boolean;
 };
 
-export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => (
+export const AppLayout: React.FC<AppLayoutProps> = ({
+  children,
+  fullHeightFooter = true,
+}) => (
   <>
     <SkipToContent to="#content" />
 
@@ -19,6 +23,8 @@ export const AppLayout: React.FC<AppLayoutProps> = ({ children }) => (
 
     <div className="app-container">{children}</div>
 
-    <AppFooter />
+    {fullHeightFooter && <AppFooter fullHeight={fullHeightFooter} />}
   </>
 );
+
+AppLayout.displayName = 'modules/layout/AppLayout';

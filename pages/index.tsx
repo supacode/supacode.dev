@@ -7,7 +7,9 @@ import { siteData } from 'consts';
 import type { Experience } from 'modules/experience/types';
 import { getAllPosts } from 'modules/blog/api/getAllPosts';
 import type { Blog } from 'modules/blog/types';
+import { SnapContainer } from 'modules/SnapScroll/SnapContainer';
 import { getAllExperiences } from 'modules/experience/api/getAllExperiences';
+import { AppFooter } from 'components/AppFooter';
 
 const HeroSection = dynamic(() =>
   import('modules/HeroSection').then((mod) => mod.HeroSection),
@@ -37,20 +39,24 @@ const Home: NextPage<HomeProps> = ({ allPosts, allExperiences }) => {
 
   const sections = [
     {
-      id: 'hero-section',
+      id: 'hero',
       section: <HeroSection />,
     },
     {
-      id: 'about-section',
+      id: 'about',
       section: <AboutSection />,
     },
     {
-      id: 'experience-section',
+      id: 'experience',
       section: <ExperienceSection experiences={allExperiences} />,
     },
     {
-      id: 'blog-section',
+      id: 'blog',
       section: <BlogSection posts={allPosts} />,
+    },
+    {
+      id: 'footer',
+      section: <AppFooter />,
     },
   ];
 
@@ -67,13 +73,7 @@ const Home: NextPage<HomeProps> = ({ allPosts, allExperiences }) => {
         <meta property="og:description" content={siteData.description} />
       </Head>
 
-      <>
-        {sections.map((section) => (
-          <div key={section.id} id={section.id}>
-            {section.section}
-          </div>
-        ))}
-      </>
+      <SnapContainer sections={sections} />
     </>
   );
 };
@@ -93,8 +93,11 @@ export const getStaticProps = async () => {
     props: {
       allPosts,
       allExperiences,
+      fullHeightFooter: false,
     },
   };
 };
+
+Home.displayName = 'pages/index';
 
 export default Home;

@@ -25,3 +25,7 @@
 @import '../pages/blog/[slug]';
 
 @import './lib/prism-solarizedlight';
+
+@import '../modules/SnapScroll/SnapContainer/SnapContainer';
+@import '../modules/SnapScroll/SnapSection/SnapSection';
+@import '../modules/SnapScroll/SnapIndicator/SnapIndicator';

@@ -64,3 +64,5 @@ export const BlogCard: React.FC<BlogProps> = ({
     </div>
   );
 };
+
+BlogCard.displayName = 'modules/blog/BlogCard';

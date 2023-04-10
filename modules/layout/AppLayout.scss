@@ -1,5 +1,5 @@
 html {
-  scroll-behavior: smooth !important;
+  scroll-behavior: smooth;
 }
 
 body {
@@ -11,8 +11,7 @@ body {
 
 .app-container {
   margin: auto;
-  max-width: 1080px;
-  padding: 0 var(--spacing-20);
+  padding: 0 var(--spacing-28);
 
   @media (--screen-md-min) {
     padding: 0 var(--spacing-40);

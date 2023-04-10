@@ -49,3 +49,5 @@ export const AppLink: React.FC<AppLinkProps> = ({
     </Link>
   );
 };
+
+AppLink.displayName = 'components/AppLink';

@@ -1,0 +1,41 @@
+:root {
+  --indicator-square: 10px;
+}
+
+.snap-indicator {
+  position: fixed;
+  right: 5%;
+  top: 40%;
+  z-index: var(--z-index-layer-4);
+  transform: translateY(-50%);
+  display: none;
+
+  @media (--screen-lg-min) {
+    display: block;
+  }
+
+  &__item {
+    &--wrapper {
+      position: relative;
+      width: var(--indicator-square);
+      height: var(--indicator-square);
+    }
+
+    position: absolute;
+    height: var(--indicator-square);
+    top: 0;
+    width: var(--indicator-square);
+    display: block;
+    border: 1px solid var(--white);
+    border-radius: 50%;
+    margin-bottom: var(--spacing-14);
+    transition: all 0.3s ease-in-out;
+
+    &--active {
+      z-index: var(--z-index-layer-5);
+      background: var(--white);
+      height: var(--indicator-square);
+      width: var(--indicator-square);
+    }
+  }
+}
