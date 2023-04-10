@@ -50,4 +50,4 @@ export const AppLink: React.FC<AppLinkProps> = ({
   );
 };
 
-AppLink.displayName = 'AppLink';
+AppLink.displayName = 'components/AppLink';
