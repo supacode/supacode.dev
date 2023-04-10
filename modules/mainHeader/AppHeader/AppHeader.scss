@@ -3,11 +3,12 @@
   height: fit-content;
   z-index: var(--z-index-layer-5);
   position: fixed;
+  backdrop-filter: blur(50px);
 
   &__fixed {
     /* stylelint-disable-next-line color-function-notation */
     background: rgba(var(--dark-tertiary-rgb), 0.5);
-    backdrop-filter: saturate(50%) blur(50px);
+    backdrop-filter: blur(50px);
     animation: slide-down 0.5s ease-in-out;
     transform: translateY(0);
     transition: transform 0.3s ease-in-out;

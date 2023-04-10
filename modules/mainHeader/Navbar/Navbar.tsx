@@ -1,32 +1,26 @@
-import { useRef, useState } from 'react';
+import { useRef, useState, useCallback } from 'react';
 import cn from 'classnames';
 import { useIsomorphicLayoutEffect, useOnClickOutside } from 'usehooks-ts';
 
 import { routes } from 'consts';
-import { useIsMobile } from 'hooks/index';
+import { useIsMobile } from 'hooks';
 import { AppLink } from 'components/AppLink';
 import { ThemeToggle } from 'modules/mainHeader/ThemeToggle';
 
 export const Navbar: React.FC = () => {
-  // Ref for the sidebar drawer/menu.
   const drawerRef = useRef<HTMLDivElement>(null);
 
   const isMobile = useIsMobile();
 
-  // State for sidebar drawer.
-  const [isDesktopMenu, _setIsDesktopMenu] = useState<boolean>(true);
   const [isMobileMenu, setIsMobileMenu] = useState<boolean>(false);
-
-  // State for checking if the menu is animating to close.
   const [isClosingDrawer, setIsClosingDrawer] = useState(false);
 
-  const openMenu = () => {
+  const openMenu = useCallback(() => {
     setIsMobileMenu(true);
-
     document.body.style.overflowY = 'hidden';
-  };
+  }, []);
 
-  const closeMenu = () => {
+  const closeMenu = useCallback(() => {
     document.body.style.overflowY = '';
     setIsClosingDrawer(true);
 
@@ -34,19 +28,16 @@ export const Navbar: React.FC = () => {
       setIsMobileMenu(false);
       setIsClosingDrawer(false);
     }, 200);
-  };
+  }, []);
 
-  const toggleMenu = () => {
+  const toggleMenu = useCallback(() => {
     if (isMobileMenu) closeMenu();
     else openMenu();
-  };
+  }, [isMobileMenu, closeMenu, openMenu]);
 
-  // Close the menu if on desktop and and the drawer is open.
-  // This is to prevent the drawer from being open
-  // when the user resizes the window or changes orientation.
   useIsomorphicLayoutEffect(() => {
     if (!isMobile && isMobileMenu) closeMenu();
-  }, [isMobile]);
+  }, [isMobile, isMobileMenu, closeMenu]);
 
   useOnClickOutside(drawerRef, () => isMobileMenu && closeMenu());
 
@@ -59,14 +50,11 @@ export const Navbar: React.FC = () => {
         })}
         onClick={toggleMenu}
         tabIndex={0}
-        aria-label={isDesktopMenu ? 'Close Menu' : 'Open Menu'}
+        aria-label={isMobileMenu ? 'Close Menu' : 'Open Menu'}
       >
-        {[...Array(3)].map((_, index) => (
-          <span
-            key={index.valueOf()}
-            className={`hamburger__line hamburger__line--${index + 1}`}
-          />
-        ))}
+        <span className="hamburger__line hamburger__line--1" />
+        <span className="hamburger__line hamburger__line--2" />
+        <span className="hamburger__line hamburger__line--3" />
       </button>
 
       {isMobileMenu && <div className="overlay" />}
@@ -106,3 +94,5 @@ export const Navbar: React.FC = () => {
     </>
   );
 };
+
+Navbar.displayName = 'modules/mainHeader/Navbar';

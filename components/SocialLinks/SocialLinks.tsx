@@ -30,3 +30,5 @@ export const SocialLinks: React.FC<SocialLinksProps> = ({
     ))}
   </ul>
 );
+
+SocialLinks.displayName = 'components/SocialLinks';

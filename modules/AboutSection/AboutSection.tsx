@@ -28,11 +28,20 @@ const skills = [
 export const AboutSection: React.FC = () => (
   <div className="about__container" id="about">
     <section className="about">
-      <h2 className="about__title">
-        A little <span className="about__title--highlight">About Me</span>
-      </h2>
+      <div className="about__img--wrapper">
+        <AppImage
+          src={AboutImg}
+          loading="lazy"
+          alt="Maverick"
+          className="about__img"
+        />
+      </div>
 
       <div className="about__content">
+        <h2 className="about__title">
+          A little <span className="about__title--highlight">About Me</span>
+        </h2>
+
         <p className="about__content--text">
           I started Software Development in 2015 as a hobby, just out of
           curiosity after reading that video games are made from computer
@@ -68,15 +77,8 @@ export const AboutSection: React.FC = () => (
           ))}
         </ul>
       </div>
-
-      <div className="about__img--wrapper">
-        <AppImage
-          src={AboutImg}
-          loading="lazy"
-          alt="Maverick"
-          className="about__img"
-        />
-      </div>
     </section>
   </div>
 );
+
+AboutSection.displayName = 'modules/AboutSection/AboutSection';

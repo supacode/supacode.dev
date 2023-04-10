@@ -34,3 +34,5 @@ export const BlogHead: React.FC<BlogHeadProps> = ({ post }) => (
     )}
   </header>
 );
+
+BlogHead.displayName = 'modules/blog/BlogHead';

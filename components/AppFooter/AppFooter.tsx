@@ -1,14 +1,28 @@
+import cn from 'classnames';
+
 import { SocialLinks } from 'components/SocialLinks';
 
-export const AppFooter: React.FC = () => (
-  <footer className="site-footer" id="contact">
-    <h2 className="site-footer__lead-txt">Reach out to me!</h2>
+type AppFooterProps = {
+  fullHeight?: boolean;
+};
 
-    <p className="site-footer__txt">
-      Do you want us to work together? Maybe you just want to say Hello!
-      <br /> Don&apos;t be shy, you can reach out to me anytime.
-    </p>
+export const AppFooter: React.FC<AppFooterProps> = ({ fullHeight }) => (
+  <div
+    className={cn('app-footer__container', {
+      'app-footer__container--full-height': !fullHeight,
+    })}
+  >
+    <footer className="app-footer" id="contact">
+      <h2 className="app-footer__lead-txt">Reach out to me!</h2>
 
-    <SocialLinks direction="column" />
-  </footer>
+      <p className="app-footer__txt">
+        Do you want us to work together? Maybe you just want to say Hello!
+        <br /> Don&apos;t be shy, you can reach out to me anytime.
+      </p>
+
+      <SocialLinks direction="column" />
+    </footer>
+  </div>
 );
+
+AppFooter.displayName = 'components/AppFooter';

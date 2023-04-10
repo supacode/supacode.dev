@@ -1,0 +1,12 @@
+.snap-container {
+  height: 100vh;
+  width: 100vw;
+  position: relative;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+  scrollbar-width: none;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}

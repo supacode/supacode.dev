@@ -52,4 +52,6 @@ export const getStaticProps = async () => {
   };
 };
 
+BlogPage.displayName = 'pages/blog';
+
 export default BlogPage;

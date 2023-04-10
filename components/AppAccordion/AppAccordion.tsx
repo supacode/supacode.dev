@@ -67,3 +67,5 @@ export const AppAccordion: React.FC<AppAccordionProps> = ({
     </div>
   );
 };
+
+AppAccordion.displayName = 'components/AppAccordion';

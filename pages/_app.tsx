@@ -5,7 +5,14 @@ import { siteData } from 'consts/index';
 import { AppLayout } from 'modules/layout';
 import 'styles/globals.scss';
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => (
+type MyAppProps = AppProps & {
+  fullHeightFooter?: boolean;
+  pageProps: {
+    fullHeightFooter?: boolean;
+  };
+};
+
+const MyApp: React.FC<MyAppProps> = ({ Component, pageProps }) => (
   <>
     <Head>
       <meta charSet="utf-8" />
@@ -44,7 +51,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }) => (
       />
     </Head>
 
-    <AppLayout>
+    <AppLayout fullHeightFooter={pageProps.fullHeightFooter}>
       <Component {...pageProps} />
     </AppLayout>
   </>

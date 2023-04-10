@@ -45,3 +45,5 @@ export const AppImage: React.FC<AppImageProps> = ({
     blurDataURL={blurDataURL}
   />
 );
+
+AppImage.displayName = 'components/AppImage';

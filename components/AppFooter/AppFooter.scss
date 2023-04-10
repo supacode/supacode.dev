@@ -1,12 +1,21 @@
-.site-footer {
-  padding: var(--spacing-120) var(--spacing-20);
+.app-footer {
   display: flex;
+  align-self: center;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 
   @media (--screen-md-min) {
     margin: var(--spacing-128) 0;
+  }
+
+  &__container {
+    &--full-height {
+      min-height: 100vh;
+    }
+
+    display: flex;
+    justify-content: center;
   }
 
   &__lead-txt {
