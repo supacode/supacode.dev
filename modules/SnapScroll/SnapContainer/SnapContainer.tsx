@@ -1,10 +1,17 @@
-import { useEffect, useState, useRef } from 'react';
+import {
+  useEffect,
+  createRef,
+  useMemo,
+  useRef,
+  useState,
+  useCallback,
+} from 'react';
 import cn from 'classnames';
 
 import { SnapIndicator } from '../SnapIndicator';
 import { SnapSection } from '../SnapSection';
 
-export type SnapContainerProps = {
+type SnapContainerProps = {
   sections: {
     id: string;
     section: JSX.Element;
@@ -16,72 +23,77 @@ export const SnapContainer: React.FC<SnapContainerProps> = ({
   className,
   sections,
 }) => {
-  // Reference to the container div
   const containerRef = useRef<HTMLDivElement>(null);
 
-  // State to keep track of the active section index
   const [activeSection, setActiveSection] = useState(0);
+
+  const sectionRefs = useRef(sections.map(() => createRef<HTMLDivElement>()));
+
+  const emptyArr: [] = [];
+
+  const intersectionCallback = useCallback(
+    (entries: IntersectionObserverEntry[]) => {
+      const intersectingEntry = entries.find((entry) => entry.isIntersecting);
+
+      // TODO: Add section id to url
+      // i.e intersectingEntry?.target.children[0].id;
+
+      if (intersectingEntry) {
+        const index = sectionRefs.current.findIndex(
+          (ref) => ref.current === intersectingEntry.target,
+        );
+
+        setActiveSection(index);
+      }
+    },
+    emptyArr,
+  );
 
   useEffect(() => {
     if (!containerRef.current) return;
 
-    // Function to handle scroll events
-    const handleScroll = () => {
-      // If the container ref or callback is not set, exit the function
-      if (!containerRef.current) return;
+    const observer = new IntersectionObserver(intersectionCallback, {
+      root: containerRef.current,
+      threshold: 0.5,
+    });
 
-      // Get all child elements of the container
-      const sectionElements = containerRef.current.children;
+    const observedElements: Element[] = [];
 
-      // Get the current scroll position of the container
-      const { scrollTop } = containerRef.current;
+    for (let i = 0; i < sectionRefs.current.length; i++) {
+      const currentSection = sectionRefs.current[i].current;
 
-      // Initialize the accumulated height of sections
-      let accumulatedHeight = 0;
-
-      const threshold = 200;
-
-      // Iterate through the child elements to find the active section
-      for (let i = 0; i < sectionElements.length; i++) {
-        const section = sectionElements[i] as HTMLDivElement;
-        accumulatedHeight += section.clientHeight;
-
-        // If the scroll position is less than the adjusted accumulated height, set the active section
-        if (scrollTop < accumulatedHeight - threshold) {
-          setActiveSection(i);
-          break;
-        }
+      if (currentSection) {
+        observer.observe(currentSection);
+        observedElements.push(currentSection);
       }
-    };
+    }
 
-    // Add a scroll event listener to the container
-    containerRef.current.addEventListener('scroll', handleScroll);
-
-    return () => {
-      if (containerRef.current) {
-        containerRef.current.removeEventListener('scroll', handleScroll);
-      }
-    };
-  }, [setActiveSection]);
+    return () =>
+      observedElements.forEach((element) => observer.unobserve(element));
+  }, [containerRef.current, intersectionCallback]);
 
   const scrollToSection = (index: number) => {
-    if (!containerRef.current) return;
+    if (!sectionRefs.current[index]?.current) return;
 
-    const sectionElements = containerRef.current.children;
-    if (sectionElements[index]) {
-      (sectionElements[index] as HTMLElement).scrollIntoView({
-        behavior: 'smooth',
-      });
-    }
+    sectionRefs.current[index].current?.scrollIntoView({
+      behavior: 'smooth',
+    });
   };
+
+  const renderedSections = useMemo(
+    () =>
+      sections.map(({ section, id }, index) => (
+        <SnapSection key={id} ref={sectionRefs.current[index]}>
+          {section}
+        </SnapSection>
+      )),
+    [sections],
+  );
 
   return (
     <>
       <div ref={containerRef} className={cn('snap-container', className)}>
-        {/* {children} */}
-        {sections.map((section, index) => (
-          <SnapSection key={index}>{section.section}</SnapSection>
-        ))}
+        {renderedSections}
       </div>
 
       <SnapIndicator
@@ -92,5 +104,3 @@ export const SnapContainer: React.FC<SnapContainerProps> = ({
     </>
   );
 };
-
-SnapContainer.displayName = 'modules/SnapScroll/SnapContainer';
