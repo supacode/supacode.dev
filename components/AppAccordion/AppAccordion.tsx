@@ -1,14 +1,14 @@
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 import cn from 'classnames';
 
-import { chevronRight as chevronRightIcon } from 'assets/icons';
+import { chevronRight } from 'assets/icons';
 
-type AppAccordionProps = {
+interface AppAccordionProps {
   children?: React.ReactNode;
   head?: React.ReactNode;
   index: number;
   title?: string;
-};
+}
 
 export const AppAccordion: React.FC<AppAccordionProps> = ({
   children,
@@ -18,15 +18,16 @@ export const AppAccordion: React.FC<AppAccordionProps> = ({
 }) => {
   const [isActive, setIsActive] = useState(false);
 
-  const toggleAccordion = (
-    evt:
-      | React.MouseEvent<HTMLDivElement, MouseEvent>
-      | React.KeyboardEvent<HTMLDivElement>,
-  ) => {
-    if (evt.target instanceof HTMLAnchorElement) return;
-
+  const toggleAccordion = useCallback(() => {
     setIsActive(!isActive);
-  };
+  }, [isActive]);
+
+  const handleKeyDown = useCallback(
+    (event: React.KeyboardEvent<HTMLDivElement>) => {
+      if (event.key === 'Enter' || event.key === ' ') toggleAccordion();
+    },
+    [toggleAccordion],
+  );
 
   return (
     <div className="accordion">
@@ -34,12 +35,12 @@ export const AppAccordion: React.FC<AppAccordionProps> = ({
         <div
           className="accordion__btn"
           onClick={toggleAccordion}
-          onKeyDown={toggleAccordion}
+          onKeyDown={handleKeyDown}
           aria-expanded={isActive}
           role="button"
           tabIndex={0}
           aria-controls={`experience-body-${index}`}
-          aria-label={title ? `Expand ${title}` : `Collapse ${title}`}
+          aria-label={isActive ? `Collapse ${title}` : `Expand ${title}`}
         >
           <div className="accordion__head">{head && head}</div>
 
@@ -48,7 +49,7 @@ export const AppAccordion: React.FC<AppAccordionProps> = ({
               'accordion__icon--active': isActive,
             })}
           >
-            {chevronRightIcon}
+            {chevronRight}
           </span>
         </div>
       </div>
@@ -56,7 +57,6 @@ export const AppAccordion: React.FC<AppAccordionProps> = ({
       <div
         aria-labelledby={`experience-${index}`}
         id={`experience-body-${index}`}
-        // tabIndex={isActive ? 0 : -1}
         className={cn('accordion__item', {
           'accordion__item--collapsed': !isActive,
           'accordion__item--animated': isActive,

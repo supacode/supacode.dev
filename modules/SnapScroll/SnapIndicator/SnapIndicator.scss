@@ -4,7 +4,7 @@
 
 .snap-indicator {
   position: fixed;
-  right: 5%;
+  // right: 1%;
   top: 40%;
   z-index: var(--z-index-layer-4);
   transform: translateY(-50%);
@@ -12,6 +12,7 @@
 
   @media (--screen-lg-min) {
     display: block;
+    right: 2%;
   }
 
   &__item {
