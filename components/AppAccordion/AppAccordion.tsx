@@ -1,16 +1,16 @@
-import { useState, useCallback } from 'react';
+import { useState, ReactNode, FC, useCallback } from 'react';
 import cn from 'classnames';
 
 import { chevronRight } from 'assets/icons';
 
 interface AppAccordionProps {
-  children?: React.ReactNode;
-  head?: React.ReactNode;
+  children?: ReactNode;
+  head?: ReactNode;
   index: number;
   title?: string;
 }
 
-export const AppAccordion: React.FC<AppAccordionProps> = ({
+export const AppAccordion: FC<AppAccordionProps> = ({
   children,
   head,
   index,

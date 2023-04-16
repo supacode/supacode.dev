@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import { useMemo, useRef } from 'react';
 import cn from 'classnames';
 
 import { useWindowScroll, useScrollDirection } from 'hooks';
@@ -14,22 +14,20 @@ export const AppHeader: React.FC = () => {
 
   const headerThreshold = scrollPosY > 60;
 
-  return (
-    <header
-      ref={headerRef}
-      className={cn('main-header', {
+  const className = useMemo(
+    () =>
+      cn('main-header', {
         'main-header__fixed': headerThreshold,
         'main-header__hidden': headerThreshold && scrollDirection === 'down',
-      })}
-    >
+      }),
+    [headerThreshold, scrollDirection],
+  );
+
+  return (
+    <header ref={headerRef} className={className}>
       <div className="main-header__inner">
         <h1 className="main-header__logo">
-          <AppLink
-            to="/"
-            onClick={() => document.querySelector('main')?.scrollTo(0, 0)}
-          >
-            Supacode
-          </AppLink>
+          <AppLink to="/">Supacode</AppLink>
         </h1>
 
         <Navbar />

@@ -1,12 +1,12 @@
+import { ReactNode, HTMLAttributeAnchorTarget } from 'react';
 import cn from 'classnames';
 
 import Link from 'next/link';
-import { HTMLAttributeAnchorTarget } from 'react';
 
 type AppLinkProps = {
   asButton?: boolean;
   newTab?: boolean;
-  children?: React.ReactNode;
+  children?: ReactNode;
   className?: string;
   rel?: string;
   target?: HTMLAttributeAnchorTarget;

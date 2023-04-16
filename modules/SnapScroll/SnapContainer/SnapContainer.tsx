@@ -25,7 +25,7 @@ export const SnapContainer: React.FC<SnapContainerProps> = ({
 }) => {
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const [activeSection, setActiveSection] = useState(0);
+  const [activeSection, setActiveSection] = useState<number>(0);
 
   const sectionRefs = useRef(sections.map(() => createRef<HTMLDivElement>()));
 
