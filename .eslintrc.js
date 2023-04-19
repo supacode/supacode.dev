@@ -27,7 +27,6 @@ module.exports = {
     ],
     'react/jsx-props-no-spreading': 'off',
     'import/prefer-default-export': 'off',
-    // Function component is not a function declaration
     'react/function-component-definition': [
       'error',
       {
