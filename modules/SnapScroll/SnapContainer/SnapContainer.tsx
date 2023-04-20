@@ -29,24 +29,24 @@ export const SnapContainer: React.FC<SnapContainerProps> = ({
 
   const sectionRefs = useRef(sections.map(() => createRef<HTMLDivElement>()));
 
-  const emptyArr: [] = [];
-
   const intersectionCallback = useCallback(
     (entries: IntersectionObserverEntry[]) => {
       const intersectingEntry = entries.find((entry) => entry.isIntersecting);
-
-      // TODO: Add section id to url
-      // i.e intersectingEntry?.target.children[0].id;
 
       if (intersectingEntry) {
         const index = sectionRefs.current.findIndex(
           (ref) => ref.current === intersectingEntry.target,
         );
 
+        const currentSectionId = intersectingEntry?.target.children[0]?.id;
+
+        if (currentSectionId)
+          window.history.pushState({}, '', `#${currentSectionId}`);
+
         setActiveSection(index);
       }
     },
-    emptyArr,
+    [],
   );
 
   useEffect(() => {
