@@ -55,8 +55,8 @@ const Home: NextPage<HomeProps> = ({ allPosts, allExperiences }) => {
       section: <BlogSection posts={allPosts} />,
     },
     {
-      id: 'footer',
-      section: <AppFooter />,
+      id: 'contact',
+      section: <AppFooter footerId="contact" />,
     },
   ];
 

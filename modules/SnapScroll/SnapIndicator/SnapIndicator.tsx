@@ -1,4 +1,4 @@
-import { useMemo } from 'react';
+import { useMemo, ReactNode } from 'react';
 import cn from 'classnames';
 
 type SnapIndicatorProps = {
@@ -6,7 +6,7 @@ type SnapIndicatorProps = {
   onItemClick?: (index: number) => void;
   sections: {
     id: string;
-    section: React.ReactNode;
+    section: ReactNode;
   }[];
 };
 

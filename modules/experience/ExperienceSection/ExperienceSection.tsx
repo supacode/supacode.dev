@@ -17,7 +17,7 @@ export const ExperienceSection: React.FC<ExperienceProps> = ({
 
     {experiences?.length > 0 ? (
       <>
-        {experiences.map((exp) => {
+        {experiences.map((exp, index) => {
           const companyName =
             exp.company + (exp.location ? `, ${exp.location}` : '');
 
@@ -25,7 +25,7 @@ export const ExperienceSection: React.FC<ExperienceProps> = ({
             <div className="experience__item" key={exp.index}>
               <AppAccordion
                 title={exp.title}
-                index={experiences.indexOf(exp)}
+                index={index}
                 head={
                   <div className="experience__head">
                     <div className="accordion__title">

@@ -1,7 +1,7 @@
-import { forwardRef } from 'react';
+import { forwardRef, ReactNode } from 'react';
 
 export type SnapSectionProps = {
-  children: React.ReactNode;
+  children: ReactNode;
 };
 
 export const SnapSection = forwardRef<HTMLDivElement, SnapSectionProps>(

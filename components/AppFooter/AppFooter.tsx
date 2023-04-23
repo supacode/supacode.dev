@@ -4,10 +4,15 @@ import { SocialLinks } from 'components/SocialLinks';
 
 type AppFooterProps = {
   fullHeight?: boolean;
+  footerId?: string;
 };
 
-export const AppFooter: React.FC<AppFooterProps> = ({ fullHeight }) => (
+export const AppFooter: React.FC<AppFooterProps> = ({
+  fullHeight,
+  footerId,
+}) => (
   <div
+    id={footerId}
     className={cn('app-footer__container', {
       'app-footer__container--full-height': !fullHeight,
     })}
