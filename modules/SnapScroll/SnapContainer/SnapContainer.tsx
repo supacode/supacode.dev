@@ -40,8 +40,9 @@ export const SnapContainer: React.FC<SnapContainerProps> = ({
 
         const currentSectionId = intersectingEntry?.target.children[0]?.id;
 
-        if (currentSectionId)
+        if (currentSectionId) {
           window.history.pushState({}, '', `#${currentSectionId}`);
+        }
 
         setActiveSection(index);
       }
