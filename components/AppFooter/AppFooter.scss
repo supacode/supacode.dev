@@ -10,12 +10,13 @@
   }
 
   &__container {
+    margin-bottom: var(--spacing-32);
+    display: flex;
+    justify-content: center;
+
     &--full-height {
       min-height: 100vh;
     }
-
-    display: flex;
-    justify-content: center;
   }
 
   &__lead-txt {
