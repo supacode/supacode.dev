@@ -40,7 +40,7 @@ echo '🤔🤔🤔🤔... Alright.... Code looks good to me... Trying to build n
 
 npm run build ||
 (
-    echo '❌👷🏿🔨❌ Buil failed. ❌👷🏿🔨❌
+    echo '❌👷🏿🔨❌ Build failed. ❌👷🏿🔨❌
             Next build failed: View the errors above to see why. 
     '
     false;
