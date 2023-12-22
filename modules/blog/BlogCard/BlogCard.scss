@@ -98,6 +98,10 @@
     font-size: var(--font-size-2xl);
   }
 
+  .blog-card-img-link {
+    height: fit-content;
+  }
+
   .blog-card__content {
     p {
       color: var(--grey-light);

@@ -31,7 +31,7 @@ export const BlogCard: React.FC<BlogProps> = ({
       })}
     >
       {coverImage && (
-        <AppLink to={blogLink}>
+        <AppLink className="blog-card-img-link" to={blogLink}>
           <AppImage
             className="blog-card__img"
             src={coverImage}

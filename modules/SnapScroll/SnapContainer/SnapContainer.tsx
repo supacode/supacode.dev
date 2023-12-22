@@ -38,13 +38,6 @@ export const SnapContainer: React.FC<SnapContainerProps> = ({
           (ref) => ref.current === intersectingEntry.target,
         );
 
-        const currentSectionId =
-          intersectingEntry?.target.children[0]?.id || '';
-
-        if (currentSectionId) {
-          window.history.pushState({}, '', `#${currentSectionId}`);
-        }
-
         setActiveSection(index);
       }
     },

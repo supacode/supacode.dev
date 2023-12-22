@@ -1,10 +1,10 @@
 .post {
-  margin: var(--spacing-128) auto var(--spacing-96) auto;
-  width: 90%;
+  margin: var(--spacing-96) auto;
+  width: 100%;
 
   @media (--screen-lg-min) {
     width: 57%;
-    max-width: var(--app-max-width);
+    max-width: var(--app-max-width-lg);
   }
 
   &__content {
