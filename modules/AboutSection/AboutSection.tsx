@@ -49,7 +49,7 @@ export const AboutSection: React.FC = () => (
         </p>
         <p className="about__content--text">
           I&apos;ve been working professionally as a Software Developer for the
-          last ~5 years. I&apos;m currently a Senior Frontend Engineer at{' '}
+          last ~6 years. I&apos;m currently a Senior Frontend Engineer at{' '}
           <AppLink to="https://instafreight.de/en/" newTab>
             InstaFreight
           </AppLink>{' '}
